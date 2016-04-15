@@ -34,7 +34,7 @@ public class MyQuartz {
 
 	    JobDetail job = newJob(Getgrade.class).withIdentity("job1", "group1").build();
 	    //在这里更改运行的时间 （second minute hour day	week month year）
-	    CronTrigger trigger = newTrigger().withIdentity("trigger1", "group1").withSchedule(cronSchedule("0 0/5 17-23 * * ?"))
+	    CronTrigger trigger = newTrigger().withIdentity("trigger1", "group1").withSchedule(cronSchedule("0 0/5 0-23 * * ?"))
 	        .build();
 	    //将工作加入工作序列中 到时间 自动启动
 	    Date ft = sched.scheduleJob(job, trigger);
