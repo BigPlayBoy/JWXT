@@ -115,8 +115,15 @@ public class JDBCTools {
 			status = 1;
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			//e1.printStackTrace();
 			System.out.println("发生异常！！！");
+			try {
+				Thread.sleep(30L*1000L);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
 		} finally {
 			JDBCTools.releaseDB(null, statement, connection);
 		}
@@ -147,7 +154,13 @@ public class JDBCTools {
 			//status = 1;
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			System.out.println("查询密码发生异常！！！");
+			try {
+				Thread.sleep(30L*1000L);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		} finally {
 			JDBCTools.releaseDB(null, statement, connection);
 		}
