@@ -145,15 +145,6 @@ public class Tools {
 		Student stu = new Student();
 		String strStuInfo = new String();
 		int stunum = 0;
-		// 暂时先使用本地文本测试
-		// try {// 读取所需要的文本
-		// string = readPage("1.html");
-		// // System.out.println("文件读取成功！\n正在输出" + string);
-		// } catch (IOException e) {
-		// // TODO Auto-generated catch block
-		// e.printStackTrace();
-		// }
-
 		// 将标签简化 为后面提取打下基础
 		strStuInfo = getContentArea(string, "<table", "/table>", 3).replace("&nbsp;", "");
 		// System.out.println("提取出的string：\n" + strStuInfo);
@@ -456,23 +447,12 @@ public class Tools {
 	 * @return stack
 	 */
 	static Stack<Grade> getGrade(String string, int stunum) {
-		// 暂时先使用本地文本测试 数据来源由调用者给出
-		// try {// 读取所需要的文本
-		// string = readPage("1.html");
-		// //System.out.println("文件读取成功！\n正在输出" + string);
-		// } catch (IOException e) {
-		// // TODO Auto-generated catch block
-		// e.printStackTrace();
-		// }
 		string = replacettt(string);
 		// 将标签简化 为后面提取打下基础
 		// string = replaceTd(replaceTd(replaceTable(string)));
 		// System.out.println("去除属性\n输出。。。" + string);
 		// 获得成绩的文本区域 第4个table包含的是成绩
 		string = getContentArea(string, "<table", "/table>", 4);
-		// System.out.println("提取出的string：\n" + string);
-		// getTrNum(string, "/tr");
-		// RegexStr(string, "/tr");
 		Stack<String> stack = new Stack<>();
 		stack = trStack(string);// 这个函数将上面的文本提取成一个一个的tr文本 方便后来提取成绩
 		// System.out.println("以下测试的是获取成绩的函数");

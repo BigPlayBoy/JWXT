@@ -28,21 +28,25 @@ public class Getgrade implements Job {
 	public static void main(String[] args) {
 		// 第一步从数据中获取学号和密码，返回值类型是Stack<IdAndPasswd>
 		Stack<IdAndPasswd> passwd = Tools.getStuIdandPasswd();// 得到学号和密码
-		System.out.println("获取学号和密码成功");
+		
+		_log.info("获取学号和密码成功"+new Date());
 		while (!passwd.isEmpty()) {
 			String xuehao = passwd.peek().getStuId();
 			String upass = passwd.peek().getPassswd();
 			passwd.pop();
 			// 获取成绩页面
-			System.out.println("获取网页信息");
+		
+			_log.info("获取网页信息");
 			String GradePage = getGradePage(xuehao, upass);
 			// 拿到成绩页面，提取出学生信息和成绩
-			System.out.println("已获取网页信息，正获取学生信息");
+			
+			_log.info("已获取网页信息，正获取学生信息");
 			// System.out.println("获取的网页为："+GradePage);
 			Student student = Tools.getStuInfo(GradePage);
 			// 存入数据库
 			// System.out.println(student);
-			System.out.println("存入数据库");
+
+			_log.info("存入数据库");
 			SQLTools.saveStudent(student);// 已经考虑是否有重复了
 		}
 	}

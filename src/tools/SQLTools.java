@@ -141,19 +141,18 @@ public class SQLTools {
 
 	// 下面写存储数据的函数 传入参数是Student类型
 	public static boolean saveStudent(Student student) {
-		System.out.println("保存成绩的函数");
 		String sql = student.getSql();
 		JDBCTools.updateSql(sql);
 		Stack<String> existGrade = getExistGrade(student.number);
-		for (String string : existGrade) {
-			System.out.println("数据库中已存在的课程名：" + string+"长度："+string.length());
-		}
+//		for (String string : existGrade) {
+//			System.out.println("数据库中已存在的课程名：" + string+"长度："+string.length());
+//		}
 		for (int i = 0; i < student.gradeNUmber; i++) {
 			// student.grade.
 			// 存成绩的时候 要考虑成绩是否已经存在的情况
-			System.out.println("student中的课程名"+student.grade.peek().getKecheng().trim()+"长度："+student.grade.peek().getKecheng().trim().length());
+			//System.out.println("student中的课程名"+student.grade.peek().getKecheng().trim()+"长度："+student.grade.peek().getKecheng().trim().length());
 				boolean status=existGrade.search(student.grade.peek().getKecheng().trim()) ==-1;
-				System.out.println("搜索的结果"+existGrade.search(student.grade.peek().getKecheng().trim()));
+				//System.out.println("搜索的结果"+existGrade.search(student.grade.peek().getKecheng().trim()));
 				//System.out.println("两个课程的比较"+status);
 				//System.out.println(student.grade.peek().getKecheng().trim());s's's
 			if (status) {
