@@ -6,9 +6,13 @@ import java.util.Stack;
 
 import javax.sql.DataSource;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.mchange.v2.c3p0.*;
 
 import info.Student;
+import main.MyQuartz;
 
 /**
  * 此包里存放的是与数据库连接有关的函数
@@ -19,6 +23,7 @@ import info.Student;
  *
  */
 public class SQLTools {
+	static Logger log = LoggerFactory.getLogger(SQLTools.class);
 	public static void main(String[] args) {
 		// Statement stmt=ConnectSql();
 		// String sql="insert into Student(stunumber,name,sex,xuezhi,yuanxi)
@@ -160,8 +165,9 @@ public class SQLTools {
 				
 				sql = student.grade.pop().getsql();
 				JDBCTools.updateSql(sql);
-				System.out.println("！！！这是一个新成绩！！！");
-				System.out.println(sql);
+				//System.out.println("！！！这是一个新成绩！！！");
+				log.info("新成绩");
+				//System.out.println(sql);
 				// 下面欠一个函数 新增的成绩 应当进行推送 推送的内容为姓名 学号 课程名 学分 成绩
 				// fun()
 			} else {
