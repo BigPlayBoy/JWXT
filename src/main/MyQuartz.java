@@ -32,7 +32,6 @@ public class MyQuartz {
 
 	    // jobs can be scheduled before sched.start() has been called
 
-	    // job 1 will run every 20 seconds
 	    JobDetail job = newJob(Getgrade.class).withIdentity("job1", "group1").build();
 
 	    CronTrigger trigger = newTrigger().withIdentity("trigger1", "group1").withSchedule(cronSchedule("0 0/2 8-17 * * ?"))
@@ -48,9 +47,7 @@ public class MyQuartz {
 	    // jobs
 	    // will run until the scheduler has been started
 	    sched.start();
-
 	    log.info("------- Started Scheduler -----------------");
-//
 	    log.info("------- Waiting five minutes... ------------");
 	    try {
 	      // wait five minutes to show jobs
@@ -60,11 +57,11 @@ public class MyQuartz {
 	      //
 	    }
 
-	    log.info("------- Shutting Down ---------------------");
+	    //log.info("------- Shutting Down ---------------------");
 
 	    //sched.shutdown(true);
 
-	    log.info("------- Shutdown Complete -----------------");
+	    //log.info("------- Shutdown Complete -----------------");
 
 	    SchedulerMetaData metaData = sched.getMetaData();
 	    log.info("Executed " + metaData.getNumberOfJobsExecuted() + " jobs.");
