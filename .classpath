@@ -9,5 +9,6 @@
 	<classpathentry kind="lib" path="slf4j-api-1.7.7.jar"/>
 	<classpathentry kind="lib" path="slf4j-log4j12-1.7.7.jar"/>
 	<classpathentry kind="lib" path="sqljdbc4.jar"/>
+	<classpathentry kind="lib" path="mail.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
