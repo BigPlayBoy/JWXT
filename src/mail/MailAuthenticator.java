@@ -18,7 +18,7 @@ public class MailAuthenticator extends Authenticator {
 	private String username;
 	/**
 	 *
-	 ** 密码   
+	 ** 密码
 	 * 
 	 */
 	private String password;
