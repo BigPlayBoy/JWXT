@@ -1,5 +1,7 @@
 package mail;
 
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
 import java.util.Properties;
 import javax.mail.Address;
 import javax.mail.MessagingException;
@@ -12,8 +14,9 @@ public class TestMail {
 
    public static void main(String[] args) throws Exception {
        Properties props = new Properties();//新建一个配置对象
-       props.put("mail.smtp.host", "smtp.163.com");//设置host地址
-       props.put("mail.smtp.auth", "true");//是否验证
+       props.load(new BufferedInputStream(new FileInputStream("src/mail.properties")));
+       //props.put("mail.smtp.host", "smtp.163.com");//设置host地址
+       //props.put("mail.smtp.auth", "true");//是否验证
        //基本的邮件会话
        Session session = Session.getInstance(props);
        //构造信息体

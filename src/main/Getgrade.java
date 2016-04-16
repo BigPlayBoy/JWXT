@@ -61,24 +61,12 @@ public class Getgrade implements Job {
 	public static String getGradePage(String xuehao, String upass) {
 		// 从主页获取cookie
 		String cookie = GetCookie("http://jw.tjnu.edu.cn/").replace("; path=/", "");
-		// System.out.println("拿到的cookie为：" + cookie);
-		// System.out.println("\n正在登录...\n");
-		// xuehao = "1330090005";
-		// upass = "rzy003502";
 		String postInfo = "uname=" + xuehao + "&upass=" + upass + "&submitgo=GO";
 		// System.out.println("拼接的登陆信息为："+postInfo);
 		sendPost("http://jw.tjnu.edu.cn/index.php", postInfo, cookie);
 		// 进入成绩页面
 		String gradePage = sendGet("http://jw.tjnu.edu.cn/jwgl/cjgl/bbdy/bottom.php?id=&page=", cookie);
-
-		// System.out.println("打印成绩页面");
-		// System.out.println(Tools.getStuInfo(grade));// 将提取的信息打印出来
-		// System.out.println(grade);// 获得了成绩页面
-		// System.out.println(grade.replaceAll("\t|\n", "").replaceAll(" ",
-		// ""));// 获得了成绩页面
-		// String staus =
 		Logout("http://jw.tjnu.edu.cn/jwgl/logout.php", cookie);
-		// System.out.println("退出");
 		System.out.println("获取网页信息 等待加工....");
 		return gradePage;
 	}

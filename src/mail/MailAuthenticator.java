@@ -27,9 +27,9 @@ public class MailAuthenticator extends Authenticator {
 	 ** 初始化邮箱和密码
 	 ** 
 	 * @param username
-	 *            邮箱      
+	 *            邮箱 
 	 ** @param password
-	 *            密码      
+	 *            密码 
 	 */
 	public MailAuthenticator(String username, String password) {
 		this.username = username;
