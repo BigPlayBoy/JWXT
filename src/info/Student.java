@@ -1,7 +1,7 @@
 package info;
 import java.util.Stack;
 
-public class Student {
+public class Student implements Cloneable{
 	String name;
 	public int number;
 	String sex;
@@ -124,5 +124,12 @@ public class Student {
 				+ this.ruxueriqi + "',KechengNo='" + this.gradeNUmber + "' where StuID='" + this.number + "'";
 
 	}
+//写一个克隆函数 将学生信息克隆出来
 
+	@Override
+	public Object clone() throws CloneNotSupportedException {
+		// TODO Auto-generated method stub
+		return super.clone();
+	}
+	
 }
