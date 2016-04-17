@@ -17,8 +17,10 @@ import org.quartz.JobKey;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import info.Grade;
 import info.IdAndPasswd;
 import info.Student;
+import tools.JDBCTools;
 import tools.SQLTools;
 import tools.Tools;
 
@@ -27,13 +29,14 @@ public class Getgrade implements Job {
 
 	public static void main(String[] args) {
 		// 第一步从数据中获取学号和密码，返回值类型是Stack<IdAndPasswd>
-		Stack<IdAndPasswd> passwd = Tools.getStuIdandPasswd();// 得到学号和密码
+		Stack<IdAndPasswd> passwd = JDBCTools.QueryPasswd(null);// 得到学号和密码
+		Stack<Grade> newGrade=new Stack<>();
 		System.out.println("获取学号和密码成功");
-		_log.info("获取学号和密码成功"+new Date());
+		_log.info("获取学号和密码成功" + new Date());
 		while (!passwd.isEmpty()) {
 			String xuehao = passwd.peek().getStuId();
 			String upass = passwd.peek().getPassswd();
-			passwd.pop();
+			passwd.pop();//拿到学号和密码之后 将学生信息弹出
 			// 获取成绩页面
 			System.out.println("获取网页信息");
 			_log.info("获取网页信息");
@@ -47,7 +50,15 @@ public class Getgrade implements Job {
 			// System.out.println(student);
 			System.out.println("存入数据库");
 			_log.info("存入数据库");
-			SQLTools.saveStudent(student);// 已经考虑是否有重复了
+			// 这里应当返回一个包含了新增成绩的栈 然后 发送出去
+			// 额 又需要在数据库中 添加邮箱了。。。
+			newGrade=JDBCTools.saveStudent(student);// 已经考虑是否有重复了
+			//判断是否有新成绩增加
+			if(!newGrade.isEmpty()){
+				//增加了新的成绩
+				_log.info("有新成绩增加");
+				
+			}
 		}
 	}
 
@@ -213,7 +224,7 @@ public class Getgrade implements Job {
 			in = new BufferedReader(new InputStreamReader(conn.getInputStream(), "utf-8"));
 			String line;
 			// 这里成功拿到cookie
-			//String head = conn.getHeaderField("Set-Cookie");
+			// String head = conn.getHeaderField("Set-Cookie");
 			// System.out.println("返回的Cookie is \n\t" + head);
 			while ((line = in.readLine()) != null) {
 				result += line;
@@ -245,7 +256,8 @@ public class Getgrade implements Job {
 		try {
 			// String urlNameString = url + "?" + param;
 			String urlNameString = url;
-			//Proxy proxy = new Proxy(java.net.Proxy.Type.HTTP, new InetSocketAddress("127.0.0.1", 8888));
+			// Proxy proxy = new Proxy(java.net.Proxy.Type.HTTP, new
+			// InetSocketAddress("127.0.0.1", 8888));
 			URL realUrl = new URL(urlNameString);
 			// 打开和URL之间的连接
 			URLConnection connection = realUrl.openConnection();
@@ -270,7 +282,7 @@ public class Getgrade implements Job {
 			// for (String key : map.keySet()) {
 			// System.out.println(key + "--->" + map.get(key));
 			// }
-			//String status = connection.getHeaderField("");
+			// String status = connection.getHeaderField("");
 			// 定义 BufferedReader输入流来读取URL的响应
 			in = new BufferedReader(new InputStreamReader(connection.getInputStream(), "gb2312"));
 			// in = new BufferedReader(new InputStreamReader((InputStream)

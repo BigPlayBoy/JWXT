@@ -17,11 +17,15 @@ import java.util.Stack;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import info.Grade;
 import info.IdAndPasswd;
 import info.Student;
 
 public class Tools {
+	static Logger log = LoggerFactory.getLogger(Tools.class);
 	static void PrintMap(Map<Integer, String> map) {
 		System.out.println("���Map�е�����");
 		Set<Integer> set = map.keySet(); // keyװ��set��
@@ -183,8 +187,10 @@ public class Tools {
 			i++;
 		}
 		System.out.println("学生信息已获取 正在获取成绩");
+		log.info("学生信息已获取 正在获取成绩");
 		stu.setGrade(getGrade(string, stunum));
 		System.out.println("学生当前成绩的科目数量:" + stu.grade.size());
+		log.info("学生当前成绩的科目数量:" + stu.grade.size());
 		stu.setGradeNUmber(stu.grade.size());// 设置学生当前成绩的科目数量
 		return stu;
 	}
@@ -343,6 +349,7 @@ public class Tools {
 			// System.out.println("trStack()得到的结果是：\n" + tr);
 			// trstring.add(tr);
 			if (i == 0) {
+				//这一句 不应该在循环最开始吗
 				continue;
 			}
 			stack.push(tr);
@@ -426,7 +433,7 @@ public class Tools {
 		float result = 0;
 		if(string.length()==0){
 			result=0;
-			System.out.println("成绩为空 设置为0");
+			System.out.println("此科成绩为空 设置为0");
 		}else{
 			try {
 				result = Integer.parseInt(string);

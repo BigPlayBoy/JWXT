@@ -80,4 +80,7 @@ public class Grade {
 		return "insert into Grade(STuid,kecheng) values('" + this.number + "','"
 				+ this.kecheng + "')";
 	}
+	public String getemail(){
+		return	"课程名："+ kecheng +", 学分=" + xuefen + ", 成绩=" + chengji + ", 绩点=" + jidian;
+	}
 }

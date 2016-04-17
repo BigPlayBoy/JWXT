@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 
 import com.mchange.v2.c3p0.*;
 
+import info.Grade;
 import info.Student;
 import main.MyQuartz;
 
@@ -21,9 +22,11 @@ import main.MyQuartz;
  * 
  * @author 明辉
  *
+ *         这里的写的好乱好乱 数据库操作，查询，插入，删除，
  */
 public class SQLTools {
 	static Logger log = LoggerFactory.getLogger(SQLTools.class);
+
 	public static void main(String[] args) {
 		// Statement stmt=ConnectSql();
 		// String sql="insert into Student(stunumber,name,sex,xuezhi,yuanxi)
@@ -145,67 +148,60 @@ public class SQLTools {
 	}
 
 	// 下面写存储数据的函数 传入参数是Student类型
-	public static boolean saveStudent(Student student) {
-		String sql = student.getSql();
-		JDBCTools.updateSql(sql);
+	// 返回一个包含更新的新成绩的栈
+	public static Stack<Grade> saveStudent(Student student) {
+		String sqlStudent = student.getSql();
+		JDBCTools.updateSql(sqlStudent);
 		Stack<String> existGrade = getExistGrade(student.number);
-//		for (String string : existGrade) {
-//			System.out.println("数据库中已存在的课程名：" + string+"长度："+string.length());
-//		}
+		Stack<Grade> newGrade = new Stack<>();
+		// for (String string : existGrade) {
+		// System.out.println("数据库中已存在的课程名：" + string+"长度："+string.length());
+		// }
 		for (int i = 0; i < student.gradeNUmber; i++) {
 			// student.grade.
 			// 存成绩的时候 要考虑成绩是否已经存在的情况
-			//System.out.println("student中的课程名"+student.grade.peek().getKecheng().trim()+"长度："+student.grade.peek().getKecheng().trim().length());
-				boolean status=existGrade.search(student.grade.peek().getKecheng().trim()) ==-1;
-				//System.out.println("搜索的结果"+existGrade.search(student.grade.peek().getKecheng().trim()));
-				//System.out.println("两个课程的比较"+status);
-				//System.out.println(student.grade.peek().getKecheng().trim());s's's
+			// System.out.println("student中的课程名"+student.grade.peek().getKecheng().trim()+"长度："+student.grade.peek().getKecheng().trim().length());
+			boolean status = existGrade.search(student.grade.peek().getKecheng().trim()) == -1;
+			// System.out.println("搜索的结果"+existGrade.search(student.grade.peek().getKecheng().trim()));
+			// System.out.println("两个课程的比较"+status);
+			// System.out.println(student.grade.peek().getKecheng().trim());s's's
 			if (status) {
 				// 只有在数据库中匹配不到的成绩 才可以保存到数据库中 已经存在的 不用保存
-				
-				sql = student.grade.pop().getsql();
-				JDBCTools.updateSql(sql);
-				//System.out.println("！！！这是一个新成绩！！！");
+
+				sqlStudent = student.grade.pop().getsql();
+				JDBCTools.updateSql(sqlStudent);
+				// System.out.println("！！！这是一个新成绩！！！");
 				log.info("新成绩");
-				//System.out.println(sql);
+				// System.out.println(sql);
 				// 下面欠一个函数 新增的成绩 应当进行推送 推送的内容为姓名 学号 课程名 学分 成绩
 				// fun()
+				// 将新增加的成绩压入newGrade栈中
+				newGrade.push(student.grade.peek());
+
 			} else {
 				student.grade.pop();// 如果已经存在 就不需要再写入数据库了
 			}
 
 		}
 		System.out.println("保存学生信息成功");
-		return false;
+		return newGrade;// 返回的是包含增加的新成绩的栈
 	}
 
 	// 我只需要获得已存在的考试科目即可 这样的话 可以放到map里面了
 	public static Stack<String> getExistGrade(int StuID) {
 		Stack<String> existGrade = new Stack<>();
 		String sql = "select kecheng from Grade where StuID='" + StuID + "'";
-		Connection connection = null;
-		Statement statement = null;
-		try {
-			connection = JDBCTools.getConnection();
-			statement = connection.createStatement();
-			// String sql="insert into Student(stunumber,name,sex,xuezhi,yuanxi)
-			// values('1330090003','胡永涛','男','4','计信学院')";
-			ResultSet rs = statement.executeQuery(sql);// 执行查询语句
-			while (rs.next()) {
-				existGrade.push(rs.getString(1).trim());// 将获得的成绩装入栈中
+		
+			ResultSet rs = JDBCTools.executeQuery(sql);// 执行查询语句
+			try {
+				while (rs.next()) {
+					existGrade.push(rs.getString(1).trim());// 将获得的成绩装入栈中
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
-			// for (String string : existGrade) {
-			// System.out.println("从数据库中取到的考试课程" + string);
-			// }
-			// System.out.println(existGrade);
-			// return true;
-			// status = 1;
-		} catch (Exception e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} finally {
-			JDBCTools.releaseDB(null, statement, connection);
-		}
+		
 		return existGrade;
 	}
 }
