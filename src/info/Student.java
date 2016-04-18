@@ -1,7 +1,8 @@
 package info;
+
 import java.util.Stack;
 
-public class Student implements Cloneable{
+public class Student implements Cloneable {
 	String name;
 	public int number;
 	String sex;
@@ -124,12 +125,32 @@ public class Student implements Cloneable{
 				+ this.ruxueriqi + "',KechengNo='" + this.gradeNUmber + "' where StuID='" + this.number + "'";
 
 	}
-//写一个克隆函数 将学生信息克隆出来
+	// 写一个克隆函数 将学生信息克隆出来
 
 	@Override
 	public Object clone() throws CloneNotSupportedException {
 		// TODO Auto-generated method stub
 		return super.clone();
 	}
-	
+
+	public Student cloneStudent() {
+		Student stu = new Student();
+		stu.banji=this.banji;
+		stu.grade=this.grade;
+		stu.gradeNUmber=this.gradeNUmber;
+		stu.name=this.name;
+		stu.number=this.number;
+		return stu;
+	}
+
+	public static void main(String[] args) {
+		Student student = new Student();
+		Student stu = student.cloneStudent();
+		if (student == stu) {
+			System.out.println("地址相等");
+
+		} else {
+			System.out.println("地址不相等");
+		}
+	}
 }

@@ -34,9 +34,10 @@ public class Getgrade implements Job {
 		//
 		Stack<Student> newGrade=new Stack<>();//用来存放更新了成绩的学生
 		
-		System.out.println("获取学号和密码成功");
-		_log.info("获取学号和密码成功" + new Date());
+		
 		while (!passwd.isEmpty()) {
+			System.out.println("获取学号和密码成功");
+			_log.info("获取学号和密码成功" + new Date());
 			Student stu=new Student();
 			String xuehao = passwd.peek().getStuId();
 			String upass = passwd.peek().getPassswd();

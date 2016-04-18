@@ -137,10 +137,13 @@ public class JDBCTools {
 			connection = JDBCTools.getConnection();
 			statement = connection.createStatement();
 			rs = statement.executeQuery(sql);// 执行查询语句
-			System.out.println("Success!！！！");
+			System.out.println("执行查询Success!！！！");
+			System.out.println("在executeQuery中输出rs" + rs);
 
+			return rs;
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
+			System.out.println(e1);
 			System.out.println("执行查询发生异常！！！");
 
 		} finally {
@@ -154,19 +157,24 @@ public class JDBCTools {
 		Stack<IdAndPasswd> xuehao = new Stack<>();
 		sql = "select StuID,Passwd,Priority from Student order by Priority desc";
 		ResultSet rs = null;
-		rs = JDBCTools.executeQuery(sql);// 执行查询语句
-		System.out.println("查询密码完成返回rs");
+		Connection connection = null;
+		Statement statement = null;
 		try {
+			connection = JDBCTools.getConnection();
+			statement = connection.createStatement();
+			rs = statement.executeQuery(sql);// 执行查询语句
 			while (rs.next()) {
 				IdAndPasswd id = new IdAndPasswd();
 				id.setStuId(rs.getString(1));
 				id.setPassswd(rs.getString(2));
 				xuehao.push(id);
 			}
-		} catch (SQLException e) {
+		} catch (Exception e1) {
 			// TODO Auto-generated catch block
-			// e.printStackTrace();
-			System.out.println("执行查询学号和密码出现错误！！" + new Date());
+			System.out.println("执行查询发生异常！！！");
+
+		} finally {
+			JDBCTools.releaseDB(null, statement, connection);
 		}
 		return xuehao;
 	}
@@ -180,13 +188,25 @@ public class JDBCTools {
 	public static String QueryEmail(String StuID) {
 		String email = null;
 		String queryEmail = "select Email	from	Student	where StuID=" + StuID;
-		ResultSet rs = JDBCTools.executeQuery(queryEmail);
+		ResultSet rs = null;
+		Connection connection = null;
+		Statement statement = null;
 		try {
-			email = rs.getString(1);
-		} catch (SQLException e) {
+			connection = JDBCTools.getConnection();
+			statement = connection.createStatement();
+			rs = statement.executeQuery(queryEmail);// 执行查询语句
+			System.out.println("执行查询Success!！！！");
+			System.out.println("在executeQuery中输出rs" + rs);
+			while(rs.next()){
+				email = rs.getString(1).trim();
+			}
+			System.out.println(email);
+		} catch (Exception e1) {
 			// TODO Auto-generated catch block
-			// e.printStackTrace();
-			System.out.println("查询邮箱出错！！");
+			System.out.println(e1);
+			System.out.println("执行查询发生异常！！！");
+		} finally {
+			JDBCTools.releaseDB(null, statement, connection);
 		}
 		return email;
 	}
@@ -199,27 +219,19 @@ public class JDBCTools {
 		JDBCTools.updateSql(sqlStudent);
 		Stack<String> existGrade = getExistGrade(student.number);
 		Stack<Grade> newGrade = new Stack<>();
-		Student stu=null;
-		try {
-			stu = (Student) student.clone();
-		} catch (CloneNotSupportedException e) {
-			// TODO Auto-generated catch block
-			//e.printStackTrace();
-			log.info("student克隆失败");
-		}// 本变量存放该学生新增加的成绩
-		stu.grade.clear();// 清空学生的成绩--我是想克隆的时候就清空的 但是还没有学会
-
-		// for (String string : existGrade) {
-		// System.out.println("数据库中已存在的课程名：" + string+"长度："+string.length());
-		// }
+		Student stu = null;
+		
+			stu = (Student) student.cloneStudent();
+		
+		 // 本变量存放该学生新增加的成绩
+		//重写一个克隆函数
+//		stu.grade.clear();// 清空学生的成绩--我是想克隆的时候就清空的 但是还没有学会
+		//
 		for (int i = 0; i < student.gradeNUmber; i++) {
 			// student.grade.
 			// 存成绩的时候 要考虑成绩是否已经存在的情况
 			// System.out.println("student中的课程名"+student.grade.peek().getKecheng().trim()+"长度："+student.grade.peek().getKecheng().trim().length());
 			boolean status = existGrade.search(student.grade.peek().getKecheng().trim()) == -1;
-			// System.out.println("搜索的结果"+existGrade.search(student.grade.peek().getKecheng().trim()));
-			// System.out.println("两个课程的比较"+status);
-			// System.out.println(student.grade.peek().getKecheng().trim());
 			if (status) {
 				// 只有在数据库中匹配不到的成绩 才可以保存到数据库中 已经存在的 不用保存
 
@@ -246,17 +258,34 @@ public class JDBCTools {
 	public static Stack<String> getExistGrade(int StuID) {
 		Stack<String> existGrade = new Stack<>();
 		String sql = "select kecheng from Grade where StuID='" + StuID + "'";
-
-		ResultSet rs = JDBCTools.executeQuery(sql);// 执行查询语句
+		ResultSet rs = null;
+		Connection connection = null;
+		Statement statement = null;
 		try {
+			connection = JDBCTools.getConnection();
+			statement = connection.createStatement();
+			rs = statement.executeQuery(sql);// 执行查询语句
 			while (rs.next()) {
 				existGrade.push(rs.getString(1).trim());// 将获得的成绩装入栈中
 			}
-		} catch (SQLException e) {
+		} catch (Exception e1) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("执行查询发生异常！！！");
+		} finally {
+			JDBCTools.releaseDB(null, statement, connection);
 		}
-
 		return existGrade;
+	}
+
+	public static void main(String[] args) {
+		// Stack<IdAndPasswd>
+		// try {
+		// System.out.println(getConnection());
+		// } catch (Exception e) {
+		// // TODO Auto-generated catch block
+		// e.printStackTrace();
+		// }
+//		QueryPasswd(null);
+		QueryEmail("1330090010");
 	}
 }
