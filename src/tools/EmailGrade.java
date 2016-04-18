@@ -5,6 +5,7 @@ import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Date;
 import java.util.Properties;
 import java.util.Stack;
 
@@ -22,6 +23,49 @@ import mail.SimpleMailSender;
  * 
  **/
 public class EmailGrade {
+	public static void main(String[] args) {
+		//拼接发送的文本
+		String emailContent="晚上好 发送自java"+new Date();
+		System.out.println(emailContent);
+		
+		//获取邮箱地址
+		String emailAddress="cuilovexing@163.om";
+		
+		
+		Properties props = new Properties();//新建一个配置对象
+	       try {
+			props.load(new BufferedInputStream(new FileInputStream("src/mail.properties")));
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			//e.printStackTrace();
+			System.out.println("文件未找到");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+//			e.printStackTrace();
+			System.out.println("IO异常？？？？？");
+		}
+		String	hostname=props.getProperty("mail.smtp.host");
+		String	username=props.getProperty("InternetAddress");
+		String	password=props.getProperty("password");
+	       SimpleMailSender mailsend = new SimpleMailSender(hostname,username,password);
+		String	recipient=emailAddress;
+		String	content=emailContent;
+		String subject="你有新的成绩123456496";
+		try {
+			//发送邮件
+			mailsend.send(recipient, subject, content);
+			System.out.println("发送成功");
+		} catch (AddressException e) {
+			// TODO Auto-generated catch block
+			//e.printStackTrace();
+			System.out.println("邮箱地址错误？？");
+		} catch (MessagingException e) {
+			// TODO Auto-generated catch block
+		//	e.printStackTrace();
+			System.out.println("邮件错误？？？？？");
+		}
+		System.out.println("end");
+	}
 	// SimpleMailSender sendemail=new SimpleMailSender();
 
 	String recipient;

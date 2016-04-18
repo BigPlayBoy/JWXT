@@ -208,7 +208,7 @@ public class JDBCTools {
 		} finally {
 			JDBCTools.releaseDB(null, statement, connection);
 		}
-		return email;
+		return email.trim();
 	}
 
 	// 下面写存储数据的函数 传入参数是Student类型
@@ -286,6 +286,7 @@ public class JDBCTools {
 		// e.printStackTrace();
 		// }
 //		QueryPasswd(null);
-		QueryEmail("1330090010");
+		String email=QueryEmail("1330090010");
+		System.out.println(email+email.length());
 	}
 }
