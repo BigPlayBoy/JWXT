@@ -77,7 +77,7 @@ public class EmailGrade {
 	public static String getEmail(int number) {
 		String email = null;
 		String sqlemail = "select Email from Student where StuID=" + String.valueOf(number);
-		System.out.println(sqlemail);
+		//System.out.println(sqlemail);
 		// 查询该学生的邮箱
 		email = JDBCTools.QueryEmail(sqlemail);
 		return email;
@@ -148,11 +148,11 @@ public class EmailGrade {
 			}
 			//拼接发送的文本
 			String emailContent=studentcontent+gradecontent;
-			System.out.println(emailContent);
+			//System.out.println(emailContent);
 			
 			//获取邮箱地址
 			String emailAddress=EmailGrade.getEmail(StuID);
-			System.out.println(emailAddress);
+			//System.out.println(emailAddress);
 			
 			Properties props = new Properties();//新建一个配置对象
 		       try {
