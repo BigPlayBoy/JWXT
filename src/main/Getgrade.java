@@ -55,6 +55,9 @@ public class Getgrade implements Job {
 			EmailGrade.sendEmail(newGrade);
 			System.out.println("发送成功");
 		}
+		else{
+			_log.info("没有增加新成绩");
+		}
 		System.out.println("end???");
 	}
 
