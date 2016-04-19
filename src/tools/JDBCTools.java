@@ -1,12 +1,9 @@
 package tools;
 
-import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Date;
-import java.util.HashMap;
 import java.util.Stack;
 
 import javax.sql.DataSource;
@@ -16,7 +13,6 @@ import org.slf4j.LoggerFactory;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
-import info.Grade;
 import info.IdAndPasswd;
 import info.Student;
 
@@ -113,13 +109,12 @@ public class JDBCTools {
 			connection = JDBCTools.getConnection();
 			statement = connection.createStatement();
 			statement.executeUpdate(sql);
-			System.out.println("Success!");
+			// log.info("更新数据库成功Success!");
 			status = 1;
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
 			// e1.printStackTrace();
-			System.out.println("发生异常！！！");
-			log.info("");
+			log.error("发生异常！！！");
 		} finally {
 			JDBCTools.releaseDB(null, statement, connection);
 		}
@@ -185,9 +180,9 @@ public class JDBCTools {
 	 * @param sql
 	 * @return
 	 */
-	public static String QueryEmail(String StuID) {
+	public static String QueryEmail(String queryEmail) {
 		String email = null;
-		String queryEmail = "select Email	from	Student	where StuID=" + StuID;
+		// String queryEmail = "select Email from Student where StuID=" + StuID;
 		ResultSet rs = null;
 		Connection connection = null;
 		Statement statement = null;
@@ -197,7 +192,7 @@ public class JDBCTools {
 			rs = statement.executeQuery(queryEmail);// 执行查询语句
 			System.out.println("执行查询Success!！！！");
 			System.out.println("在executeQuery中输出rs" + rs);
-			while(rs.next()){
+			while (rs.next()) {
 				email = rs.getString(1).trim();
 			}
 			System.out.println(email);
@@ -216,41 +211,34 @@ public class JDBCTools {
 	// 4.17 返回的应当是一个学生对象，包含了该学生的所有新增加成绩
 	public static Student saveStudent(Student student) {
 		String sqlStudent = student.getSql();
-		JDBCTools.updateSql(sqlStudent);
+		if (JDBCTools.updateSql(sqlStudent)) {
+			log.info("学生信息更新成功");
+		}
 		Stack<String> existGrade = getExistGrade(student.number);
-		Stack<Grade> newGrade = new Stack<>();
 		Student stu = null;
-		
-			stu = (Student) student.cloneStudent();
-		
-		 // 本变量存放该学生新增加的成绩
-		//重写一个克隆函数
-//		stu.grade.clear();// 清空学生的成绩--我是想克隆的时候就清空的 但是还没有学会
-		//
+		stu = (Student) student.cloneStudent();
+		// 本变量存放该学生新增加的成绩
+		// 重写一个克隆函数
+		// stu.grade.clear();// 清空学生的成绩--我是想克隆的时候就清空的 但是还没有学会 已经写出来了
 		for (int i = 0; i < student.gradeNUmber; i++) {
-			// student.grade.
 			// 存成绩的时候 要考虑成绩是否已经存在的情况
 			// System.out.println("student中的课程名"+student.grade.peek().getKecheng().trim()+"长度："+student.grade.peek().getKecheng().trim().length());
 			boolean status = existGrade.search(student.grade.peek().getKecheng().trim()) == -1;
 			if (status) {
 				// 只有在数据库中匹配不到的成绩 才可以保存到数据库中 已经存在的 不用保存
-
 				sqlStudent = student.grade.pop().getsql();
-				JDBCTools.updateSql(sqlStudent);
+				if (!JDBCTools.updateSql(sqlStudent)) {
+					log.error("学生成绩存储失败");
+				}
 				// System.out.println("！！！这是一个新成绩！！！");
-				log.info("新成绩");
-				// System.out.println(sql);
-				// 下面欠一个函数 新增的成绩 应当进行推送 推送的内容为姓名 学号 课程名 学分 成绩
-				// fun()
+				// log.info("新成绩");
 				// 将新增加的成绩压入stu栈中
-				// newGrade.push(student.grade.peek());
 				stu.grade.push(student.grade.peek());
 			} else {
 				student.grade.pop();// 如果已经存在 就不需要再写入数据库了
 			}
-
 		}
-		System.out.println("保存学生信息成功");
+		log.info("保存学生信息成功");
 		return stu;// 返回的是包含增加的新成绩的栈
 	}
 
@@ -266,11 +254,11 @@ public class JDBCTools {
 			statement = connection.createStatement();
 			rs = statement.executeQuery(sql);// 执行查询语句
 			while (rs.next()) {
-				existGrade.push(rs.getString(1).trim());// 将获得的成绩装入栈中
+				existGrade.push(rs.getString(1).trim());// 将获得的成绩名装入栈中
 			}
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
-			System.out.println("执行查询发生异常！！！");
+			log.error("执行查询发生异常！！！");
 		} finally {
 			JDBCTools.releaseDB(null, statement, connection);
 		}
@@ -285,8 +273,8 @@ public class JDBCTools {
 		// // TODO Auto-generated catch block
 		// e.printStackTrace();
 		// }
-//		QueryPasswd(null);
-		String email=QueryEmail("1330090010");
-		System.out.println(email+email.length());
+		// QueryPasswd(null);
+		String email = QueryEmail("1330090010");
+		System.out.println(email + email.length());
 	}
 }

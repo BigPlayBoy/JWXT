@@ -114,7 +114,7 @@ public class Student implements Cloneable {
 
 	@Override
 	public String toString() {
-		return "Student [name=" + name + ", number=" + number + ", sex=" + sex + ", xuezhi=" + xuezhi + ", yuanxi="
+		return "\nStudent [name=" + name + ", number=" + number + ", sex=" + sex + ", xuezhi=" + xuezhi + ", yuanxi="
 				+ yuanxi + ", zhuanye=" + zhuanye + ", banji=" + banji + ", ruxueriqi=" + ruxueriqi + ", grade=" + grade
 				+ ", gradeNUmber=" + gradeNUmber + "]";
 	}

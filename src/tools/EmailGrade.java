@@ -1,6 +1,5 @@
 package tools;
 
-import java.awt.List;
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -14,7 +13,6 @@ import javax.mail.internet.AddressException;
 
 import info.Grade;
 import info.Student;
-import mail.Mail;
 import mail.SimpleMailSender;
 
 /**
@@ -29,8 +27,8 @@ public class EmailGrade {
 		System.out.println(emailContent);
 		
 		//获取邮箱地址
-		String emailAddress="cuilovexing@163.om";
-		
+//		String emailAddress="cuilovexing@163.com";
+		String emailAddress="1151770629@qq.com";
 		
 		Properties props = new Properties();//新建一个配置对象
 	       try {
@@ -78,7 +76,7 @@ public class EmailGrade {
 	// 先获取用户的邮箱地址
 	public static String getEmail(int number) {
 		String email = null;
-		String sqlemail = "select Email from Student where StuID=" + number;
+		String sqlemail = "select Email from Student where StuID=" + String.valueOf(number);
 		System.out.println(sqlemail);
 		// 查询该学生的邮箱
 		email = JDBCTools.QueryEmail(sqlemail);
@@ -146,7 +144,7 @@ public class EmailGrade {
 				float chengji=grade.getChengji();
 				float	xuefen=grade.getXuefen();
 				float	jidian=grade.getJidian();
-				gradecontent=gradecontent+"课程名："+kechengming+"\n成绩:"+chengji+"\n学分:"+"\n绩点:"+jidian+" ";
+				gradecontent=gradecontent+"课程名："+kechengming+"\n成绩:"+chengji+"\n学分:"+xuefen+"\n绩点:"+jidian+" ";
 			}
 			//拼接发送的文本
 			String emailContent=studentcontent+gradecontent;
@@ -154,7 +152,7 @@ public class EmailGrade {
 			
 			//获取邮箱地址
 			String emailAddress=EmailGrade.getEmail(StuID);
-			
+			System.out.println(emailAddress);
 			
 			Properties props = new Properties();//新建一个配置对象
 		       try {
@@ -173,12 +171,12 @@ public class EmailGrade {
 			String	password=props.getProperty("password");
 		       SimpleMailSender mailsend = new SimpleMailSender(hostname,username,password);
 			String	recipient=emailAddress;
-			String	content=emailAddress;
+			String	content=emailContent;
 			String subject="你有新的成绩";
 			try {
 				//发送邮件
 				mailsend.send(recipient, subject, content);
-				System.out.println("发送成功");
+				//System.out.println("发送成功");
 			} catch (AddressException e) {
 				// TODO Auto-generated catch block
 				//e.printStackTrace();
@@ -188,7 +186,14 @@ public class EmailGrade {
 			//	e.printStackTrace();
 				System.out.println("邮件错误？？？？？");
 			}
-
+			//每发送一次 过5秒钟 再次发送
+			try {
+			      // wait five minutes to show jobs
+			      Thread.sleep(5L * 1000L);
+			      // executing...
+			    } catch (Exception e) {
+			      //
+			    }
 //			String content = "尊敬的" + newGrade.peek().getName() + ":你有新的成绩出来了！！！\n学号:" + newGrade.peek().getNumber()
 //					+ "\n课程名:" + newGrade.peek().grade.peek().getKecheng() + "\n成绩:"
 //					+ newGrade.peek().grade.peek().getChengji() + "\n学分:" + newGrade.peek().grade.peek().getXuefen()

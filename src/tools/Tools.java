@@ -11,7 +11,6 @@ import java.net.URLConnection;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
@@ -80,10 +79,10 @@ public class Tools {
 
 	public static void main(String[] args) {
 		// 测试获取学生信息
-		Student stu = getStuInfo("123");
+		//Student stu = getStuInfo("123");
 		// System.out.println(stu);
 		// SQLTools.saveStudent(stu);
-		Stack<IdAndPasswd> idandpasswd = getStuIdandPasswd();
+		//Stack<IdAndPasswd> idandpasswd = getStuIdandPasswd();
 
 		// Stack<Grade> stack = getGrade("123");
 		// for (Grade grade : stack) {
@@ -188,10 +187,8 @@ public class Tools {
 			}
 			i++;
 		}
-		System.out.println("学生信息已获取 正在获取成绩");
 		log.info("学生信息已获取 正在获取成绩");
 		stu.setGrade(getGrade(string, stunum));
-		System.out.println("学生当前成绩的科目数量:" + stu.grade.size());
 		log.info("学生当前成绩的科目数量:" + stu.grade.size());
 		stu.setGradeNUmber(stu.grade.size());// 设置学生当前成绩的科目数量
 		return stu;
@@ -211,7 +208,7 @@ public class Tools {
 		// 需要保存数据
 		int i = 1;
 		while (matcher.find()) {
-			Grade grade = new Grade();
+			//Grade grade = new Grade();
 			System.out.print("匹配结果" + i++);
 			System.out.println(matcher.group());// .replaceAll("<td>",
 												// "").replaceAll("&nbsp;", "")
@@ -292,6 +289,7 @@ public class Tools {
 
 	static String readPage(String pagename) throws IOException {
 		String string = null;
+		@SuppressWarnings("resource")
 		BufferedReader in = new BufferedReader(new InputStreamReader(new FileInputStream(pagename), "GBK"));
 		String line = null;
 		while ((line = in.readLine()) != null) {
@@ -435,7 +433,7 @@ public class Tools {
 		float result = 0;
 		if(string.length()==0){
 			result=0;
-			System.out.println("此科成绩为空 设置为0");
+			log.info("此科成绩为空 设置为0");
 		}else{
 			try {
 				result = Integer.parseInt(string);
@@ -520,7 +518,7 @@ public class Tools {
 		// 进入成绩页面
 		String gradePage = sendGet("http://jw.tjnu.edu.cn/jwgl/cjgl/bbdy/bottom.php?id=&page=", cookie);
 		Logout("http://jw.tjnu.edu.cn/jwgl/logout.php", cookie);
-		System.out.println("获取网页信息 等待加工....");
+		//System.out.println("获取网页信息 等待加工....");
 		return gradePage;
 	}
 
@@ -651,8 +649,8 @@ public class Tools {
 			conn.setRequestProperty("Accept-Encoding", "gzip, deflate");//
 			conn.setRequestProperty("Accept-Language", "zh-CN,zh;q=0.8");//
 			conn.setRequestProperty("Cookie", cookie);
-			System.out.println("POST提交的cookie为：\n" + cookie);
-			System.out.println(conn);
+			//System.out.println("POST提交的cookie为：\n" + cookie);
+			//System.out.println(conn);
 			// 发送POST请求必须设置如下两行
 			conn.setDoOutput(true);
 			conn.setDoInput(true);
