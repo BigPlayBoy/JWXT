@@ -395,7 +395,7 @@ public class Tools {
 					grade.setTime(matcher.group(1));
 					break;
 				default:
-					System.out.println("提取的数据出错啦");
+					log.info("提取的数据出错啦");
 				}
 
 			}
@@ -433,7 +433,7 @@ public class Tools {
 		float result = 0;
 		if(string.length()==0){
 			result=0;
-			log.info("此科成绩为空 设置为0");
+			//log.info("此科成绩为空 设置为0");
 		}else{
 			try {
 				result = Integer.parseInt(string);

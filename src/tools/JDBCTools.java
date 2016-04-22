@@ -212,14 +212,7 @@ public class JDBCTools {
 	// 返回一个包含更新的新成绩的栈
 	// 4.17 返回的应当是一个学生对象，包含了该学生的所有新增加成绩
 	public static Student saveStudent(Student student) {
-//		log.info(student.toString());
-//		try {
-//		      // wait five minutes to show jobs
-//		      Thread.sleep(5L * 1000L);
-//		      // executing...
-//		    } catch (Exception e) {
-//		      //
-//		    }
+
 		String sqlStudent = student.getSql();//获得学生信息的string变量
 		String	sqlGrade=null;
 		if (JDBCTools.updateSql(sqlStudent)) {
@@ -232,40 +225,28 @@ public class JDBCTools {
 		//克隆学生信息，不包含成绩
 		Student stu = null;
 		stu = (Student) student.cloneStudent();
-//		if()
 		// 本变量存放该学生新增加的成绩
 		// 重写一个克隆函数
-		// stu.grade.clear();// 清空学生的成绩--我是想克隆的时候就清空的 但是还没有学会 已经写出来了
-//		log.info(student.grade.toString());
-//		try {
-//		      // wait five minutes to show jobs
-//		      Thread.sleep(5L * 1000L);
-//		      // executing...
-//		    } catch (Exception e) {
-//		      //
-//		    }
+		// 清空学生的成绩--我是想克隆的时候就清空的 但是还没有学会 已经写出来了
+
 		for (int i = 0; i < student.gradeNUmber; i++) {
+			//无论是否要存储 都需要弹出数据
 			Grade newGrade=student.grade.pop();
 			// 存成绩的时候 要考虑成绩是否已经存在的情况
-			// System.out.println("student中的课程名"+student.grade.peek().getKecheng().trim()+"长度："+student.grade.peek().getKecheng().trim().length());
 			//对象到堆栈顶部的位置，以 1 为基数；返回值 -1 表示此对象不在堆栈中。
-			boolean status = existGrade.search(newGrade.getKecheng().trim()) == -1;
-			if (status) {
+			//boolean status = existGrade.search(newGrade.getKecheng().trim()) == -1;
+			if (existGrade.search(newGrade.getKecheng().trim()) == -1) {
 				// 只有在数据库中匹配不到的成绩 才可以保存到数据库中 已经存在的 不用保存
-				
 				sqlGrade = newGrade.getsql();
-				System.out.println(sqlGrade);
+				//System.out.println(sqlGrade);
 				JDBCTools.updateSql(sqlGrade);
 				// System.out.println("！！！这是一个新成绩！！！");
-				 log.info("新成绩");
+				 log.info("新成绩"+sqlGrade);
 				// 将新增加的成绩压入stu栈中
 				stu.grade.push(newGrade);
-				//student.grade.pop();
-			} else {
-				//student.grade.pop();// 如果已经存在 就不需要再写入数据库了
 			}
 		}
-		log.info("保存学生信息成功");
+		log.info("学生信息更新成功");
 		return stu;// 返回的是包含增加的新成绩的栈
 	}
 
