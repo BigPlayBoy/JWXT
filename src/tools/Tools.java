@@ -187,9 +187,9 @@ public class Tools {
 			}
 			i++;
 		}
-		log.info("学生信息已获取 正在获取成绩");
+		log.info("学生信息已获取 正在获取成绩"+stu.getNumber());
 		stu.setGrade(getGrade(string, stunum));
-		log.info("学生当前成绩的科目数量:" + stu.grade.size());
+		//log.info("学生当前成绩的科目数量:" + stu.grade.size());
 		stu.setGradeNUmber(stu.grade.size());// 设置学生当前成绩的科目数量
 		return stu;
 	}
@@ -537,7 +537,6 @@ public class Tools {
 		try {
 			// String urlNameString = url + "?" + param;
 			String urlNameString = url;
-
 			URL realUrl = new URL(urlNameString);
 			// 打开和URL之间的连接
 			URLConnection connection = realUrl.openConnection();
@@ -571,8 +570,9 @@ public class Tools {
 				result += line;
 			}
 		} catch (Exception e) {
-			System.out.println("发送GET请求出现异常！" + e);
-			e.printStackTrace();
+			log.info("发送GET请求出现异常！" + e);
+//			System.out.println("发送GET请求出现异常！" + e);
+//			e.printStackTrace();
 		}
 		// 使用finally块来关闭输入流
 		finally {
@@ -609,8 +609,9 @@ public class Tools {
 			connection.connect();
 			cookie = connection.getHeaderField("Set-Cookie");
 		} catch (Exception e) {
-			System.out.println("发送GET请求出现异常！" + e);
-			e.printStackTrace();
+//			System.out.println("发送GET请求出现异常！" + e);
+			log.info("get cookie出现异常！" + e);
+			//e.printStackTrace();
 		}
 		return cookie;
 	}
@@ -670,8 +671,9 @@ public class Tools {
 				result += line;
 			}
 		} catch (Exception e) {
-			System.out.println("发送 POST 请求出现异常！" + e);
-			e.printStackTrace();
+			log.info("发送 POST 请求出现异常！" + e);
+//			System.out.println("发送 POST 请求出现异常！" + e);
+//			e.printStackTrace();
 		}
 		// 使用finally块来关闭输出流、输入流
 		finally {
@@ -732,8 +734,9 @@ public class Tools {
 				result += line;
 			}
 		} catch (Exception e) {
-			System.out.println("发送GET请求出现异常！" + e);
-			e.printStackTrace();
+			//System.out.println("发送GET请求出现异常！" + e);
+			log.info("退出发生异常！" + e);
+			//e.printStackTrace();
 		}
 		// 使用finally块来关闭输入流
 		finally {

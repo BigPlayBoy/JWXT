@@ -167,7 +167,8 @@ public class JDBCTools {
 			}
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
-			System.out.println("执行查询发生异常！！！");
+//			System.out.println("查询密码发生异常！！！");
+			log.info("查询密码发生异常！！！");
 
 		} finally {
 			JDBCTools.releaseDB(null, statement, connection);

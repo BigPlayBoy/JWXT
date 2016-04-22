@@ -27,14 +27,15 @@ public class Getgrade implements Job {
 		Stack<Student> newGrade=new Stack<>();//用来存放更新了成绩的学生
 		while (!passwd.isEmpty()) {
 			//System.out.println("获取学号和密码成功");
-			_log.info("获取学号和密码成功");
+			
 			Student stu=new Student();
 			String xuehao = passwd.peek().getStuId();
 			String upass = passwd.peek().getPassswd();
+			_log.info("获取学号和密码成功 \t学号："+xuehao);
 			passwd.pop();//拿到学号和密码之后 将学生信息弹出
 			// 获取成绩页面
 			//System.out.println("获取网页信息");
-			_log.info("获取网页信息");
+			//_log.info("获取网页信息");
 			String GradePage = Tools.getGradePage(xuehao, upass);
 			// 拿到成绩页面，提取出学生信息和成绩
 			_log.info("已获取网页信息，正获取学生信息");
