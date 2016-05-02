@@ -108,31 +108,22 @@ public class EmailGrade {
 	}
 
 	public static boolean sendEmail(Stack<Student> newGrade) {
-		// List StuID=new List();
-		// newGrade栈中包含了所有新增加成绩的人的信息。。。。
-		// 是不是应该把栈里放新增加成绩的学生？？
-		// while(!newGrade.isEmpty()){
-		// //将新的成绩提出来 进行加工
-		// Grade grade=newGrade.pop();
-		// String StuID=String.valueOf(grade.getNumber());//将学号转换为字符串
-		// String kechengming=grade.getKecheng();
-		// float chengji=grade.getChengji();
-		// float xuefen=grade.getXuefen();
-		// float jidian=grade.getJidian();
-		// EmailGrade emailGrade=new EmailGrade();
-		// //emailGrade.content.replace("xuehao", StuID).replace("kechengming",
-		// kechengming);
-		// //emailGrade.content.replace("chengji",
-		// chengji).replace("xuefen",xuefen);
-		//
-		// }
-//		String email=null;
+		//1.准备发送邮件所需要的东西
+		/**
+		 * smtp邮件服务器
+		 * , from发件人
+		 * , to收件人
+		 * , copyto抄送人（这个不需要）
+		 * , subject主题
+		 * , content内容
+		 * , username用户名
+		 * , password密码
+		 */
 		while (!newGrade.peek().grade.isEmpty()) {
 			String	studentcontent="尊敬的";
 			// 当有新增的成绩时 加工该成绩
 			Student student=newGrade.pop();
 			String	name=student.getName();
-			
 			int	StuID=student.getNumber();
 			studentcontent=studentcontent+name+"学号:"+StuID+",你有新的成绩出来了！！！";
 			Stack<Grade> stackGrade=student.grade;
@@ -194,10 +185,6 @@ public class EmailGrade {
 			    } catch (Exception e) {
 			      //
 			    }
-//			String content = "尊敬的" + newGrade.peek().getName() + ":你有新的成绩出来了！！！\n学号:" + newGrade.peek().getNumber()
-//					+ "\n课程名:" + newGrade.peek().grade.peek().getKecheng() + "\n成绩:"
-//					+ newGrade.peek().grade.peek().getChengji() + "\n学分:" + newGrade.peek().grade.peek().getXuefen()
-//					+ "\n绩点:"+newGrade.peek().grade.peek().getJidian()+"\n";
 		}
 		
 		return true;
