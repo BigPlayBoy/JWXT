@@ -1,12 +1,10 @@
 package main;
 
-import java.util.Date;
 import java.util.Stack;
 
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
-import org.quartz.JobKey;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,7 +12,6 @@ import info.IdAndPasswd;
 import info.Student;
 import tools.EmailGrade;
 import tools.JDBCTools;
-import tools.SQLTools;
 import tools.Tools;
 
 public class Getgrade implements Job {

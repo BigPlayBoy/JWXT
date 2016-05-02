@@ -20,7 +20,7 @@ public class Mail {
 	private MimeMessage mimeMsg; // MIME邮件对象
 	private Session session; // 邮件会话对象
 	private Properties props; // 系统属性
-	private boolean needAuth = false; // smtp是否需要认证
+//	private boolean needAuth = false; // smtp是否需要认证
 	// smtp认证用户名和密码
 	private String username;
 	private String password;

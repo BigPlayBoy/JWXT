@@ -1,13 +1,5 @@
 package mail;
 
-import java.io.BufferedInputStream;
-import java.io.FileInputStream;
-import java.util.Properties;
-import javax.mail.Address;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
 
 public class TestMail {
 

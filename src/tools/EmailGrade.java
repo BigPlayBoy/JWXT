@@ -11,9 +11,14 @@ import java.util.Stack;
 import javax.mail.MessagingException;
 import javax.mail.internet.AddressException;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import info.Grade;
 import info.Student;
+import mail.Mail;
 import mail.SimpleMailSender;
+import main.Getgrade;
 
 /**
  * 建立一个存放了所有更新了成绩的学生的栈 搞定 然后查询学生的邮箱，成绩格式化，发送 发送邮件 需要知道对方的邮箱 新建一个发送邮箱的对象 发送的内容格式为
@@ -21,6 +26,7 @@ import mail.SimpleMailSender;
  * 
  **/
 public class EmailGrade {
+	private static Logger log = LoggerFactory.getLogger(Getgrade.class);
 	public static void main(String[] args) {
 		//拼接发送的文本
 		String emailContent="晚上好 发送自java"+new Date();
@@ -107,7 +113,7 @@ public class EmailGrade {
 		this.grade = grade;
 	}
 
-	public static boolean sendEmail(Stack<Student> newGrade) {
+	public static boolean sendEmail(Stack<Student> newGrade)  {
 		//1.准备发送邮件所需要的东西
 		/**
 		 * smtp邮件服务器
@@ -119,6 +125,21 @@ public class EmailGrade {
 		 * , username用户名
 		 * , password密码
 		 */
+		Properties props = new Properties();//新建一个配置对象
+	       try {
+			props.load(new BufferedInputStream(new FileInputStream("src/mail.properties")));
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			//e.printStackTrace();
+			System.out.println("文件未找到");
+		} catch (IOException e) {
+			log.error("配置文件mail.properties没有找到");
+			System.out.println("IO异常？？？？？");
+		}
+		String	hostname=props.getProperty("mail.smtp.host");
+		String	username=props.getProperty("username");
+		String	password=props.getProperty("password");
+		String	subject="你有新的成绩";
 		while (!newGrade.peek().grade.isEmpty()) {
 			String	studentcontent="尊敬的";
 			// 当有新增的成绩时 加工该成绩
@@ -145,48 +166,20 @@ public class EmailGrade {
 			String emailAddress=EmailGrade.getEmail(StuID);
 			//System.out.println(emailAddress);
 			
-			Properties props = new Properties();//新建一个配置对象
-		       try {
-				props.load(new BufferedInputStream(new FileInputStream("src/mail.properties")));
-			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
-				//e.printStackTrace();
-				System.out.println("文件未找到");
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-//				e.printStackTrace();
-				System.out.println("IO异常？？？？？");
-			}
-			String	hostname=props.getProperty("mail.smtp.host");
-			String	username=props.getProperty("InternetAddress");
-			String	password=props.getProperty("password");
-		       SimpleMailSender mailsend = new SimpleMailSender(hostname,username,password);
-			String	recipient=emailAddress;
-			String	content=emailContent;
-			String subject="你有新的成绩";
-			try {
-				//发送邮件
-				mailsend.send(recipient, subject, content);
-				//System.out.println("发送成功");
-			} catch (AddressException e) {
-				// TODO Auto-generated catch block
-				//e.printStackTrace();
-				System.out.println("邮箱地址错误？？");
-			} catch (MessagingException e) {
-				// TODO Auto-generated catch block
-			//	e.printStackTrace();
-				System.out.println("邮件错误？？？？？");
-			}
+//			String	recipient=emailAddress;
+			//发送邮件
+			//smtp, from, to, copyto, subject, content, username, password
+			Mail.send(hostname, username, emailAddress,"copyto", subject, emailContent, username, password);
+			//System.out.println("发送成功");
 			//每发送一次 过5秒钟 再次发送
+			// wait five minutes to show jobs
 			try {
-			      // wait five minutes to show jobs
-			      Thread.sleep(5L * 1000L);
-			      // executing...
-			    } catch (Exception e) {
-			      //
-			    }
+					Thread.sleep(5L * 1000L);
+			} catch (InterruptedException e) {
+					//
+			}
+			log.info("邮件发送成功"+name);
 		}
-		
 		return true;
 	}
 
