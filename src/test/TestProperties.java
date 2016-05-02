@@ -1,4 +1,4 @@
-package mail;
+package test;
 
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;

@@ -1,5 +1,5 @@
 package mail;
-
+//邮件发送需要的类
 import java.util.Properties;
 
 import javax.activation.DataHandler;
