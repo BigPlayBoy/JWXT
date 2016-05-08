@@ -24,6 +24,8 @@
 
 
 2.时间触发器的写法(应该写到配置文件中)
+second minute hour week month year 
+
 "0 0 12 * * ?"    Fire at 12pm (noon) every day 
 "0 15 10 ? * *"    Fire at 10:15am every day 
 "0 15 10 * * ?"    Fire at 10:15am every day 

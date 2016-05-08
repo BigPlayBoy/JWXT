@@ -63,7 +63,7 @@ public class JDBCTools {
 
 	// 数据库连接池应只被初始化一次.
 	static {
-		dataSource = new ComboPooledDataSource();
+		dataSource = new ComboPooledDataSource("TJNU");
 	}
 
 	public static Connection getConnection() throws Exception {
