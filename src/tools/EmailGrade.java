@@ -27,48 +27,35 @@ import main.Getgrade;
  **/
 public class EmailGrade {
 	private static Logger log = LoggerFactory.getLogger(Getgrade.class);
+
 	public static void main(String[] args) {
-		//拼接发送的文本
-		String emailContent="晚上好 发送自java"+new Date();
+		// 拼接发送的文本
+		String emailContent = "晚上好 发送自java" + new Date();
 		System.out.println(emailContent);
-		
-		//获取邮箱地址
-//		String emailAddress="cuilovexing@163.com";
-		String emailAddress="1151770629@qq.com";
-		
-		Properties props = new Properties();//新建一个配置对象
-	       try {
+
+		// 获取邮箱地址
+		// String emailAddress="cuilovexing@163.com";
+		String emailAddress = "1151770629@qq.com";
+		// 获取邮箱的配置文件
+		Properties props = new Properties();// 新建一个配置对象
+		try {
 			props.load(new BufferedInputStream(new FileInputStream("src/mail.properties")));
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			//e.printStackTrace();
-			System.out.println("文件未找到");
+			log.error("FileNotFoundException" + e);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-//			e.printStackTrace();
-			System.out.println("IO异常？？？？？");
+			log.error("配置文件mail.properties没有找到" + e);
 		}
-		String	hostname=props.getProperty("mail.smtp.host");
-		String	username=props.getProperty("InternetAddress");
-		String	password=props.getProperty("password");
-	       SimpleMailSender mailsend = new SimpleMailSender(hostname,username,password);
-		String	recipient=emailAddress;
-		String	content=emailContent;
-		String subject="你有新的成绩123456496";
-		try {
-			//发送邮件
-			mailsend.send(recipient, subject, content);
-			System.out.println("发送成功");
-		} catch (AddressException e) {
-			// TODO Auto-generated catch block
-			//e.printStackTrace();
-			System.out.println("邮箱地址错误？？");
-		} catch (MessagingException e) {
-			// TODO Auto-generated catch block
-		//	e.printStackTrace();
-			System.out.println("邮件错误？？？？？");
-		}
-		System.out.println("end");
+		
+		String hostname = props.getProperty("mail.smtp.host");
+		String username = props.getProperty("username");
+		String password = props.getProperty("password");
+		//SimpleMailSender mailsend = new SimpleMailSender(hostname, username, password);
+		String recipient = emailAddress;
+		String content = emailContent;
+		String subject = "你有新的成绩123456496";
+		System.out.println("host:"+hostname+"\nusername:"+username+"\npassword:"+password+"\nemailAddress:"+emailAddress+"\n");
+		Mail.send(hostname, username, emailAddress, "copyto", subject, emailContent, username, password);
+		log.info("end");
 	}
 	// SimpleMailSender sendemail=new SimpleMailSender();
 
@@ -83,7 +70,7 @@ public class EmailGrade {
 	public static String getEmail(int number) {
 		String email = null;
 		String sqlemail = "select Email from Student where StuID=" + String.valueOf(number);
-		//System.out.println(sqlemail);
+		// System.out.println(sqlemail);
 		// 查询该学生的邮箱
 		email = JDBCTools.QueryEmail(sqlemail);
 		return email;
@@ -113,72 +100,66 @@ public class EmailGrade {
 		this.grade = grade;
 	}
 
-	public static boolean sendEmail(Stack<Student> newGrade)  {
-		//1.准备发送邮件所需要的东西
+	public static boolean sendEmail(Stack<Student> newGrade) {
+		// 1.准备发送邮件所需要的东西
 		/**
-		 * smtp邮件服务器
-		 * , from发件人
-		 * , to收件人
-		 * , copyto抄送人（这个不需要）
-		 * , subject主题
-		 * , content内容
-		 * , username用户名
-		 * , password密码
+		 * smtp邮件服务器 , from发件人 , to收件人 , copyto抄送人（这个不需要） , subject主题 ,
+		 * content内容 , username用户名 , password密码
 		 */
-		Properties props = new Properties();//新建一个配置对象
-	       try {
+		// 获取邮箱的配置文件
+		Properties props = new Properties();// 新建一个配置对象
+		try {
 			props.load(new BufferedInputStream(new FileInputStream("src/mail.properties")));
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			//e.printStackTrace();
-			System.out.println("文件未找到");
+			log.error("FileNotFoundException" + e);
 		} catch (IOException e) {
-			log.error("配置文件mail.properties没有找到");
-			System.out.println("IO异常？？？？？");
+			log.error("配置文件mail.properties没有找到" + e);
 		}
-		String	hostname=props.getProperty("mail.smtp.host");
-		String	username=props.getProperty("username");
-		String	password=props.getProperty("password");
-		String	subject="你有新的成绩";
+		// 配置邮箱的属性
+		String hostname = props.getProperty("mail.smtp.host");
+		String username = props.getProperty("username");
+		String password = props.getProperty("password");
+		String subject = "你有新的成绩";
 		while (!newGrade.peek().grade.isEmpty()) {
-			String	studentcontent="尊敬的";
+			String studentcontent = "尊敬的";
 			// 当有新增的成绩时 加工该成绩
-			Student student=newGrade.pop();
-			String	name=student.getName();
-			int	StuID=student.getNumber();
-			studentcontent=studentcontent+name+"学号:"+StuID+",你有新的成绩出来了！！！";
-			Stack<Grade> stackGrade=student.grade;
-			String gradecontent="\n";
-			while(!stackGrade.isEmpty()){
-				//这里加工成绩
-				Grade grade=stackGrade.pop();
-				String	kechengming=grade.getKecheng();
-				float chengji=grade.getChengji();
-				float	xuefen=grade.getXuefen();
-				float	jidian=grade.getJidian();
-				gradecontent=gradecontent+"课程名："+kechengming+"\n成绩:"+chengji+"\n学分:"+xuefen+"\n绩点:"+jidian+" \r\n<br>";
+			Student student = newGrade.pop();
+			String name = student.getName();
+			int StuID = student.getNumber();
+			studentcontent = studentcontent + name + "学号:" + StuID + ",你有新的成绩出来了！！！";
+			Stack<Grade> stackGrade = student.grade;
+			String gradecontent = "\n";
+			while (!stackGrade.isEmpty()) {
+				// 这里加工成绩
+				Grade grade = stackGrade.pop();
+				String kechengming = grade.getKecheng();
+				float chengji = grade.getChengji();
+				float xuefen = grade.getXuefen();
+				float jidian = grade.getJidian();
+				gradecontent = gradecontent + "课程名：" + kechengming + "\n成绩:" + chengji + "\n学分:" + xuefen + "\n绩点:"
+						+ jidian + " \r\n<br>";
 			}
-			//拼接发送的文本
-			String emailContent=studentcontent+gradecontent;
-			//System.out.println(emailContent);
-			
-			//获取邮箱地址
-			String emailAddress=EmailGrade.getEmail(StuID);
-			//System.out.println(emailAddress);
-			
-//			String	recipient=emailAddress;
-			//发送邮件
-			//smtp, from, to, copyto, subject, content, username, password
-			Mail.send(hostname, username, emailAddress,"copyto", subject, emailContent, username, password);
-			//System.out.println("发送成功");
-			//每发送一次 过5秒钟 再次发送
+			// 拼接发送的文本
+			String emailContent = studentcontent + gradecontent;
+			// System.out.println(emailContent);
+
+			// 获取邮箱地址
+			String emailAddress = EmailGrade.getEmail(StuID);
+			// System.out.println(emailAddress);
+
+			// String recipient=emailAddress;
+			// 发送邮件
+			// smtp, from, to, copyto, subject, content, username, password
+			Mail.send(hostname, username, emailAddress, "copyto", subject, emailContent, username, password);
+			// System.out.println("发送成功");
+			// 每发送一次 过5秒钟 再次发送
 			// wait five minutes to show jobs
 			try {
-					Thread.sleep(5L * 1000L);
+				Thread.sleep(5L * 1000L);
 			} catch (InterruptedException e) {
-					//
+				//
 			}
-			log.info("邮件发送成功"+name);
+			log.info("邮件发送成功" + name);
 		}
 		return true;
 	}

@@ -11,5 +11,6 @@
 	<classpathentry kind="lib" path="E:/Users/明辉/workspace/JWXT/lib/sqljdbc4.jar"/>
 	<classpathentry kind="lib" path="F:/JAVA/jarpack/javamail1_4_7/mail.jar"/>
 	<classpathentry kind="lib" path="lib/sqlitejdbc-v033-nested.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -282,7 +282,9 @@ public class JDBCTools {
 		// e.printStackTrace();
 		// }
 		// QueryPasswd(null);
-		String email = QueryEmail("1330090010");
-		System.out.println(email + email.length());
+		Stack<IdAndPasswd> pass=QueryPasswd("123");
+		System.out.println(pass);
+		//String email = QueryEmail("1330090010");
+		//System.out.println(email + email.length());
 	}
 }
