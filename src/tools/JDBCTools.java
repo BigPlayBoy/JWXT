@@ -115,7 +115,7 @@ public class JDBCTools {
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
 			//e1.printStackTrace();
-			log.error("发生异常！！！");
+			log.error("发生异常！！！"+e1);
 		} finally {
 			JDBCTools.releaseDB(null, statement, connection);
 		}
@@ -133,14 +133,14 @@ public class JDBCTools {
 			connection = JDBCTools.getConnection();
 			statement = connection.createStatement();
 			rs = statement.executeQuery(sql);// 执行查询语句
-			System.out.println("执行查询Success!！！！");
-			System.out.println("在executeQuery中输出rs" + rs);
+			//System.out.println("执行查询Success!！！！");
+			log.info("执行查询成功\n在executeQuery中输出rs" + rs);
 
 			return rs;
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
-			System.out.println(e1);
-			System.out.println("执行查询发生异常！！！");
+			//System.out.println(e1);
+			log.error("执行查询发生异常！！！"+e1);
 
 		} finally {
 			JDBCTools.releaseDB(null, statement, connection);
@@ -168,7 +168,7 @@ public class JDBCTools {
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
 //			System.out.println("查询密码发生异常！！！");
-			log.info("查询密码发生异常！！！");
+			log.info("查询密码发生异常！！！"+e1);
 
 		} finally {
 			JDBCTools.releaseDB(null, statement, connection);
@@ -192,8 +192,8 @@ public class JDBCTools {
 			connection = JDBCTools.getConnection();
 			statement = connection.createStatement();
 			rs = statement.executeQuery(queryEmail);// 执行查询语句
-			System.out.println("执行查询Success!！！！");
-			System.out.println("在executeQuery中输出rs" + rs);
+			log.info("执行查询Success!！！！");
+			log.info("在executeQuery中输出rs" + rs);
 			while (rs.next()) {
 				email = rs.getString(1).trim();
 			}
@@ -201,7 +201,7 @@ public class JDBCTools {
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
 			System.out.println(e1);
-			System.out.println("执行查询发生异常！！！");
+			System.out.println("执行查询发生异常！！！"+e1);
 		} finally {
 			JDBCTools.releaseDB(null, statement, connection);
 		}
