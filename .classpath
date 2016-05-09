@@ -2,13 +2,14 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
-	<classpathentry kind="lib" path="c3p0-0.9.5.2.jar"/>
-	<classpathentry kind="lib" path="c3p0-oracle-thin-extras-0.9.5.2.jar"/>
-	<classpathentry kind="lib" path="log4j-1.2.16.jar"/>
-	<classpathentry kind="lib" path="quartz-2.2.2.jar"/>
-	<classpathentry kind="lib" path="slf4j-api-1.7.7.jar"/>
-	<classpathentry kind="lib" path="slf4j-log4j12-1.7.7.jar"/>
-	<classpathentry kind="lib" path="sqljdbc4.jar"/>
-	<classpathentry kind="lib" path="mail.jar"/>
+	<classpathentry kind="lib" path="F:/JAVA/jarpack/c3p0-0.9.5.2/lib/c3p0-0.9.5.2.jar"/>
+	<classpathentry kind="lib" path="F:/JAVA/jarpack/c3p0-0.9.5.2/lib/c3p0-oracle-thin-extras-0.9.5.2.jar"/>
+	<classpathentry kind="lib" path="F:/JAVA/jarpack/quartz-2.2.2/lib/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="F:/JAVA/jarpack/quartz-2.2.2/lib/quartz-2.2.2.jar"/>
+	<classpathentry kind="lib" path="F:/JAVA/jarpack/quartz-2.2.2/lib/slf4j-api-1.7.7.jar"/>
+	<classpathentry kind="lib" path="F:/JAVA/jarpack/quartz-2.2.2/lib/slf4j-log4j12-1.7.7.jar"/>
+	<classpathentry kind="lib" path="E:/Users/明辉/workspace/JWXT/lib/sqljdbc4.jar"/>
+	<classpathentry kind="lib" path="F:/JAVA/jarpack/javamail1_4_7/mail.jar"/>
+	<classpathentry kind="lib" path="lib/sqlitejdbc-v033-nested.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
