@@ -41,9 +41,11 @@ public class Mail {
 		String subject = "邮件主题";
 		String content = "邮件内容";
 		String username = "cuilovexing@163.com";
-		String password = "1994cuiminghui";
+		String password = "cuiminghui1994";
 		//String filename = "附件路径，如：F:\\笔记<a>\\struts2</a>与mvc.txt";
-		Mail.send(smtp, from, to, copyto, subject, content, username, password);
+		//Mail mail=new Mail("smtp.163.com");
+		//String smtp, String from, String to, String subject, String content, String username,String password
+		Mail.send(smtp, from, to, subject, content, username, password);
 	}
 
 	/**
@@ -248,8 +250,11 @@ public class Mail {
 			Session mailSession = Session.getInstance(props, null);
 			Transport transport = mailSession.getTransport("smtp");
 			transport.connect((String) props.get("mail.smtp.host"), username, password);
+			//Send the message to the specified addresses, ignoring any recipients specified in the message itself.
 			transport.sendMessage(mimeMsg, mimeMsg.getRecipients(Message.RecipientType.TO));
-			transport.sendMessage(mimeMsg, mimeMsg.getRecipients(Message.RecipientType.CC));
+			
+			//transport.sendMessage(mimeMsg, mimeMsg.getRecipients(Message.RecipientType.CC));
+//			Send a message.
 			// transport.send(mimeMsg);
 			log.info("发送邮件成功！");
 			transport.close();
@@ -348,10 +353,12 @@ public class Mail {
 
 		if (!theMail.setSubject(subject))
 			return false;
+		System.out.println("设置邮件主题");
 		if (!theMail.setBody(content))
 			return false;
 		if (!theMail.addFileAffix(filename))
 			return false;
+		
 		if (!theMail.setTo(to))
 			return false;
 		if (!theMail.setFrom(from))

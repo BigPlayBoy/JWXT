@@ -54,7 +54,7 @@ public class EmailGrade {
 		String content = emailContent;
 		String subject = "你有新的成绩123456496";
 		System.out.println("host:"+hostname+"\nusername:"+username+"\npassword:"+password+"\nemailAddress:"+emailAddress+"\n");
-		Mail.send(hostname, username, emailAddress, "copyto", subject, emailContent, username, password);
+		Mail.send(hostname, username, emailAddress,  subject, emailContent, username, password);
 		log.info("end");
 	}
 	// SimpleMailSender sendemail=new SimpleMailSender();
@@ -150,7 +150,7 @@ public class EmailGrade {
 			// String recipient=emailAddress;
 			// 发送邮件
 			// smtp, from, to, copyto, subject, content, username, password
-			Mail.send(hostname, username, emailAddress, "copyto", subject, emailContent, username, password);
+			Mail.send(hostname, username, emailAddress,  subject, emailContent, username, password);
 			// System.out.println("发送成功");
 			// 每发送一次 过5秒钟 再次发送
 			// wait five minutes to show jobs

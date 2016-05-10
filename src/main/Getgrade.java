@@ -49,14 +49,14 @@ public class Getgrade implements Job {
 		}
 		// 判断是否有新成绩增加
 		// System.out.println(newGrade);
-//		if (!newGrade.peek().grade.isEmpty()) {
-//			// 增加了新的成绩
-//			_log.info("有新成绩增加");
-//			EmailGrade.sendEmail(newGrade);
-//			_log.info("邮件发送成功");
-//		} else {
-//			_log.info("没有增加新成绩");
-//		}
+		if (!newGrade.peek().grade.isEmpty()) {
+			// 增加了新的成绩
+			_log.info("有新成绩增加");
+			EmailGrade.sendEmail(newGrade);
+			_log.info("邮件发送成功");
+		} else {
+			_log.info("没有增加新成绩");
+		}
 		_log.info("运行结束");
 	}
 
