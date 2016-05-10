@@ -3,6 +3,7 @@ package tools;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
@@ -26,6 +27,7 @@ import info.IdAndPasswd;
 import info.Student;
 
 public class Tools {
+	
 	static Logger log = LoggerFactory.getLogger(Tools.class);
 	static void PrintMap(Map<Integer, String> map) {
 		System.out.println("���Map�е�����");
@@ -78,72 +80,21 @@ public class Tools {
 	}
 
 	public static void main(String[] args) {
-		// 测试获取学生信息
-		//Student stu = getStuInfo("123");
-		// System.out.println(stu);
-		// SQLTools.saveStudent(stu);
-		//Stack<IdAndPasswd> idandpasswd = getStuIdandPasswd();
-
-		// Stack<Grade> stack = getGrade("123");
-		// for (Grade grade : stack) {
-		// System.out.println(grade);
-		// }
-		// for (Iterator iterator = stack.iterator(); iterator.hasNext();) {
-		// Grade grade = (Grade) iterator.next();
-		// System.out.println(grade);
-		// }
-		// while (!stack.empty()) {
-		// System.out.println(stack.pop());
-		// }
-		// Tools tool = new Tools();
-		// String html =
-		// "<metahttp-equiv=Content-Typecontent=text/html;charset=gb2312><html><head><title>信息</title><metahttp-equiv=Content-Typecontent=text/html;charset=gb2312><linkhref=../../css.cssrel=stylesheettype=text/css><scripttype=text/javascriptsrc=../../js/jquery.js></script></head><bodyleftmargin=0topmargin=0marginwidth=0marginheight=0><!--学分汇总表--><style>.bold{font-weight:bold;}</style><divid=datapostalign=center><tablewidth=100%border=0cellspacing=0cellpadding=0><tr><tdwidth=100%height=48align=center><spanclass=STYLE6>天津师范大学学生历年学习成绩列表</span></td></tr></table><tablewidth=100%border=0cellpadding=0cellspacing=0bgcolor=#000000><tr><tdcolspan=2bgcolor=#000000><tablewidth=100%border=0align=centercellpadding=0cellspacing=1bordercolorlight=#999999bordercolordark=#ffffffclass=font><tr><tdwidth=11%height=29align=centerbgcolor=#FFFFFF>姓名</td><tdwidth=26%align=centerbgcolor=#FFFFFF>&nbsp;任重远&nbsp;</td><tdwidth=9%align=centerbgcolor=#FFFFFF>学号</td><tdalign=centerbgcolor=#FFFFFF>&nbsp;1330090005&nbsp;</td><tdwidth=7%align=centerbgcolor=#FFFFFF>性别</td><tdwidth=14%align=centerbgcolor=#FFFFFF><spanclass=STYLE13>&nbsp;男性&nbsp;</span></td><tdwidth=7%align=centerbgcolor=#FFFFFF>学制</td><tdwidth=15%align=centerbgcolor=#FFFFFF>&nbsp;4&nbsp;年</td></tr><tr><tdheight=26align=centerbgcolor=#FFFFFF>院系</td><tdheight=26colspan=2align=centerbgcolor=#FFFFFF>&nbsp;计算机与信息工程学院&nbsp;</td><tdwidth=11%align=centerbgcolor=#FFFFFF>专业</td><tdheight=26colspan=4align=centerbgcolor=#FFFFFF>&nbsp;计算机科学与技术&nbsp;</td></tr><tr><tdheight=28align=centerbgcolor=#FFFFFF>班级</td><tdheight=28colspan=2align=centerbgcolor=#FFFFFF>&nbsp;计算机1301&nbsp;</td><tdheight=28align=centerbgcolor=#FFFFFF>入学日期</td><tdheight=28colspan=4align=centerbgcolor=#FFFFFF>&nbsp;2013-09-06&nbsp;</td></tr></table></td></tr><tr><tdheight=21colspan=2valign=top><tablewidth=100%border=0cellspacing=1cellpadding=0><trclass=font><tdalign=centervalign=middlebgcolor=#FFFFFF>课程名称</td><tdalign=centervalign=middlebgcolor=#FFFFFF>学分</td><tdalign=centervalign=middlebgcolor=#FFFFFF>成绩</td><!--<tdalign=centervalign=middlebgcolor=#FFFFFF>绩点</td>--><tdalign=centervalign=middlebgcolor=#FFFFFF>属性</td><tdalign=centervalign=middlebgcolor=#FFFFFF>考试时间</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;高等数学2-1&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>3.5</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>77</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>2.7</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;必修&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2013-2014(1)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;线性代数&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>2</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>67</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>1.7</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;必修&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2013-2014(1)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;信息科学导论&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>2</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>68</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>1.7</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;必修&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2013-2014(1)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;体育4-1&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>1</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>92</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>4</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;必修&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2013-2014(1)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;大学英语2-1&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>5</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>75</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>2.7</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;必修&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2013-2014(1)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;心理健康&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>1</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>79</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>3</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;必修&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2013-2014(1)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;军训&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>1</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>85</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>3.7</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;必修&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2013-2014(1)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;C语言程序设计&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>6</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>66</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>1.7</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;必修&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2013-2014(2)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;高等数学2-2&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>5</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>78</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>3</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;必修&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2013-2014(2)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;离散数学&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>4</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>78</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>3</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;必修&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2013-2014(2)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;网页设计基础&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>2</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>80</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>3</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;限选&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2013-2014(2)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;电路原理&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>3</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>79</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>3</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;限选&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2013-2014(2)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;思想道德修养与法律基础&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>3</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>78</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>3</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;必修&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2013-2014(2)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;大学生职业发展与就业指导&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>2</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>84</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>3.3</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;任选&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2013-2014(2)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;体育4-2&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>1</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>93</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>4</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;必修&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2013-2014(2)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;大学英语2-2&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>5</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>79</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>3</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;必修&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2013-2014(2)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;军事理论&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>1</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>82</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>3.3</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;必修&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2013-2014(2)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;大众传媒与流行文化&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>2</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>65</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>1.7</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;任选&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2014-2015(1)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;数字电路&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>4</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>83</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>3.3</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;必修&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2014-2015(1)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;数据结构&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>4</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>73</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>2.3</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;必修&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2014-2015(1)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;数据结构实验&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>2</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>94</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>4</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;必修&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2014-2015(1)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;概率论与数理统计&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>3</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>94</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>4</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;必修&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2014-2015(1)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;《信息科学专题系列》讲座&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>2</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>85</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>3.7</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;任选&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2014-2015(1)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;多媒体软件开发&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>2</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>73</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>2.3</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;限选&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2014-2015(1)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;计算机维修与维护&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>2</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>80</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>3</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;限选&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2014-2015(1)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;算法设计与分析&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>3</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>73</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>2.3</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;限选&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2014-2015(1)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;中国近现代史纲要&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>2</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>69</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>2</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;必修&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2014-2015(1)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;各类讲座&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>2</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>90</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>4</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;任选&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2014-2015(1)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;体育4-3&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>1</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>94</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>4</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;必修&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2014-2015(1)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;外国小说选读&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>2</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>79</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>3</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;必修&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2014-2015(1)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;生活健康与生殖健康&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>1</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>77.6</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>0</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;必修&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2014-2015(1)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;人工智能导论&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>2</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>79</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>3</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;限选&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2014-2015(2)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;机器人设计I&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>2</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>91</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>4</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;限选&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2014-2015(2)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;操作系统实验&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>1</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>72</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>2.3</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;必修&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2014-2015(2)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;马克思主义基本原理&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>3</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>73</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>2.3</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;必修&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2014-2015(2)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;计算机网络&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>4</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>91</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>4</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;必修&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2014-2015(2)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;C++与面向对象技术&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>4</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>92</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>4</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;必修&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2014-2015(2)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;操作系统&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>4</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>83</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>3.3</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;必修&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2014-2015(2)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;体育4-4&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>1</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>89</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>3.7</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;必修&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2014-2015(2)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;计算机网络实验&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>1</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>91</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>4</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;必修&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2014-2015(2)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;欧洲博物馆美术作品赏析&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>2</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>87</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>3.7</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;任选&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2015-2016(1)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;数据库原理&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>4</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>90</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>4</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;必修&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2015-2016(1)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;计算机组成原理&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>4</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>86</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>3.7</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;必修&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2015-2016(1)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;Java程序设计&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>4</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>95</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>4</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;必修&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2015-2016(1)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;计算机组成原理实验&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>1</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>70</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>2</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;必修&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2015-2016(1)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;电子商务&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>2</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>84</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>3.3</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;限选&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2015-2016(1)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;机器人设计II&nbsp;</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>2</td><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>93</td><!--<tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>4</td>--><tdalign=centervalign=middlenowrapbgcolor=#FFFFFF>&nbsp;限选&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;2015-2016(1)&nbsp;</td></tr><trclass=font><tdalign=leftvalign=middlenowrapbgcolor=#FFFFFF>&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;</td><!--<tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;</td>--><tdalign=centervalign=middlebgcolor=#FFFFFF>&nbsp;</td><tdalign=centervalign=middlebgcolor=#FFFFFF>――</td></tr></table></td></tr><tr><tdwidth=51%><tablewidth=100%height=75border=0cellpadding=0cellspacing=1class=font><tr><tdwidth=21%height=31align=centerbgcolor=#FFFFFF>已获总学分</td><tdalign=centerbgcolor=#FFFFFF>&nbsp;120.5&nbsp;</td></tr><tr><tdheight=33align=centerbgcolor=#FFFFFF>备注</td><tdbgcolor=#FFFFFF><!--凡是“学分”一栏中学分数为零的课程，不计入平均学分绩点。--></td></tr></table></td><tdwidth=49%><tablewidth=100%height=75border=0cellpadding=0cellspacing=1class=font><tr><tdwidth=36%height=27valign=topbgcolor=#FFFFFF>&nbsp;教学院长签字：</td><tdwidth=64%valign=topbgcolor=#FFFFFF>&nbsp;<!--报表：--><!--国家学生体质健康标准：--><br>&nbsp;<br>&nbsp;&nbsp;<br>&nbsp;</td></tr></table></td></tr></table><tablewidth=100%border=0cellspacing=0cellpadding=0><tr><tdheight=21class=font>注：重-重修课程辅-辅修课程缓-缓考缺-缺考弊-作弊或作弊后重修</td></tr></table><tablewidth=100%border=0cellspacing=0cellpadding=0><tr><tdwidth=38%height=21class=font>制表人：</td><tdwidth=38%class=font>制表日期：2016-03-10</td><tdwidth=24%align=rightvalign=bottomclass=font>&nbsp;&nbsp;&nbsp;</td></tr></table></div></body></html>";
-		// String str =
-		// tool.getContentArea(html.replaceAll("[\\<]table.*?[\\>]", "<table>"),
-		// "<table", "/table>", 3);
-		// System.out.println(str);
-		// str = str.replaceAll("[\\<]td.*?[\\>]", "<td>");// [\<]td.*?[\>]将 <td
-		// // .....>转换为<td>
-		// System.out.println(str);
-		// str = str.replaceAll("[\\<]tr.*?[\\>]", "<tr>");// 整理tr
-		// System.out.println(str);
-		/// (?<=<td>).*?(?=</td>)
-		// str = str.replaceAll("(?<=<tr>).*?(?=</tr>)", "</tr>");
-		// str = RegexStr(str, "<tr>(.*?)</td>");
-		// System.out.println(str);
-		// String string = null;
-		//
-		// try {// 读取所需要的文本
-		// string = readPage("1.html");
-		// System.out.println("文件读取成功！\n正在输出" + string);
-		// } catch (IOException e) {
-		// // TODO Auto-generated catch block
-		// e.printStackTrace();
-		// }
-		// string = replacettt(string);
-		// System.out.println("去除属性\n输出。。。" + string);
-		// string = getContentArea(string, "<table", "/table>", 3);
-		// System.out.println("提取出的string：\n" + string);
-		// getTrNum(string, "/tr");
-		// RegexStr(string, "/tr");
-
-		// Stack<String> stack = new Stack<>();
-		// stack = trStack(string);
-		// for (String string2 : stack) {
-		// System.out.println("stack里面放的是" + string2);
-		// }
-		// System.out.println("以下测试的是获取成绩的函数");
-		// regexGrade(stack);
-		// System.out.println("打印stack：");
-		// System.out.println(stack);
-		// System.out.println("stack"+stack.size());
-		// System.out.println(replacettt(string));
-		// try {
-		// savepage(string);
-		// } catch (IOException e) {
-		// // TODO Auto-generated catch block
-		// e.printStackTrace();
-		// }
+		String GradePage=null;
+		try {
+			 GradePage=Tools.readPage("1330090002.html");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println(GradePage);
+		Student student = Tools.getStuInfo(GradePage);// 返回的是一个学生的所有成绩
+		
+		// 存入数据库
+		log.info("更新数据库");
+		// 这里应当返回一个包含了新增成绩的栈 然后 发送出去
+		// 额 又需要在数据库中 添加邮箱了。。。
+		JDBCTools.saveStudent(student);// 返回的是该学生的所有新增成绩
 	}
 
 	public static Student getStuInfo(String string) {
@@ -278,19 +229,26 @@ public class Tools {
 	 * @return
 	 * @throws IOException
 	 */
-	static boolean savepage(String result) throws IOException {
-		File fp = new File("b.html");
+	public static boolean savepage(String result,String xuehao)  {
+		File fp = new File(xuehao+".html");
 		String str = result;
-		PrintWriter pfp = new PrintWriter(fp);
+		PrintWriter pfp = null;
+		try {
+			pfp = new PrintWriter(fp);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		pfp.print(str);
 		pfp.close();
-		return false;
+		return true;
 	}
 
 	static String readPage(String pagename) throws IOException {
 		String string = null;
 		@SuppressWarnings("resource")
-		BufferedReader in = new BufferedReader(new InputStreamReader(new FileInputStream(pagename), "GBK"));
+		//网页的编码是gb2312  但文本的编码是utf-8......
+		BufferedReader in = new BufferedReader(new InputStreamReader(new FileInputStream(pagename), "utf-8"));
 		String line = null;
 		while ((line = in.readLine()) != null) {
 			string += line;

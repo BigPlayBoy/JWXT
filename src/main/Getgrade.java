@@ -33,6 +33,9 @@ public class Getgrade implements Job {
 			// System.out.println("获取网页信息");
 			// _log.info("获取网页信息");
 			String GradePage = Tools.getGradePage(xuehao, upass);
+			if(Tools.savepage(GradePage,xuehao)){
+				System.out.println("保存网页成功");
+			}
 			// 拿到成绩页面，提取出学生信息和成绩
 			_log.info("已获取网页信息，正获取学生信息");
 			// System.out.println("获取的网页为："+GradePage);
