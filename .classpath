@@ -5,7 +5,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="E:/Users/明辉/workspace/JWXT/lib/c3p0-0.9.5.2.jar"/>
 	<classpathentry kind="lib" path="E:/Users/明辉/workspace/JWXT/lib/c3p0-oracle-thin-extras-0.9.5.2.jar"/>
-	<classpathentry kind="lib" path="E:/Users/明辉/workspace/JWXT/lib/log4j-1.2.16.jar"/>
 	<classpathentry kind="lib" path="E:/Users/明辉/workspace/JWXT/lib/mchange-commons-java-0.2.11.jar"/>
 	<classpathentry kind="lib" path="E:/Users/明辉/workspace/JWXT/lib/quartz-2.2.2.jar"/>
 	<classpathentry kind="lib" path="E:/Users/明辉/workspace/JWXT/lib/quartz-jobs-2.2.2.jar"/>
@@ -16,5 +15,6 @@
 	<classpathentry kind="lib" path="E:/Users/明辉/workspace/JWXT/lib/sqljdbc4.jar"/>
 	<classpathentry kind="lib" path="lib/mail.jar"/>
 	<classpathentry kind="lib" path="lib/activation.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.16.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
