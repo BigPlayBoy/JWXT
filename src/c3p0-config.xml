@@ -62,7 +62,7 @@
 		<property name="minPoolSize">50</property>
 		<property name="maxPoolSize">1000</property>
 		<property name="user">sa</property>
-		<property name="jdbcUrl">jdbc:sqlite://e:/tim.db
+		<property name="jdbcUrl">jdbc:sqlite://home/anshichifan/TJNU.db
 		</property>
 		<property name="driverClass">org.sqlite.JDBC
 		</property>

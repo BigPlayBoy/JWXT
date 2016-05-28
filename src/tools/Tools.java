@@ -80,21 +80,22 @@ public class Tools {
 	}
 
 	public static void main(String[] args) {
-		String GradePage=null;
-		try {
-			 GradePage=Tools.readPage("1330090002.html");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		System.out.println(GradePage);
-		Student student = Tools.getStuInfo(GradePage);// 返回的是一个学生的所有成绩
-		
-		// 存入数据库
-		log.info("更新数据库");
-		// 这里应当返回一个包含了新增成绩的栈 然后 发送出去
-		// 额 又需要在数据库中 添加邮箱了。。。
-		JDBCTools.saveStudent(student);// 返回的是该学生的所有新增成绩
+//		String GradePage=null;
+//		try {
+//			 GradePage=Tools.readPage("1330090002.html");
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		System.out.println(GradePage);
+//		Student student = Tools.getStuInfo(GradePage);// 返回的是一个学生的所有成绩
+//		
+//		// 存入数据库
+//		log.info("更新数据库");
+//		// 这里应当返回一个包含了新增成绩的栈 然后 发送出去
+//		// 额 又需要在数据库中 添加邮箱了。。。
+//		JDBCTools.saveStudent(student);// 返回的是该学生的所有新增成绩
+		System.out.println(Tools.getGradePage("1330090002", "cuiminghui"));
 	}
 
 	public static Student getStuInfo(String string) {
