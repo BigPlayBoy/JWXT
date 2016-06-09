@@ -1,6 +1,7 @@
 #2016年4月20日
 
-github地址：     https://github.com/BigPlayBoy/JWXT.git
+github地址：     
+https://github.com/BigPlayBoy/JWXT.git
 本项目第一次完成开发
 未完成：httpclient
 已经可以通过手动运行获取成绩，更新数据库 发送成绩
