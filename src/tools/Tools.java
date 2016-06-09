@@ -623,16 +623,11 @@ public class Tools {
 			// 定义BufferedReader输入流来读取URL的响应
 			in = new BufferedReader(new InputStreamReader(conn.getInputStream(), "utf-8"));
 			String line;
-			// 这里成功拿到cookie
-			// String head = conn.getHeaderField("Set-Cookie");
-			// System.out.println("返回的Cookie is \n\t" + head);
 			while ((line = in.readLine()) != null) {
 				result += line;
 			}
 		} catch (Exception e) {
 			log.info("发送 POST 请求出现异常！" + e);
-//			System.out.println("发送 POST 请求出现异常！" + e);
-//			e.printStackTrace();
 		}
 		// 使用finally块来关闭输出流、输入流
 		finally {
