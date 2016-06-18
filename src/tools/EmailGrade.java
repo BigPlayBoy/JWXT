@@ -8,8 +8,6 @@ import java.util.Date;
 import java.util.Properties;
 import java.util.Stack;
 
-import javax.mail.MessagingException;
-import javax.mail.internet.AddressException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,7 +15,6 @@ import org.slf4j.LoggerFactory;
 import info.Grade;
 import info.Student;
 import mail.Mail;
-import mail.SimpleMailSender;
 import main.Getgrade;
 
 /**
@@ -50,8 +47,6 @@ public class EmailGrade {
 		String username = props.getProperty("username");
 		String password = props.getProperty("password");
 		//SimpleMailSender mailsend = new SimpleMailSender(hostname, username, password);
-		String recipient = emailAddress;
-		String content = emailContent;
 		String subject = "你有新的成绩123456496";
 		System.out.println("host:"+hostname+"\nusername:"+username+"\npassword:"+password+"\nemailAddress:"+emailAddress+"\n");
 		Mail.send(hostname, username, emailAddress,  subject, emailContent, username, password);
@@ -86,13 +81,10 @@ public class EmailGrade {
 	}
 
 	public EmailGrade() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	// 拼接成绩？//不用了
 	public EmailGrade(String recipient, String content, String name, Grade grade) {
-		super();
 
 		this.recipient = recipient;
 		this.content = content;

@@ -18,8 +18,6 @@ import javax.mail.internet.MimeMultipart;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import main.Getgrade;
-
 public class Mail {
 	//配置日志
 	private static Logger log = LoggerFactory.getLogger(Mail.class);
@@ -37,7 +35,7 @@ public class Mail {
 		String smtp = "smtp.163.com";
 		String from = "cuilovexing@163.com";
 		String to = "1151770629@qq.com";
-		String copyto = "抄送人";
+//		String copyto = "抄送人";
 		String subject = "邮件主题";
 		String content = "邮件内容";
 		String username = "cuilovexing@163.com";

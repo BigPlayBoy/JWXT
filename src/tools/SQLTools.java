@@ -13,7 +13,6 @@ import com.mchange.v2.c3p0.*;
 
 import info.Grade;
 import info.Student;
-import main.MyQuartz;
 
 /**
  * 此包里存放的是与数据库连接有关的函数
@@ -35,7 +34,6 @@ public class SQLTools {
 		// stmt.executeUpdate(sql);
 		// System.out.println("Success");
 		// } catch (SQLException e) {
-		// // TODO Auto-generated catch block
 		// e.printStackTrace();
 		// System.err.println(" Something Wrong!");
 		// }
@@ -43,10 +41,8 @@ public class SQLTools {
 			testc3p0();
 			System.out.println("Success");
 		} catch (PropertyVetoException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		System.err.println(" Something Wrong!");
@@ -64,10 +60,8 @@ public class SQLTools {
 			stmt = conn.createStatement();
 			// Statement stmt1 = conn.createStatement();
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return stmt;
@@ -198,7 +192,6 @@ public class SQLTools {
 					existGrade.push(rs.getString(1).trim());// 将获得的成绩装入栈中
 				}
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		
