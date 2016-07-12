@@ -63,7 +63,11 @@ public class JDBCTools {
 
 	// 数据库连接池应只被初始化一次.
 	static {
-		dataSource = new ComboPooledDataSource("TJNU");
+		String c3p0="TJNUSQlite";
+		if("Windows_NT".equals(System.getenv("OS"))){
+			c3p0="TJNU";
+		}
+		dataSource = new ComboPooledDataSource(c3p0);
 	}
 
 	public static Connection getConnection() throws Exception {
@@ -168,7 +172,7 @@ public class JDBCTools {
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
 //			System.out.println("查询密码发生异常！！！");
-			log.info("查询密码发生异常！！！"+e1);
+			log.info("selstc password happens something wrong！！！"+e1);
 
 		} finally {
 			JDBCTools.releaseDB(null, statement, connection);
@@ -192,8 +196,8 @@ public class JDBCTools {
 			connection = JDBCTools.getConnection();
 			statement = connection.createStatement();
 			rs = statement.executeQuery(queryEmail);// 执行查询语句
-			log.info("执行查询Success!！！！");
-			log.info("在executeQuery中输出rs" + rs);
+			log.info("exect select Success!！！！");
+			log.info("at executeQuery rs=" + rs);
 			while (rs.next()) {
 				email = rs.getString(1).trim();
 			}
@@ -201,7 +205,7 @@ public class JDBCTools {
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
 			System.out.println(e1);
-			System.out.println("执行查询发生异常！！！"+e1);
+			System.out.println("selstc password happens something wrong！！！"+e1);
 		} finally {
 			JDBCTools.releaseDB(null, statement, connection);
 		}
@@ -216,9 +220,9 @@ public class JDBCTools {
 		String sqlStudent = student.getSql();//获得学生信息的string变量
 		String	sqlGrade=null;
 		if (JDBCTools.updateSql(sqlStudent)) {
-			log.info("学生信息更新成功");
+			log.info("updata student success");
 		} else {
-			log.error("学生信息更新失败");
+			log.error("up data student wrong");
 		}
 		//根据学号查找该学生已经存在的课程
 		Stack<String> existGrade = getExistGrade(student.number);
@@ -241,12 +245,12 @@ public class JDBCTools {
 				//System.out.println(sqlGrade);
 				JDBCTools.updateSql(sqlGrade);
 				// System.out.println("！！！这是一个新成绩！！！");
-				 log.info("新成绩"+sqlGrade);
+				 log.info("new grade"+sqlGrade);
 				// 将新增加的成绩压入stu栈中
 				stu.grade.push(newGrade);
 			}
 		}
-		log.info("学生信息更新成功");
+		log.info("updata grade success");
 		return stu;// 返回的是包含增加的新成绩的栈
 	}
 
@@ -266,7 +270,7 @@ public class JDBCTools {
 			}
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
-			log.error("执行查询发生异常！！！");
+			log.error("select wrong！！！");
 		} finally {
 			JDBCTools.releaseDB(null, statement, connection);
 		}

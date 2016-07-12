@@ -470,6 +470,12 @@ public class Tools {
 	 */
 	public static String getGradePage(String xuehao, String upass) {
 		// 从主页获取cookie
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		String cookie = GetCookie("http://jw.tjnu.edu.cn/").replace("; path=/", "");
 		String postInfo = "uname=" + xuehao + "&upass=" + upass + "&submitgo=GO";
 		// System.out.println("拼接的登陆信息为："+postInfo);
@@ -529,7 +535,7 @@ public class Tools {
 				result += line;
 			}
 		} catch (Exception e) {
-			log.info("发送GET请求出现异常！" + e);
+			log.info("GET something wrong！" + e);
 //			System.out.println("发送GET请求出现异常！" + e);
 //			e.printStackTrace();
 		}
@@ -569,7 +575,7 @@ public class Tools {
 			cookie = connection.getHeaderField("Set-Cookie");
 		} catch (Exception e) {
 //			System.out.println("发送GET请求出现异常！" + e);
-			log.info("get cookie出现异常！" + e);
+			log.info("get cookie something wrong！" + e);
 			//e.printStackTrace();
 		}
 		return cookie;
@@ -627,7 +633,7 @@ public class Tools {
 				result += line;
 			}
 		} catch (Exception e) {
-			log.info("发送 POST 请求出现异常！" + e);
+			log.info(" POST wrong！" + e);
 		}
 		// 使用finally块来关闭输出流、输入流
 		finally {
@@ -689,7 +695,7 @@ public class Tools {
 			}
 		} catch (Exception e) {
 			//System.out.println("发送GET请求出现异常！" + e);
-			log.info("退出发生异常！" + e);
+			log.info("logout wrong！" + e);
 			//e.printStackTrace();
 		}
 		// 使用finally块来关闭输入流

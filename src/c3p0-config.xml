@@ -33,22 +33,19 @@
 		<property name="minPoolSize">50</property>
 		<!--连接池中保留的最大连接数。Default: 15 -->
 		<property name="maxPoolSize">1000</property>
-
 		<property name="jdbcUrl">jdbc:sqlite://e:/TJNU.db
 		</property>
 		<property name="driverClass">org.sqlite.JDBC
 		</property>
 		<!-- intergalactoApp adopts a different approach to configuring statement 
 			caching -->
-
 		<property name="maxStatements">0</property>
 		<!--maxStatementsPerConnection定义了连接池内单个连接所拥有的最大缓存statements数。Default: 0 -->
 		<property name="maxStatementsPerConnection">5</property>
-
 		<!-- he's important, but there's only one of him -->
 		<user-overrides user="master-of-the-universe">
 			<!--当连接池中的连接耗尽的时候c3p0一次同时获取的连接数。Default: 3 -->
-			<property name="acquireIncrement">1</property>
+			<property name="acquireIncrement">3</property>
 			<property name="initialPoolSize">1</property>
 			<property name="minPoolSize">1</property>
 			<property name="maxPoolSize">5</property>
@@ -58,23 +55,20 @@
 	<!-- 将数据库转移到sqlite中 方便在linux中运行 -->
 	<named-config name="TJNUSQlite">
 		<property name="acquireIncrement">5</property>
-		<property name="initialPoolSize">100</property>
-		<property name="minPoolSize">50</property>
-		<property name="maxPoolSize">1000</property>
-		<property name="user">sa</property>
-		<property name="jdbcUrl">jdbc:sqlite://home/anshichifan/TJNU.db
+		<property name="initialPoolSize">10</property>
+		<property name="minPoolSize">5</property>
+		<property name="maxPoolSize">52</property>
+		<property name="jdbcUrl">jdbc:sqlite://home/cui/TJNU.db
 		</property>
 		<property name="driverClass">org.sqlite.JDBC
 		</property>
-		<!-- <property name="password">cuiminghui</property> -->
-		<!--  -->
 		<property name="maxStatements">0</property>
 		<property name="maxStatementsPerConnection">5</property>
 		<user-overrides user="master-of-the-universe">
 			<property name="acquireIncrement">3</property>
 			<property name="initialPoolSize">10</property>
 			<property name="minPoolSize">1</property>
-			<property name="maxPoolSize">25</property>
+			<property name="maxPoolSize">15</property>
 			<property name="maxStatementsPerConnection">50</property>
 		</user-overrides>
 	</named-config>
