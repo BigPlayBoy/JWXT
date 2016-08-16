@@ -12,8 +12,8 @@ import java.util.Stack;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import info.Grade;
-import info.Student;
+import Bean.Grade;
+import Bean.Student;
 import mail.Mail;
 import main.Getgrade;
 

@@ -22,9 +22,9 @@ import java.util.regex.Pattern;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import info.Grade;
-import info.IdAndPasswd;
-import info.Student;
+import Bean.Grade;
+import Bean.IdAndPasswd;
+import Bean.Student;
 
 public class Tools {
 	
@@ -91,7 +91,7 @@ public class Tools {
 //		Student student = Tools.getStuInfo(GradePage);// 返回的是一个学生的所有成绩
 //		
 //		// 存入数据库
-//		log.info("更新数据库");
+//		log.Bean("更新数据库");
 //		// 这里应当返回一个包含了新增成绩的栈 然后 发送出去
 //		// 额 又需要在数据库中 添加邮箱了。。。
 //		JDBCTools.saveStudent(student);// 返回的是该学生的所有新增成绩
@@ -141,7 +141,7 @@ public class Tools {
 		}
 		log.info("学生信息已获取 正在获取成绩"+stu.getNumber());
 		stu.setGrade(getGrade(string, stunum));
-		//log.info("学生当前成绩的科目数量:" + stu.grade.size());
+		//log.Bean("学生当前成绩的科目数量:" + stu.grade.size());
 		stu.setGradeNUmber(stu.grade.size());// 设置学生当前成绩的科目数量
 		return stu;
 	}
@@ -392,7 +392,7 @@ public class Tools {
 		float result = 0;
 		if(string.length()==0){
 			result=0;
-			//log.info("此科成绩为空 设置为0");
+			//log.Bean("此科成绩为空 设置为0");
 		}else{
 			try {
 				result = Integer.parseInt(string);

@@ -126,7 +126,7 @@
 2016-07-06 17:06:34,149 INFO [com.mchange.v2.c3p0.C3P0Registry] - Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
 2016-07-06 17:06:34,274 INFO [com.mchange.v2.c3p0.impl.AbstractPoolBackedDataSource] - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 5, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 30000, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> TJNU, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> org.sqlite.JDBC, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> 1hgecch9h1h4ffsl1sq6dqq|7637f22, idleConnectionTestPeriod -> 30, initialPoolSize -> 100, jdbcUrl -> jdbc:sqlite://e:/TJNU.db, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 30, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 1000, maxStatements -> 0, maxStatementsPerConnection -> 5, minPoolSize -> 50, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {master-of-the-universe={maxStatementsPerConnection=50, minPoolSize=1, acquireIncrement=3, initialPoolSize=1, maxPoolSize=5}, test-user={minPoolSize=1, maxStatements=0, maxPoolSize=10}}, usesTraditionalReflectiveProxies -> false ]
 2016-07-06 17:06:34,615 INFO [main.Getgrade] - success！get SId：1330090002
-2016-07-06 17:06:35,459 INFO [main.Getgrade] - success get page,get student info
+2016-07-06 17:06:35,459 INFO [main.Getgrade] - success get page,get student Bean
 2016-07-06 17:06:35,471 INFO [tools.Tools] - 学生信息已获取 正在获取成绩1330090002
 2016-07-06 17:06:35,487 INFO [main.Getgrade] - update database
 2016-07-06 17:06:35,581 INFO [tools.JDBCTools] - 学生信息更新成功
@@ -136,13 +136,13 @@
 2016-07-07 08:41:22,423 INFO [com.mchange.v2.c3p0.C3P0Registry] - Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
 2016-07-07 08:41:23,267 INFO [com.mchange.v2.c3p0.impl.AbstractPoolBackedDataSource] - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 5, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 30000, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> TJNU, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> org.sqlite.JDBC, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> 1hgecch9h1i1tl7ekpqciw|7c53a9eb, idleConnectionTestPeriod -> 30, initialPoolSize -> 100, jdbcUrl -> jdbc:sqlite://e:/TJNU.db, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 30, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 1000, maxStatements -> 0, maxStatementsPerConnection -> 5, minPoolSize -> 50, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {master-of-the-universe={maxStatementsPerConnection=50, minPoolSize=1, acquireIncrement=3, initialPoolSize=1, maxPoolSize=5}, test-user={minPoolSize=1, maxStatements=0, maxPoolSize=10}}, usesTraditionalReflectiveProxies -> false ]
 2016-07-07 08:41:25,185 INFO [main.Getgrade] - success！get SId：1330090002
-2016-07-07 08:41:26,424 INFO [main.Getgrade] - success get page,get student info
+2016-07-07 08:41:26,424 INFO [main.Getgrade] - success get page,get student Bean
 2016-07-07 08:41:26,433 INFO [tools.Tools] - 学生信息已获取 正在获取成绩1330090002
 2016-07-07 08:41:26,620 INFO [main.Getgrade] - update database
 2016-07-07 08:41:26,735 INFO [tools.JDBCTools] - 学生信息更新成功
 2016-07-07 08:41:26,764 INFO [tools.JDBCTools] - 学生信息更新成功
 2016-07-07 08:41:26,764 INFO [main.Getgrade] - success！get SId：1330090010
-2016-07-07 08:41:27,640 INFO [main.Getgrade] - success get page,get student info
+2016-07-07 08:41:27,640 INFO [main.Getgrade] - success get page,get student Bean
 2016-07-07 08:41:27,641 INFO [tools.Tools] - 学生信息已获取 正在获取成绩1330090010
 2016-07-07 08:41:27,677 INFO [main.Getgrade] - update database
 2016-07-07 08:41:27,787 INFO [tools.JDBCTools] - 学生信息更新成功
@@ -152,7 +152,7 @@
 2016-07-07 08:43:05,454 INFO [com.mchange.v2.c3p0.C3P0Registry] - Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
 2016-07-07 08:43:05,937 INFO [com.mchange.v2.c3p0.impl.AbstractPoolBackedDataSource] - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 5, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 30000, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> TJNU, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> org.sqlite.JDBC, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> 1hgecch9h1i1vt0hnregd8|7637f22, idleConnectionTestPeriod -> 30, initialPoolSize -> 100, jdbcUrl -> jdbc:sqlite://e:/TJNU.db, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 30, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 1000, maxStatements -> 0, maxStatementsPerConnection -> 5, minPoolSize -> 50, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {master-of-the-universe={maxStatementsPerConnection=50, minPoolSize=1, acquireIncrement=3, initialPoolSize=1, maxPoolSize=5}, test-user={minPoolSize=1, maxStatements=0, maxPoolSize=10}}, usesTraditionalReflectiveProxies -> false ]
 2016-07-07 08:43:07,507 INFO [main.Getgrade] - success！get SId：1330090002
-2016-07-07 08:43:11,457 INFO [main.Getgrade] - success get page,get student info
+2016-07-07 08:43:11,457 INFO [main.Getgrade] - success get page,get student Bean
 2016-07-07 08:43:11,468 INFO [tools.Tools] - 学生信息已获取 正在获取成绩1330090002
 2016-07-07 08:43:11,540 INFO [main.Getgrade] - update database
 2016-07-07 08:43:11,640 INFO [tools.JDBCTools] - 学生信息更新成功
@@ -162,25 +162,25 @@
 2016-07-07 22:17:57,017 INFO [com.mchange.v2.c3p0.C3P0Registry] - Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
 2016-07-07 22:17:57,218 INFO [com.mchange.v2.c3p0.impl.AbstractPoolBackedDataSource] - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 5, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 30000, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> TJNU, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> org.sqlite.JDBC, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> 1hgf4cu9h1iuzq7w4kco34|7c53a9eb, idleConnectionTestPeriod -> 30, initialPoolSize -> 100, jdbcUrl -> jdbc:sqlite://e:/TJNU.db, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 30, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 1000, maxStatements -> 0, maxStatementsPerConnection -> 5, minPoolSize -> 50, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {master-of-the-universe={maxStatementsPerConnection=50, minPoolSize=1, acquireIncrement=3, initialPoolSize=1, maxPoolSize=5}, test-user={minPoolSize=1, maxStatements=0, maxPoolSize=10}}, usesTraditionalReflectiveProxies -> false ]
 2016-07-07 22:17:57,848 INFO [main.Getgrade] - success！get SId：1330090002
-2016-07-07 22:18:05,207 INFO [main.Getgrade] - success get page,get student info
+2016-07-07 22:18:05,207 INFO [main.Getgrade] - success get page,get student Bean
 2016-07-07 22:18:05,209 INFO [tools.Tools] - 学生信息已获取 正在获取成绩1330090002
 2016-07-07 22:18:05,239 INFO [main.Getgrade] - update database
 2016-07-07 22:18:05,341 INFO [tools.JDBCTools] - 学生信息更新成功
 2016-07-07 22:18:05,395 INFO [tools.JDBCTools] - 学生信息更新成功
 2016-07-07 22:18:05,395 INFO [main.Getgrade] - success！get SId：1330090010
-2016-07-07 22:18:14,299 INFO [main.Getgrade] - success get page,get student info
+2016-07-07 22:18:14,299 INFO [main.Getgrade] - success get page,get student Bean
 2016-07-07 22:18:14,300 INFO [tools.Tools] - 学生信息已获取 正在获取成绩1330090010
 2016-07-07 22:18:14,313 INFO [main.Getgrade] - update database
 2016-07-07 22:18:14,402 INFO [tools.JDBCTools] - 学生信息更新成功
 2016-07-07 22:18:14,443 INFO [tools.JDBCTools] - 学生信息更新成功
 2016-07-07 22:18:14,443 INFO [main.Getgrade] - success！get SId：1330090003
-2016-07-07 22:18:27,220 INFO [main.Getgrade] - success get page,get student info
+2016-07-07 22:18:27,220 INFO [main.Getgrade] - success get page,get student Bean
 2016-07-07 22:18:27,221 INFO [tools.Tools] - 学生信息已获取 正在获取成绩1330090003
 2016-07-07 22:18:27,227 INFO [main.Getgrade] - update database
 2016-07-07 22:18:27,283 INFO [tools.JDBCTools] - 学生信息更新成功
 2016-07-07 22:18:29,439 INFO [tools.JDBCTools] - 学生信息更新成功
 2016-07-07 22:18:29,439 INFO [main.Getgrade] - success！get SId：1330090009
-2016-07-07 22:18:35,343 INFO [main.Getgrade] - success get page,get student info
+2016-07-07 22:18:35,343 INFO [main.Getgrade] - success get page,get student Bean
 2016-07-07 22:18:35,343 INFO [tools.Tools] - 学生信息已获取 正在获取成绩1330090009
 2016-07-07 22:18:35,349 INFO [main.Getgrade] - update database
 2016-07-07 22:18:35,456 INFO [tools.JDBCTools] - 学生信息更新成功
