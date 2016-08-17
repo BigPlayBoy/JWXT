@@ -1,0 +1,75 @@
+<c3p0-config>
+	<default-config>
+		<!-- <property name="automaticTestTable"></property> -->
+		<property name="checkoutTimeout">30000</property>
+		<property name="idleConnectionTestPeriod">30</property>
+		<property name="initialPoolSize">10</property>
+		<property name="maxIdleTime">30</property>
+		<property name="maxPoolSize">100</property>
+		<property name="minPoolSize">10</property>
+		<property name="maxStatements">200</property>
+
+		<property name="user">sa</property>
+		<property name="jdbcUrl">jdbc:sqlserver://localhost:1433;DatabaseName=TJNU
+		</property>
+		<property name="driverClass">com.microsoft.sqlserver.jdbc.SQLServerDriver
+		</property>
+		<property name="password">cuiminghui</property>
+		<!-- 用户可以自定义的变量 不知道用户是指谁 -->
+		<user-overrides user="test-user">
+			<property name="maxPoolSize">10</property>
+			<property name="minPoolSize">1</property>
+			<property name="maxStatements">0</property>
+		</user-overrides>
+	</default-config>
+
+	<!-- 这里是自定义的配置 可以写很多个 -->
+	<named-config name="TJNU">
+		<!--当连接池中的连接耗尽的时候c3p0一次同时获取的连接数。Default: 3 -->
+		<property name="acquireIncrement">5</property>
+		<!--初始化时获取三个连接，取值应在minPoolSize与maxPoolSize之间。Default: 3 -->
+		<property name="initialPoolSize">100</property>
+		<!--连接池中保留的最小连接数。 -->
+		<property name="minPoolSize">50</property>
+		<!--连接池中保留的最大连接数。Default: 15 -->
+		<property name="maxPoolSize">1000</property>
+		<property name="jdbcUrl">jdbc:sqlite://e:/TJNU.db
+		</property>
+		<property name="driverClass">org.sqlite.JDBC
+		</property>
+		<!-- intergalactoApp adopts a different approach to configuring statement 
+			caching -->
+		<property name="maxStatements">0</property>
+		<!--maxStatementsPerConnection定义了连接池内单个连接所拥有的最大缓存statements数。Default: 0 -->
+		<property name="maxStatementsPerConnection">5</property>
+		<!-- he's important, but there's only one of him -->
+		<user-overrides user="master-of-the-universe">
+			<!--当连接池中的连接耗尽的时候c3p0一次同时获取的连接数。Default: 3 -->
+			<property name="acquireIncrement">3</property>
+			<property name="initialPoolSize">1</property>
+			<property name="minPoolSize">1</property>
+			<property name="maxPoolSize">5</property>
+			<property name="maxStatementsPerConnection">50</property>
+		</user-overrides>
+	</named-config>
+	<!-- 将数据库转移到sqlite中 方便在linux中运行 -->
+	<named-config name="TJNUSQlite">
+		<property name="acquireIncrement">5</property>
+		<property name="initialPoolSize">10</property>
+		<property name="minPoolSize">5</property>
+		<property name="maxPoolSize">52</property>
+		<property name="jdbcUrl">jdbc:sqlite://home/cui/TJNU.db
+		</property>
+		<property name="driverClass">org.sqlite.JDBC
+		</property>
+		<property name="maxStatements">0</property>
+		<property name="maxStatementsPerConnection">5</property>
+		<user-overrides user="master-of-the-universe">
+			<property name="acquireIncrement">3</property>
+			<property name="initialPoolSize">10</property>
+			<property name="minPoolSize">1</property>
+			<property name="maxPoolSize">15</property>
+			<property name="maxStatementsPerConnection">50</property>
+		</user-overrides>
+	</named-config>
+</c3p0-config>

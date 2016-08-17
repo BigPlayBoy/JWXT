@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="Bean.StudentEntity" table="Student" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer(0,-1)" not-null="true"/>
+        </id>
+        <property name="name">
+            <column name="name" sql-type="text(0,-1)" not-null="true"/>
+        </property>
+        <property name="sex">
+            <column name="sex" sql-type="text(0,-1)" not-null="true"/>
+        </property>
+        <property name="xuezhi">
+            <column name="xuezhi" sql-type="text(0,-1)" not-null="true"/>
+        </property>
+        <property name="yuanxi">
+            <column name="yuanxi" sql-type="text(0,-1)" not-null="true"/>
+        </property>
+        <property name="zhuanye">
+            <column name="zhuanye" sql-type="text(0,-1)" not-null="true"/>
+        </property>
+        <property name="banji">
+            <column name="banji" sql-type="text(0,-1)" not-null="true"/>
+        </property>
+        <property name="ruxueriqi">
+            <column name="ruxueriqi" sql-type="text(0,-1)" not-null="true"/>
+        </property>
+        <property name="gradeNumber">
+            <column name="gradeNumber" sql-type="integer(0,-1)" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

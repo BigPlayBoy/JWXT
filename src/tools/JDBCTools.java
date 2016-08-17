@@ -13,9 +13,9 @@ import org.slf4j.LoggerFactory;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
-import info.Grade;
-import info.IdAndPasswd;
-import info.Student;
+import Bean.Grade;
+import Bean.IdAndPasswd;
+import Bean.Student;
 
 /**
  * JDBC 的工具类
@@ -114,7 +114,7 @@ public class JDBCTools {
 			connection = JDBCTools.getConnection();
 			statement = connection.createStatement();
 			statement.executeUpdate(sql);
-			// log.info("更新数据库成功Success!");
+			// log.Bean("更新数据库成功Success!");
 			status = 1;
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block

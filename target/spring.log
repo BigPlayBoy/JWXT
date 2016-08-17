@@ -126,7 +126,7 @@
 2016-07-06 17:06:34,149 INFO [com.mchange.v2.c3p0.C3P0Registry] - Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
 2016-07-06 17:06:34,274 INFO [com.mchange.v2.c3p0.impl.AbstractPoolBackedDataSource] - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 5, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 30000, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> TJNU, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> org.sqlite.JDBC, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> 1hgecch9h1h4ffsl1sq6dqq|7637f22, idleConnectionTestPeriod -> 30, initialPoolSize -> 100, jdbcUrl -> jdbc:sqlite://e:/TJNU.db, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 30, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 1000, maxStatements -> 0, maxStatementsPerConnection -> 5, minPoolSize -> 50, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {master-of-the-universe={maxStatementsPerConnection=50, minPoolSize=1, acquireIncrement=3, initialPoolSize=1, maxPoolSize=5}, test-user={minPoolSize=1, maxStatements=0, maxPoolSize=10}}, usesTraditionalReflectiveProxies -> false ]
 2016-07-06 17:06:34,615 INFO [main.Getgrade] - success！get SId：1330090002
-2016-07-06 17:06:35,459 INFO [main.Getgrade] - success get page,get student info
+2016-07-06 17:06:35,459 INFO [main.Getgrade] - success get page,get student Bean
 2016-07-06 17:06:35,471 INFO [tools.Tools] - 学生信息已获取 正在获取成绩1330090002
 2016-07-06 17:06:35,487 INFO [main.Getgrade] - update database
 2016-07-06 17:06:35,581 INFO [tools.JDBCTools] - 学生信息更新成功
@@ -136,13 +136,13 @@
 2016-07-07 08:41:22,423 INFO [com.mchange.v2.c3p0.C3P0Registry] - Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
 2016-07-07 08:41:23,267 INFO [com.mchange.v2.c3p0.impl.AbstractPoolBackedDataSource] - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 5, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 30000, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> TJNU, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> org.sqlite.JDBC, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> 1hgecch9h1i1tl7ekpqciw|7c53a9eb, idleConnectionTestPeriod -> 30, initialPoolSize -> 100, jdbcUrl -> jdbc:sqlite://e:/TJNU.db, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 30, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 1000, maxStatements -> 0, maxStatementsPerConnection -> 5, minPoolSize -> 50, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {master-of-the-universe={maxStatementsPerConnection=50, minPoolSize=1, acquireIncrement=3, initialPoolSize=1, maxPoolSize=5}, test-user={minPoolSize=1, maxStatements=0, maxPoolSize=10}}, usesTraditionalReflectiveProxies -> false ]
 2016-07-07 08:41:25,185 INFO [main.Getgrade] - success！get SId：1330090002
-2016-07-07 08:41:26,424 INFO [main.Getgrade] - success get page,get student info
+2016-07-07 08:41:26,424 INFO [main.Getgrade] - success get page,get student Bean
 2016-07-07 08:41:26,433 INFO [tools.Tools] - 学生信息已获取 正在获取成绩1330090002
 2016-07-07 08:41:26,620 INFO [main.Getgrade] - update database
 2016-07-07 08:41:26,735 INFO [tools.JDBCTools] - 学生信息更新成功
 2016-07-07 08:41:26,764 INFO [tools.JDBCTools] - 学生信息更新成功
 2016-07-07 08:41:26,764 INFO [main.Getgrade] - success！get SId：1330090010
-2016-07-07 08:41:27,640 INFO [main.Getgrade] - success get page,get student info
+2016-07-07 08:41:27,640 INFO [main.Getgrade] - success get page,get student Bean
 2016-07-07 08:41:27,641 INFO [tools.Tools] - 学生信息已获取 正在获取成绩1330090010
 2016-07-07 08:41:27,677 INFO [main.Getgrade] - update database
 2016-07-07 08:41:27,787 INFO [tools.JDBCTools] - 学生信息更新成功
@@ -152,7 +152,7 @@
 2016-07-07 08:43:05,454 INFO [com.mchange.v2.c3p0.C3P0Registry] - Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
 2016-07-07 08:43:05,937 INFO [com.mchange.v2.c3p0.impl.AbstractPoolBackedDataSource] - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 5, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 30000, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> TJNU, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> org.sqlite.JDBC, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> 1hgecch9h1i1vt0hnregd8|7637f22, idleConnectionTestPeriod -> 30, initialPoolSize -> 100, jdbcUrl -> jdbc:sqlite://e:/TJNU.db, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 30, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 1000, maxStatements -> 0, maxStatementsPerConnection -> 5, minPoolSize -> 50, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {master-of-the-universe={maxStatementsPerConnection=50, minPoolSize=1, acquireIncrement=3, initialPoolSize=1, maxPoolSize=5}, test-user={minPoolSize=1, maxStatements=0, maxPoolSize=10}}, usesTraditionalReflectiveProxies -> false ]
 2016-07-07 08:43:07,507 INFO [main.Getgrade] - success！get SId：1330090002
-2016-07-07 08:43:11,457 INFO [main.Getgrade] - success get page,get student info
+2016-07-07 08:43:11,457 INFO [main.Getgrade] - success get page,get student Bean
 2016-07-07 08:43:11,468 INFO [tools.Tools] - 学生信息已获取 正在获取成绩1330090002
 2016-07-07 08:43:11,540 INFO [main.Getgrade] - update database
 2016-07-07 08:43:11,640 INFO [tools.JDBCTools] - 学生信息更新成功
@@ -162,25 +162,25 @@
 2016-07-07 22:17:57,017 INFO [com.mchange.v2.c3p0.C3P0Registry] - Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
 2016-07-07 22:17:57,218 INFO [com.mchange.v2.c3p0.impl.AbstractPoolBackedDataSource] - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 5, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 30000, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> TJNU, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> org.sqlite.JDBC, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> 1hgf4cu9h1iuzq7w4kco34|7c53a9eb, idleConnectionTestPeriod -> 30, initialPoolSize -> 100, jdbcUrl -> jdbc:sqlite://e:/TJNU.db, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 30, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 1000, maxStatements -> 0, maxStatementsPerConnection -> 5, minPoolSize -> 50, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {master-of-the-universe={maxStatementsPerConnection=50, minPoolSize=1, acquireIncrement=3, initialPoolSize=1, maxPoolSize=5}, test-user={minPoolSize=1, maxStatements=0, maxPoolSize=10}}, usesTraditionalReflectiveProxies -> false ]
 2016-07-07 22:17:57,848 INFO [main.Getgrade] - success！get SId：1330090002
-2016-07-07 22:18:05,207 INFO [main.Getgrade] - success get page,get student info
+2016-07-07 22:18:05,207 INFO [main.Getgrade] - success get page,get student Bean
 2016-07-07 22:18:05,209 INFO [tools.Tools] - 学生信息已获取 正在获取成绩1330090002
 2016-07-07 22:18:05,239 INFO [main.Getgrade] - update database
 2016-07-07 22:18:05,341 INFO [tools.JDBCTools] - 学生信息更新成功
 2016-07-07 22:18:05,395 INFO [tools.JDBCTools] - 学生信息更新成功
 2016-07-07 22:18:05,395 INFO [main.Getgrade] - success！get SId：1330090010
-2016-07-07 22:18:14,299 INFO [main.Getgrade] - success get page,get student info
+2016-07-07 22:18:14,299 INFO [main.Getgrade] - success get page,get student Bean
 2016-07-07 22:18:14,300 INFO [tools.Tools] - 学生信息已获取 正在获取成绩1330090010
 2016-07-07 22:18:14,313 INFO [main.Getgrade] - update database
 2016-07-07 22:18:14,402 INFO [tools.JDBCTools] - 学生信息更新成功
 2016-07-07 22:18:14,443 INFO [tools.JDBCTools] - 学生信息更新成功
 2016-07-07 22:18:14,443 INFO [main.Getgrade] - success！get SId：1330090003
-2016-07-07 22:18:27,220 INFO [main.Getgrade] - success get page,get student info
+2016-07-07 22:18:27,220 INFO [main.Getgrade] - success get page,get student Bean
 2016-07-07 22:18:27,221 INFO [tools.Tools] - 学生信息已获取 正在获取成绩1330090003
 2016-07-07 22:18:27,227 INFO [main.Getgrade] - update database
 2016-07-07 22:18:27,283 INFO [tools.JDBCTools] - 学生信息更新成功
 2016-07-07 22:18:29,439 INFO [tools.JDBCTools] - 学生信息更新成功
 2016-07-07 22:18:29,439 INFO [main.Getgrade] - success！get SId：1330090009
-2016-07-07 22:18:35,343 INFO [main.Getgrade] - success get page,get student info
+2016-07-07 22:18:35,343 INFO [main.Getgrade] - success get page,get student Bean
 2016-07-07 22:18:35,343 INFO [tools.Tools] - 学生信息已获取 正在获取成绩1330090009
 2016-07-07 22:18:35,349 INFO [main.Getgrade] - update database
 2016-07-07 22:18:35,456 INFO [tools.JDBCTools] - 学生信息更新成功
@@ -211,3 +211,517 @@
 2016-07-12 11:39:48,323 INFO [org.quartz.core.QuartzScheduler] - Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
 2016-07-12 11:39:48,323 INFO [main.MyQuartz] - ------- Started Scheduler -----------------
 2016-07-12 11:39:48,323 INFO [main.MyQuartz] - Executed 0 jobs.
+2016-08-17 09:20:57,629 INFO [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2016-08-17 09:20:57,653 INFO [org.hibernate.Version] - HHH000412: Hibernate Core {4.3.0.Final}
+2016-08-17 09:20:57,656 INFO [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2016-08-17 09:20:57,661 INFO [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2016-08-17 09:20:57,760 INFO [org.hibernate.cfg.Configuration] - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-08-17 09:20:57,760 INFO [org.hibernate.cfg.Configuration] - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-08-17 09:20:57,943 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/GradeEntity.hbm.xml
+2016-08-17 09:20:58,349 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/StudentEntity.hbm.xml
+2016-08-17 09:20:58,442 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/TestEntity.hbm.xml
+2016-08-17 09:20:58,554 INFO [org.hibernate.cfg.Configuration] - HHH000041: Configured SessionFactory: null
+2016-08-17 09:20:58,855 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-08-17 09:20:59,251 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:D:/TJNU.db]
+2016-08-17 09:20:59,251 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000046: Connection properties: {}
+2016-08-17 09:20:59,252 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000006: Autocommit mode: false
+2016-08-17 09:20:59,254 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-08-17 09:23:25,634 INFO [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2016-08-17 09:23:25,646 INFO [org.hibernate.Version] - HHH000412: Hibernate Core {4.3.0.Final}
+2016-08-17 09:23:25,650 INFO [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2016-08-17 09:23:25,654 INFO [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2016-08-17 09:23:25,717 INFO [org.hibernate.cfg.Configuration] - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-08-17 09:23:25,717 INFO [org.hibernate.cfg.Configuration] - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-08-17 09:23:25,861 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/GradeEntity.hbm.xml
+2016-08-17 09:23:25,992 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/StudentEntity.hbm.xml
+2016-08-17 09:23:26,043 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/TestEntity.hbm.xml
+2016-08-17 09:23:26,076 INFO [org.hibernate.cfg.Configuration] - HHH000041: Configured SessionFactory: null
+2016-08-17 09:23:26,265 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-08-17 09:23:26,481 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite:D:/TJNU.db]
+2016-08-17 09:23:26,482 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000046: Connection properties: {}
+2016-08-17 09:23:26,482 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000006: Autocommit mode: false
+2016-08-17 09:23:26,485 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-08-17 09:53:19,190 INFO [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2016-08-17 09:53:19,211 INFO [org.hibernate.Version] - HHH000412: Hibernate Core {4.3.0.Final}
+2016-08-17 09:53:19,213 INFO [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2016-08-17 09:53:19,218 INFO [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2016-08-17 09:53:19,305 INFO [org.hibernate.cfg.Configuration] - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-08-17 09:53:19,305 INFO [org.hibernate.cfg.Configuration] - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-08-17 09:53:19,580 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/GradeEntity.hbm.xml
+2016-08-17 09:53:19,734 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/StudentEntity.hbm.xml
+2016-08-17 09:53:19,809 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/TestEntity.hbm.xml
+2016-08-17 09:53:19,838 INFO [org.hibernate.cfg.Configuration] - HHH000041: Configured SessionFactory: null
+2016-08-17 09:53:20,076 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-08-17 09:53:20,260 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite://D:/TJNU.db]
+2016-08-17 09:53:20,261 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000046: Connection properties: {}
+2016-08-17 09:53:20,261 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000006: Autocommit mode: false
+2016-08-17 09:53:20,263 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-08-17 09:56:05,530 INFO [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2016-08-17 09:56:05,550 INFO [org.hibernate.Version] - HHH000412: Hibernate Core {4.3.0.Final}
+2016-08-17 09:56:05,554 INFO [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2016-08-17 09:56:05,561 INFO [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2016-08-17 09:56:05,651 INFO [org.hibernate.cfg.Configuration] - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-08-17 09:56:05,651 INFO [org.hibernate.cfg.Configuration] - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-08-17 09:56:05,875 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/GradeEntity.hbm.xml
+2016-08-17 09:56:06,015 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/StudentEntity.hbm.xml
+2016-08-17 09:56:06,114 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/TestEntity.hbm.xml
+2016-08-17 09:56:06,167 INFO [org.hibernate.cfg.Configuration] - HHH000041: Configured SessionFactory: null
+2016-08-17 09:56:06,542 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-08-17 09:56:06,885 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite://D:/TJNU.db]
+2016-08-17 09:56:06,885 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000046: Connection properties: {}
+2016-08-17 09:56:06,886 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000006: Autocommit mode: false
+2016-08-17 09:56:06,890 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-08-17 09:57:32,188 INFO [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2016-08-17 09:57:32,202 INFO [org.hibernate.Version] - HHH000412: Hibernate Core {4.3.0.Final}
+2016-08-17 09:57:32,206 INFO [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2016-08-17 09:57:32,212 INFO [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2016-08-17 09:57:32,285 INFO [org.hibernate.cfg.Configuration] - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-08-17 09:57:32,286 INFO [org.hibernate.cfg.Configuration] - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-08-17 09:57:32,436 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/GradeEntity.hbm.xml
+2016-08-17 09:57:32,576 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/StudentEntity.hbm.xml
+2016-08-17 09:57:32,622 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/TestEntity.hbm.xml
+2016-08-17 09:57:32,704 INFO [org.hibernate.cfg.Configuration] - HHH000041: Configured SessionFactory: null
+2016-08-17 09:57:32,983 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-08-17 09:57:33,183 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite://d:/TJNU.db]
+2016-08-17 09:57:33,184 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000046: Connection properties: {}
+2016-08-17 09:57:33,185 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000006: Autocommit mode: false
+2016-08-17 09:57:33,195 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-08-17 09:57:34,532 INFO [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: dialect.SQLiteDialect
+2016-08-17 09:57:34,550 INFO [org.hibernate.engine.jdbc.internal.LobCreatorBuilder] - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2016-08-17 09:57:34,719 INFO [org.hibernate.engine.transaction.internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-08-17 09:57:34,742 INFO [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2016-08-17 09:57:35,384 INFO [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000228: Running hbm2ddl schema update
+2016-08-17 09:57:35,384 INFO [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000102: Fetching database metadata
+2016-08-17 09:57:35,396 INFO [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000396: Updating schema
+2016-08-17 09:57:35,545 WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] - SQL Error: 0, SQLState: null
+2016-08-17 09:57:35,545 ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] - not yet implemented
+2016-08-17 09:57:35,546 ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000299: Could not complete schema update
+java.lang.NullPointerException
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:126)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:112)
+	at org.hibernate.tool.hbm2ddl.DatabaseMetadata.getTableMetadata(DatabaseMetadata.java:156)
+	at org.hibernate.cfg.Configuration.generateSchemaUpdateScriptList(Configuration.java:1202)
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:212)
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:178)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:520)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1857)
+	at tools.HibernateUtil.<clinit>(HibernateUtil.java:23)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:264)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:123)
+2016-08-17 09:57:47,295 INFO [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2016-08-17 09:57:47,333 INFO [org.hibernate.Version] - HHH000412: Hibernate Core {4.3.0.Final}
+2016-08-17 09:57:47,336 INFO [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2016-08-17 09:57:47,340 INFO [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2016-08-17 09:57:47,434 INFO [org.hibernate.cfg.Configuration] - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-08-17 09:57:47,434 INFO [org.hibernate.cfg.Configuration] - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-08-17 09:57:47,608 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/GradeEntity.hbm.xml
+2016-08-17 09:57:47,742 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/StudentEntity.hbm.xml
+2016-08-17 09:57:47,784 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/TestEntity.hbm.xml
+2016-08-17 09:57:47,821 INFO [org.hibernate.cfg.Configuration] - HHH000041: Configured SessionFactory: null
+2016-08-17 09:57:48,068 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-08-17 09:57:48,280 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite://d:/TJNU.db]
+2016-08-17 09:57:48,281 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000046: Connection properties: {}
+2016-08-17 09:57:48,281 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000006: Autocommit mode: false
+2016-08-17 09:57:48,283 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-08-17 09:57:49,486 INFO [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: dialect.SQLiteDialect
+2016-08-17 09:57:49,498 INFO [org.hibernate.engine.jdbc.internal.LobCreatorBuilder] - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2016-08-17 09:57:49,756 INFO [org.hibernate.engine.transaction.internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-08-17 09:57:49,763 INFO [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2016-08-17 09:57:50,440 INFO [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000228: Running hbm2ddl schema update
+2016-08-17 09:57:50,441 INFO [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000102: Fetching database metadata
+2016-08-17 09:57:50,445 INFO [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000396: Updating schema
+2016-08-17 09:57:50,727 WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] - SQL Error: 0, SQLState: null
+2016-08-17 09:57:50,727 ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] - not yet implemented
+2016-08-17 09:57:50,728 ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000299: Could not complete schema update
+java.lang.NullPointerException
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:126)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:112)
+	at org.hibernate.tool.hbm2ddl.DatabaseMetadata.getTableMetadata(DatabaseMetadata.java:156)
+	at org.hibernate.cfg.Configuration.generateSchemaUpdateScriptList(Configuration.java:1202)
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:212)
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:178)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:520)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1857)
+	at tools.HibernateUtil.<clinit>(HibernateUtil.java:23)
+	at test.test.main(test.java:18)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+2016-08-17 10:02:08,961 INFO [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2016-08-17 10:02:08,973 INFO [org.hibernate.Version] - HHH000412: Hibernate Core {4.3.0.Final}
+2016-08-17 10:02:08,976 INFO [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2016-08-17 10:02:08,983 INFO [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2016-08-17 10:02:09,135 INFO [org.hibernate.cfg.Configuration] - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-08-17 10:02:09,135 INFO [org.hibernate.cfg.Configuration] - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-08-17 10:02:09,345 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/GradeEntity.hbm.xml
+2016-08-17 10:02:09,508 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/StudentEntity.hbm.xml
+2016-08-17 10:02:09,565 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/TestEntity.hbm.xml
+2016-08-17 10:02:09,639 INFO [org.hibernate.cfg.Configuration] - HHH000041: Configured SessionFactory: null
+2016-08-17 10:02:09,863 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-08-17 10:02:10,017 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite://d:/TJNU.db]
+2016-08-17 10:02:10,017 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000046: Connection properties: {}
+2016-08-17 10:02:10,018 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000006: Autocommit mode: false
+2016-08-17 10:02:10,035 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-08-17 10:02:11,633 INFO [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: dialect.SQLiteDialect
+2016-08-17 10:02:11,655 INFO [org.hibernate.engine.jdbc.internal.LobCreatorBuilder] - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2016-08-17 10:02:11,765 INFO [org.hibernate.engine.transaction.internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-08-17 10:02:11,772 INFO [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2016-08-17 10:02:12,306 INFO [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000228: Running hbm2ddl schema update
+2016-08-17 10:02:12,307 INFO [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000102: Fetching database metadata
+2016-08-17 10:02:12,311 INFO [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000396: Updating schema
+2016-08-17 10:02:12,477 WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] - SQL Error: 0, SQLState: null
+2016-08-17 10:02:12,477 ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] - not yet implemented
+2016-08-17 10:02:12,478 ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000299: Could not complete schema update
+java.lang.NullPointerException
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:126)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:112)
+	at org.hibernate.tool.hbm2ddl.DatabaseMetadata.getTableMetadata(DatabaseMetadata.java:156)
+	at org.hibernate.cfg.Configuration.generateSchemaUpdateScriptList(Configuration.java:1202)
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:212)
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:178)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:520)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1857)
+	at tools.HibernateUtil.<clinit>(HibernateUtil.java:23)
+	at test.test.main(test.java:18)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+2016-08-17 10:07:10,509 INFO [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2016-08-17 10:07:10,542 INFO [org.hibernate.Version] - HHH000412: Hibernate Core {4.3.0.Final}
+2016-08-17 10:07:10,545 INFO [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2016-08-17 10:07:10,550 INFO [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2016-08-17 10:07:10,621 INFO [org.hibernate.cfg.Configuration] - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-08-17 10:07:10,621 INFO [org.hibernate.cfg.Configuration] - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-08-17 10:07:10,775 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/GradeEntity.hbm.xml
+2016-08-17 10:07:10,953 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/StudentEntity.hbm.xml
+2016-08-17 10:07:11,010 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/TestEntity.hbm.xml
+2016-08-17 10:07:11,042 INFO [org.hibernate.cfg.Configuration] - HHH000041: Configured SessionFactory: null
+2016-08-17 10:07:11,207 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-08-17 10:07:11,413 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite://d:/TJNU.db]
+2016-08-17 10:07:11,414 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000046: Connection properties: {}
+2016-08-17 10:07:11,414 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000006: Autocommit mode: false
+2016-08-17 10:07:11,416 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-08-17 10:07:12,555 INFO [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: dialect.SQLiteDialect
+2016-08-17 10:07:12,569 INFO [org.hibernate.engine.jdbc.internal.LobCreatorBuilder] - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2016-08-17 10:07:12,679 INFO [org.hibernate.engine.transaction.internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-08-17 10:07:12,687 INFO [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2016-08-17 10:07:13,549 INFO [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000228: Running hbm2ddl schema update
+2016-08-17 10:07:13,549 INFO [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000102: Fetching database metadata
+2016-08-17 10:07:13,555 INFO [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000396: Updating schema
+2016-08-17 10:07:13,662 WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] - SQL Error: 0, SQLState: null
+2016-08-17 10:07:13,662 ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] - not yet implemented
+2016-08-17 10:07:13,663 ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000299: Could not complete schema update
+java.lang.NullPointerException
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:126)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:112)
+	at org.hibernate.tool.hbm2ddl.DatabaseMetadata.getTableMetadata(DatabaseMetadata.java:156)
+	at org.hibernate.cfg.Configuration.generateSchemaUpdateScriptList(Configuration.java:1202)
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:212)
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:178)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:520)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1857)
+	at tools.HibernateUtil.<clinit>(HibernateUtil.java:23)
+	at test.test.main(test.java:18)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+2016-08-17 10:09:42,307 INFO [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2016-08-17 10:09:42,321 INFO [org.hibernate.Version] - HHH000412: Hibernate Core {4.3.0.Final}
+2016-08-17 10:09:42,333 INFO [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2016-08-17 10:09:42,337 INFO [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2016-08-17 10:09:42,448 INFO [org.hibernate.cfg.Configuration] - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-08-17 10:09:42,448 INFO [org.hibernate.cfg.Configuration] - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-08-17 10:09:42,720 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/GradeEntity.hbm.xml
+2016-08-17 10:09:42,830 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/StudentEntity.hbm.xml
+2016-08-17 10:09:42,877 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/TestEntity.hbm.xml
+2016-08-17 10:09:42,903 INFO [org.hibernate.cfg.Configuration] - HHH000041: Configured SessionFactory: null
+2016-08-17 10:09:43,118 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-08-17 10:09:43,377 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite://d:/TJNU.db]
+2016-08-17 10:09:43,378 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000046: Connection properties: {}
+2016-08-17 10:09:43,378 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000006: Autocommit mode: false
+2016-08-17 10:09:43,380 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-08-17 10:09:44,470 INFO [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: dialect.SQLiteDialect
+2016-08-17 10:09:44,483 INFO [org.hibernate.engine.jdbc.internal.LobCreatorBuilder] - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2016-08-17 10:09:44,638 INFO [org.hibernate.engine.transaction.internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-08-17 10:09:44,646 INFO [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2016-08-17 10:09:45,119 INFO [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000228: Running hbm2ddl schema update
+2016-08-17 10:09:45,120 INFO [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000102: Fetching database metadata
+2016-08-17 10:09:45,125 INFO [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000396: Updating schema
+2016-08-17 10:09:45,207 WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] - SQL Error: 0, SQLState: null
+2016-08-17 10:09:45,207 ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] - not yet implemented
+2016-08-17 10:09:45,208 ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000299: Could not complete schema update
+java.lang.NullPointerException
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:126)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:112)
+	at org.hibernate.tool.hbm2ddl.DatabaseMetadata.getTableMetadata(DatabaseMetadata.java:156)
+	at org.hibernate.cfg.Configuration.generateSchemaUpdateScriptList(Configuration.java:1202)
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:212)
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:178)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:520)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1857)
+	at tools.HibernateUtil.<clinit>(HibernateUtil.java:23)
+	at test.test.main(test.java:18)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+2016-08-17 10:09:45,504 WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] - SQL Error: 0, SQLState: null
+2016-08-17 10:09:45,504 ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] - PRIMARY KEY must be unique
+2016-08-17 10:09:45,534 INFO [org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl] - HHH000010: On release of batch it still contained JDBC statements
+2016-08-17 10:10:06,315 INFO [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2016-08-17 10:10:06,326 INFO [org.hibernate.Version] - HHH000412: Hibernate Core {4.3.0.Final}
+2016-08-17 10:10:06,330 INFO [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2016-08-17 10:10:06,335 INFO [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2016-08-17 10:10:06,399 INFO [org.hibernate.cfg.Configuration] - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-08-17 10:10:06,399 INFO [org.hibernate.cfg.Configuration] - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-08-17 10:10:06,675 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/GradeEntity.hbm.xml
+2016-08-17 10:10:06,820 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/StudentEntity.hbm.xml
+2016-08-17 10:10:06,868 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/TestEntity.hbm.xml
+2016-08-17 10:10:06,925 INFO [org.hibernate.cfg.Configuration] - HHH000041: Configured SessionFactory: null
+2016-08-17 10:10:07,141 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-08-17 10:10:07,319 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite://d:/TJNU.db]
+2016-08-17 10:10:07,319 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000046: Connection properties: {}
+2016-08-17 10:10:07,319 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000006: Autocommit mode: false
+2016-08-17 10:10:07,322 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-08-17 10:10:08,727 INFO [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: dialect.SQLiteDialect
+2016-08-17 10:10:08,742 INFO [org.hibernate.engine.jdbc.internal.LobCreatorBuilder] - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2016-08-17 10:10:08,855 INFO [org.hibernate.engine.transaction.internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-08-17 10:10:08,864 INFO [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2016-08-17 10:10:09,479 INFO [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000228: Running hbm2ddl schema update
+2016-08-17 10:10:09,479 INFO [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000102: Fetching database metadata
+2016-08-17 10:10:09,485 INFO [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000396: Updating schema
+2016-08-17 10:10:09,566 WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] - SQL Error: 0, SQLState: null
+2016-08-17 10:10:09,566 ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] - not yet implemented
+2016-08-17 10:10:09,567 ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000299: Could not complete schema update
+java.lang.NullPointerException
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:126)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:112)
+	at org.hibernate.tool.hbm2ddl.DatabaseMetadata.getTableMetadata(DatabaseMetadata.java:156)
+	at org.hibernate.cfg.Configuration.generateSchemaUpdateScriptList(Configuration.java:1202)
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:212)
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:178)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:520)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1857)
+	at tools.HibernateUtil.<clinit>(HibernateUtil.java:23)
+	at test.test.main(test.java:18)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+2016-08-17 10:10:12,822 WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] - SQL Error: 0, SQLState: null
+2016-08-17 10:10:12,822 ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] - database locked
+2016-08-17 10:10:12,827 INFO [org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl] - HHH000010: On release of batch it still contained JDBC statements
+2016-08-17 10:13:37,119 INFO [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2016-08-17 10:13:37,187 INFO [org.hibernate.Version] - HHH000412: Hibernate Core {4.3.0.Final}
+2016-08-17 10:13:37,203 INFO [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2016-08-17 10:13:37,230 INFO [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2016-08-17 10:13:37,291 INFO [org.hibernate.cfg.Configuration] - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-08-17 10:13:37,291 INFO [org.hibernate.cfg.Configuration] - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-08-17 10:13:37,493 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/GradeEntity.hbm.xml
+2016-08-17 10:13:37,615 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/StudentEntity.hbm.xml
+2016-08-17 10:13:37,683 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/TestEntity.hbm.xml
+2016-08-17 10:13:37,706 INFO [org.hibernate.cfg.Configuration] - HHH000041: Configured SessionFactory: null
+2016-08-17 10:13:37,846 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-08-17 10:13:38,035 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite://d:/TJNU.db]
+2016-08-17 10:13:38,035 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000046: Connection properties: {}
+2016-08-17 10:13:38,036 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000006: Autocommit mode: false
+2016-08-17 10:13:38,038 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-08-17 10:13:39,051 INFO [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: dialect.SQLiteDialect
+2016-08-17 10:13:39,065 INFO [org.hibernate.engine.jdbc.internal.LobCreatorBuilder] - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2016-08-17 10:13:39,385 INFO [org.hibernate.engine.transaction.internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-08-17 10:13:39,417 INFO [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2016-08-17 10:13:40,277 INFO [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000228: Running hbm2ddl schema update
+2016-08-17 10:13:40,277 INFO [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000102: Fetching database metadata
+2016-08-17 10:13:40,282 INFO [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000396: Updating schema
+2016-08-17 10:13:40,355 WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] - SQL Error: 0, SQLState: null
+2016-08-17 10:13:40,355 ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] - not yet implemented
+2016-08-17 10:13:40,357 ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000299: Could not complete schema update
+java.lang.NullPointerException
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:126)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:112)
+	at org.hibernate.tool.hbm2ddl.DatabaseMetadata.getTableMetadata(DatabaseMetadata.java:156)
+	at org.hibernate.cfg.Configuration.generateSchemaUpdateScriptList(Configuration.java:1202)
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:212)
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:178)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:520)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1857)
+	at tools.HibernateUtil.<clinit>(HibernateUtil.java:23)
+	at test.test.main(test.java:18)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+2016-08-17 10:14:07,176 INFO [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2016-08-17 10:14:07,197 INFO [org.hibernate.Version] - HHH000412: Hibernate Core {4.3.0.Final}
+2016-08-17 10:14:07,201 INFO [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2016-08-17 10:14:07,206 INFO [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2016-08-17 10:14:07,288 INFO [org.hibernate.cfg.Configuration] - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-08-17 10:14:07,288 INFO [org.hibernate.cfg.Configuration] - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-08-17 10:14:07,493 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/GradeEntity.hbm.xml
+2016-08-17 10:14:07,628 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/StudentEntity.hbm.xml
+2016-08-17 10:14:07,736 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/TestEntity.hbm.xml
+2016-08-17 10:14:07,791 INFO [org.hibernate.cfg.Configuration] - HHH000041: Configured SessionFactory: null
+2016-08-17 10:14:08,161 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-08-17 10:14:08,445 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite://d:/TJNU.db]
+2016-08-17 10:14:08,446 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000046: Connection properties: {}
+2016-08-17 10:14:08,446 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000006: Autocommit mode: false
+2016-08-17 10:14:08,448 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-08-17 10:14:09,515 INFO [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: dialect.SQLiteDialect
+2016-08-17 10:14:09,534 INFO [org.hibernate.engine.jdbc.internal.LobCreatorBuilder] - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2016-08-17 10:14:09,644 INFO [org.hibernate.engine.transaction.internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-08-17 10:14:09,650 INFO [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2016-08-17 10:14:10,064 INFO [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000228: Running hbm2ddl schema update
+2016-08-17 10:14:10,064 INFO [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000102: Fetching database metadata
+2016-08-17 10:14:10,068 INFO [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000396: Updating schema
+2016-08-17 10:14:10,209 WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] - SQL Error: 0, SQLState: null
+2016-08-17 10:14:10,210 ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] - not yet implemented
+2016-08-17 10:14:10,210 ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000299: Could not complete schema update
+java.lang.NullPointerException
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:126)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:112)
+	at org.hibernate.tool.hbm2ddl.DatabaseMetadata.getTableMetadata(DatabaseMetadata.java:156)
+	at org.hibernate.cfg.Configuration.generateSchemaUpdateScriptList(Configuration.java:1202)
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:212)
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:178)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:520)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1857)
+	at tools.HibernateUtil.<clinit>(HibernateUtil.java:23)
+	at test.test.main(test.java:18)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+2016-08-17 10:14:38,836 INFO [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2016-08-17 10:14:38,848 INFO [org.hibernate.Version] - HHH000412: Hibernate Core {4.3.0.Final}
+2016-08-17 10:14:38,851 INFO [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2016-08-17 10:14:38,855 INFO [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2016-08-17 10:14:38,926 INFO [org.hibernate.cfg.Configuration] - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-08-17 10:14:38,927 INFO [org.hibernate.cfg.Configuration] - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-08-17 10:14:39,119 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/GradeEntity.hbm.xml
+2016-08-17 10:14:39,265 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/StudentEntity.hbm.xml
+2016-08-17 10:14:39,310 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/TestEntity.hbm.xml
+2016-08-17 10:14:39,335 INFO [org.hibernate.cfg.Configuration] - HHH000041: Configured SessionFactory: null
+2016-08-17 10:14:39,663 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-08-17 10:14:39,908 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite://d:/TJNU.db]
+2016-08-17 10:14:39,909 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000046: Connection properties: {}
+2016-08-17 10:14:39,909 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000006: Autocommit mode: false
+2016-08-17 10:14:39,912 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-08-17 10:14:40,858 INFO [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: dialect.SQLiteDialect
+2016-08-17 10:14:40,872 INFO [org.hibernate.engine.jdbc.internal.LobCreatorBuilder] - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2016-08-17 10:14:40,977 INFO [org.hibernate.engine.transaction.internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-08-17 10:14:40,985 INFO [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2016-08-17 10:14:41,505 INFO [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000228: Running hbm2ddl schema update
+2016-08-17 10:14:41,505 INFO [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000102: Fetching database metadata
+2016-08-17 10:14:41,510 INFO [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000396: Updating schema
+2016-08-17 10:14:41,675 WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] - SQL Error: 0, SQLState: null
+2016-08-17 10:14:41,675 ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] - not yet implemented
+2016-08-17 10:14:41,676 ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000299: Could not complete schema update
+java.lang.NullPointerException
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:126)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:112)
+	at org.hibernate.tool.hbm2ddl.DatabaseMetadata.getTableMetadata(DatabaseMetadata.java:156)
+	at org.hibernate.cfg.Configuration.generateSchemaUpdateScriptList(Configuration.java:1202)
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:212)
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:178)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:520)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1857)
+	at tools.HibernateUtil.<clinit>(HibernateUtil.java:23)
+	at test.test.main(test.java:18)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+2016-08-17 10:16:14,822 INFO [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2016-08-17 10:16:14,832 INFO [org.hibernate.Version] - HHH000412: Hibernate Core {4.3.0.Final}
+2016-08-17 10:16:14,835 INFO [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2016-08-17 10:16:14,839 INFO [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2016-08-17 10:16:14,907 INFO [org.hibernate.cfg.Configuration] - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-08-17 10:16:14,907 INFO [org.hibernate.cfg.Configuration] - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-08-17 10:16:15,182 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/GradeEntity.hbm.xml
+2016-08-17 10:16:15,372 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/StudentEntity.hbm.xml
+2016-08-17 10:16:15,536 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/TestEntity.hbm.xml
+2016-08-17 10:16:15,570 INFO [org.hibernate.cfg.Configuration] - HHH000041: Configured SessionFactory: null
+2016-08-17 10:16:15,926 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-08-17 10:16:16,349 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite://d:/TJNU.db]
+2016-08-17 10:16:16,350 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000046: Connection properties: {}
+2016-08-17 10:16:16,350 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000006: Autocommit mode: false
+2016-08-17 10:16:16,352 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-08-17 10:16:17,761 INFO [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: dialect.SQLiteDialect
+2016-08-17 10:16:17,775 INFO [org.hibernate.engine.jdbc.internal.LobCreatorBuilder] - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2016-08-17 10:16:17,888 INFO [org.hibernate.engine.transaction.internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-08-17 10:16:17,896 INFO [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2016-08-17 10:16:18,444 INFO [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000228: Running hbm2ddl schema update
+2016-08-17 10:16:18,444 INFO [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000102: Fetching database metadata
+2016-08-17 10:16:18,449 INFO [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000396: Updating schema
+2016-08-17 10:16:18,554 WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] - SQL Error: 0, SQLState: null
+2016-08-17 10:16:18,554 ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] - not yet implemented
+2016-08-17 10:16:18,555 ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000299: Could not complete schema update
+java.lang.NullPointerException
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:126)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:112)
+	at org.hibernate.tool.hbm2ddl.DatabaseMetadata.getTableMetadata(DatabaseMetadata.java:156)
+	at org.hibernate.cfg.Configuration.generateSchemaUpdateScriptList(Configuration.java:1202)
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:212)
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:178)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:520)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1857)
+	at tools.HibernateUtil.<clinit>(HibernateUtil.java:23)
+	at test.test.main(test.java:18)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+2016-08-17 10:16:59,020 INFO [org.hibernate.annotations.common.Version] - HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2016-08-17 10:16:59,039 INFO [org.hibernate.Version] - HHH000412: Hibernate Core {4.3.0.Final}
+2016-08-17 10:16:59,044 INFO [org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2016-08-17 10:16:59,050 INFO [org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2016-08-17 10:16:59,107 INFO [org.hibernate.cfg.Configuration] - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-08-17 10:16:59,107 INFO [org.hibernate.cfg.Configuration] - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-08-17 10:16:59,295 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/GradeEntity.hbm.xml
+2016-08-17 10:16:59,447 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/StudentEntity.hbm.xml
+2016-08-17 10:16:59,519 INFO [org.hibernate.cfg.Configuration] - HHH000221: Reading mappings from resource: Bean/TestEntity.hbm.xml
+2016-08-17 10:16:59,545 INFO [org.hibernate.cfg.Configuration] - HHH000041: Configured SessionFactory: null
+2016-08-17 10:16:59,849 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-08-17 10:17:00,030 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000401: using driver [org.sqlite.JDBC] at URL [jdbc:sqlite://d:/TJNU.db]
+2016-08-17 10:17:00,030 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000046: Connection properties: {}
+2016-08-17 10:17:00,031 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000006: Autocommit mode: false
+2016-08-17 10:17:00,033 INFO [org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-08-17 10:17:01,348 INFO [org.hibernate.dialect.Dialect] - HHH000400: Using dialect: dialect.SQLiteDialect
+2016-08-17 10:17:01,370 INFO [org.hibernate.engine.jdbc.internal.LobCreatorBuilder] - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [2] less than 4
+2016-08-17 10:17:01,490 INFO [org.hibernate.engine.transaction.internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-08-17 10:17:01,496 INFO [org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2016-08-17 10:17:02,078 INFO [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000228: Running hbm2ddl schema update
+2016-08-17 10:17:02,078 INFO [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000102: Fetching database metadata
+2016-08-17 10:17:02,083 INFO [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000396: Updating schema
+2016-08-17 10:17:02,156 WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] - SQL Error: 0, SQLState: null
+2016-08-17 10:17:02,157 ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] - not yet implemented
+2016-08-17 10:17:02,157 ERROR [org.hibernate.tool.hbm2ddl.SchemaUpdate] - HHH000299: Could not complete schema update
+java.lang.NullPointerException
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:126)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:112)
+	at org.hibernate.tool.hbm2ddl.DatabaseMetadata.getTableMetadata(DatabaseMetadata.java:156)
+	at org.hibernate.cfg.Configuration.generateSchemaUpdateScriptList(Configuration.java:1202)
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:212)
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:178)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:520)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1857)
+	at tools.HibernateUtil.<clinit>(HibernateUtil.java:23)
+	at test.test.main(test.java:18)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)

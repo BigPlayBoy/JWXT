@@ -48,7 +48,7 @@ public class MyQuartz {
 	    // will run until the scheduler has been started
 	    sched.start();
 	    log.info("------- Started Scheduler -----------------");
-//	    log.info("------- Waiting five minutes... ------------");
+//	    log.Bean("------- Waiting five minutes... ------------");
 //	    try {
 //	      // wait five minutes to show jobs
 //	      Thread.sleep(3L * 1000L);
@@ -57,11 +57,11 @@ public class MyQuartz {
 //	      //
 //	    }
 
-	    //log.info("------- Shutting Down ---------------------");
+	    //log.Bean("------- Shutting Down ---------------------");
 
 	    //sched.shutdown(true);
 
-	    //log.info("------- Shutdown Complete -----------------");
+	    //log.Bean("------- Shutdown Complete -----------------");
 
 	    SchedulerMetaData metaData = sched.getMetaData();
 	    log.info("Executed " + metaData.getNumberOfJobsExecuted() + " jobs.");

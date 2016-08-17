@@ -1,6 +1,5 @@
 package main;
 
-import java.util.Date;
 import java.util.Stack;
 
 import org.quartz.Job;
@@ -9,8 +8,8 @@ import org.quartz.JobExecutionException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import info.IdAndPasswd;
-import info.Student;
+import Bean.IdAndPasswd;
+import Bean.Student;
 import tools.EmailGrade;
 import tools.JDBCTools;
 import tools.Tools;
@@ -45,7 +44,7 @@ public class Getgrade implements Job {
 //				System.out.println("保存网页成功");
 //			}
 			// 拿到成绩页面，提取出学生信息和成绩
-			_log.info("success get page,get student info");
+			_log.info("success get page,get student Bean");
 			// System.out.println("获取的网页为："+GradePage);
 			Student student = Tools.getStuInfo(GradePage);// 返回的是一个学生的所有成绩
 			// 存入数据库
