@@ -10,3 +10,6 @@ https://github.com/BigPlayBoy/JWXT.git
 
 
 后期目标 增加代理服务器 ，更换ip  更换模拟浏览器的信息
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
