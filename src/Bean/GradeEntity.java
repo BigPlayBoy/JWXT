@@ -6,9 +6,9 @@ package Bean;
 public class GradeEntity {
     private Integer id;
     private String kecheng;
-    private Integer xuefen;
-    private Integer cehngji;
-    private Integer jidian;
+    private Double xuefen;
+    private Double cehngji;
+    private Double jidian;
     private String shuxing;
     private String time;
 
@@ -28,27 +28,27 @@ public class GradeEntity {
         this.kecheng = kecheng;
     }
 
-    public Integer getXuefen() {
+    public Double getXuefen() {
         return xuefen;
     }
 
-    public void setXuefen(Integer xuefen) {
+    public void setXuefen(Double xuefen) {
         this.xuefen = xuefen;
     }
 
-    public Integer getCehngji() {
+    public Double getCehngji() {
         return cehngji;
     }
 
-    public void setCehngji(Integer cehngji) {
+    public void setCehngji(Double cehngji) {
         this.cehngji = cehngji;
     }
 
-    public Integer getJidian() {
+    public Double getJidian() {
         return jidian;
     }
 
-    public void setJidian(Integer jidian) {
+    public void setJidian(Double jidian) {
         this.jidian = jidian;
     }
 
@@ -96,5 +96,18 @@ public class GradeEntity {
         result = 31 * result + (shuxing != null ? shuxing.hashCode() : 0);
         result = 31 * result + (time != null ? time.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "GradeEntity{" +
+                "id=" + id +
+                ", kecheng='" + kecheng + '\'' +
+                ", xuefen=" + xuefen +
+                ", cehngji=" + cehngji +
+                ", jidian=" + jidian +
+                ", shuxing='" + shuxing + '\'' +
+                ", time='" + time + '\'' +
+                '}';
     }
 }

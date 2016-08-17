@@ -18,13 +18,13 @@
         <data-type>TEXT(0,-1)|12</data-type>
       </column>
       <column id="8" parent="2" name="xuefen">
-        <data-type>INTEGER(0,-1)|4</data-type>
+        <data-type>REAL(0,-1)|6</data-type>
       </column>
       <column id="9" parent="2" name="cehngji">
-        <data-type>INTEGER(0,-1)|4</data-type>
+        <data-type>REAL(0,-1)|6</data-type>
       </column>
       <column id="10" parent="2" name="jidian">
-        <data-type>INTEGER(0,-1)|4</data-type>
+        <data-type>REAL(0,-1)|6</data-type>
       </column>
       <column id="11" parent="2" name="shuxing">
         <data-type>TEXT(0,-1)|12</data-type>
