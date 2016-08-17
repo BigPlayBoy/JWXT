@@ -10,12 +10,12 @@ public class TestProperties {
 	public static void main(String[] args) throws IOException {
 		Properties pro = new Properties();
 		// InputStream
-		// inStream=getClass().getResourceAsStream("mail.properties");
+		// inStream=getClass().getResourceAsStream("com.cui.mail.properties");
 		// InputStream inStream=new BufferedInputStream(new
-		// FileInputStream("src/mail.properties"));
-//		pro.load(new BufferedInputStream(new FileInputStream("src/mail.properties")));
+		// FileInputStream("src/com.cui.mail.properties"));
+//		pro.load(new BufferedInputStream(new FileInputStream("src/com.cui.mail.properties")));
 //		System.out.println(pro);
-//		String value = pro.getProperty("mail.smtp.auth");
+//		String value = pro.getProperty("com.cui.mail.smtp.auth");
 //		System.out.println(value);
 		
 		//获取操作系统类型
