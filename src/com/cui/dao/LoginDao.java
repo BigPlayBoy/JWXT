@@ -1,51 +1,50 @@
 package com.cui.dao;
 
-import com.cui.Bean.GradeEntity;
-import org.hibernate.Session;
+import com.cui.Bean.LoginEntity;
 import com.cui.tools.HibernateUtil;
+import org.hibernate.Session;
 
 /**
  * Created by CUI on 2016/8/17.
  */
-public class Grade {
-    static void addGrade(GradeEntity gradeEntity) {
+public class LoginDao {
+    static void addLogin(LoginEntity loginEntity) {
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
-        session.save(gradeEntity);
+        session.save(loginEntity);
         session.getTransaction().commit();
         HibernateUtil.closeSession(session);
-        System.out.println("add Grade Success!");
+        System.out.println("add login Success!");
     }
 
-    static GradeEntity findGraddebyId(int id) {
+    static LoginEntity findLoginById(int id) {
         Session session = HibernateUtil.getSession();
-        return (GradeEntity) session.get(GradeEntity.class, id);
+        return (LoginEntity) session.get(LoginEntity.class, id);
     }
 
-    static boolean updateGrade(GradeEntity gradeEntity) {
+    static boolean updateLogin(LoginEntity loginEntity) {
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
-        session.update(gradeEntity);
+        session.update(loginEntity);
         session.getTransaction().commit();
         HibernateUtil.closeSession(session);
         return true;
     }
 
-    static boolean deleteGrade(int id) {
+    static boolean deleteLogin(int id) {
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
-        GradeEntity gradeEntity = (GradeEntity) session.get(GradeEntity.class, id);
-        session.delete(gradeEntity);
+        LoginEntity loginEntity = (LoginEntity) session.get(LoginEntity.class, id);
+        session.delete(loginEntity);
         session.getTransaction().commit();
         HibernateUtil.closeSession(session);
         return true;
     }
 
     public static void main(String[] args) {
-        GradeEntity gradeEntity = new GradeEntity();
-        gradeEntity.setId(1330090003);
-        gradeEntity.setKecheng("数学");
-        gradeEntity.setCehngji(99.0);
-        addGrade(gradeEntity);
+        LoginEntity loginEntity = new LoginEntity();
+        loginEntity.setId(1330090002);
+        loginEntity.setPassword("cuiminghui");
+        addLogin(loginEntity);
     }
 }

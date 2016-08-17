@@ -2,3 +2,4 @@
 /etilqs_*
 /out/
 .gitignore
+/target/

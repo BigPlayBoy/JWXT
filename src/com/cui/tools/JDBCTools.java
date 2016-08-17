@@ -183,7 +183,7 @@ public class JDBCTools {
 	/**
 	 * 函数工厂 一定要学会！！！！！！！！！！
 	 * 
-	 * @param sql
+	 * @param queryEmail
 	 * @return
 	 */
 	public static String QueryEmail(String queryEmail) {
@@ -203,7 +203,6 @@ public class JDBCTools {
 			}
 			System.out.println(email);
 		} catch (Exception e1) {
-			// TODO Auto-generated catch block
 			System.out.println(e1);
 			System.out.println("selstc password happens something wrong！！！"+e1);
 		} finally {
