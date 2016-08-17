@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="Bean.GradeEntity" table="Grade" schema="">
+        <id name="id">
+            <column name="id" sql-type="integer(0,-1)" not-null="true"/>
+        </id>
+        <property name="kecheng">
+            <column name="kecheng" sql-type="text(0,-1)" not-null="true"/>
+        </property>
+        <property name="xuefen">
+            <column name="xuefen" sql-type="integer(0,-1)" not-null="true"/>
+        </property>
+        <property name="cehngji">
+            <column name="cehngji" sql-type="integer(0,-1)" not-null="true"/>
+        </property>
+        <property name="jidian">
+            <column name="jidian" sql-type="integer(0,-1)" not-null="true"/>
+        </property>
+        <property name="shuxing">
+            <column name="shuxing" sql-type="text(0,-1)" not-null="true"/>
+        </property>
+        <property name="time">
+            <column name="time" sql-type="text(0,-1)" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
