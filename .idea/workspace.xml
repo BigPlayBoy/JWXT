@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68ca837c-b284-42b4-8727-90e39f6c761e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/1.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/tools/HtmlParse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JWXT/Bean/GradeEntity.class" afterPath="$PROJECT_DIR$/out/production/JWXT/Bean/GradeEntity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JWXT/Bean/StudentEntity.class" afterPath="$PROJECT_DIR$/out/production/JWXT/Bean/StudentEntity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/JWXT/tools/Tools.class" afterPath="$PROJECT_DIR$/out/production/JWXT/tools/Tools.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Bean/GradeEntity.hbm.xml" afterPath="$PROJECT_DIR$/src/Bean/GradeEntity.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Bean/GradeEntity.java" afterPath="$PROJECT_DIR$/src/Bean/GradeEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Bean/StudentEntity.java" afterPath="$PROJECT_DIR$/src/Bean/StudentEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Bean/TestEntity.hbm.xml" afterPath="$PROJECT_DIR$/src/Bean/TestEntity.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/src/hibernate.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tools/Tools.java" afterPath="$PROJECT_DIR$/src/tools/Tools.java" />
     </list>
     <ignored path="JWXT.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -798,12 +785,12 @@
       <workItem from="1471393988147" duration="2240000" />
       <workItem from="1471396428520" duration="3258000" />
       <workItem from="1471399988518" duration="307000" />
-      <workItem from="1471402623692" duration="8807000" />
+      <workItem from="1471402623692" duration="9329000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15680000" />
+    <option name="totallyTimeSpent" value="16202000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -818,7 +805,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3264642" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3286334" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3286334" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19936034" sideWeight="0.51857835" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19936034" sideWeight="0.48142165" order="0" side_tool="false" content_ui="combo" />
