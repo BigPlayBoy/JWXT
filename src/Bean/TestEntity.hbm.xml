@@ -7,8 +7,6 @@
     <class name="Bean.TestEntity" table="Test" schema="">
         <id name="id">
             <column name="id" sql-type="integer(0,-1)" not-null="true"/>
-            <generator class="increment"></generator>
-
         </id>
         <property name="name">
             <column name="name" sql-type="text(0,-1)" not-null="true"/>

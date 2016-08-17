@@ -119,4 +119,19 @@ public class StudentEntity {
         result = 31 * result + (gradeNumber != null ? gradeNumber.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "StudentEntity{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", sex='" + sex + '\'' +
+                ", xuezhi='" + xuezhi + '\'' +
+                ", yuanxi='" + yuanxi + '\'' +
+                ", zhuanye='" + zhuanye + '\'' +
+                ", banji='" + banji + '\'' +
+                ", ruxueriqi='" + ruxueriqi + '\'' +
+                ", gradeNumber=" + gradeNumber +
+                '}';
+    }
 }
