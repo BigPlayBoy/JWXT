@@ -36,8 +36,15 @@ public class HtmlParse {
         }
         return table;
     }
+    public static Element getTable(String htmlpage,int index) {
+        Document doc;
+        Element table = null;
+        doc = Jsoup.parse(htmlpage, "gb2312");
+        table = doc.getElementById("datapost").getElementsByTag("table").get(1).getElementsByTag("table").get(index);//1 获得学生信息 2获得学生成绩
+        return table;
+    }
 
-    static StudentEntity parseStudent(Element table) {
+    public static StudentEntity parseStudent(Element table) {
         StudentEntity studentEntity = new StudentEntity();
         Element tr1 = table.getElementsByTag("tbody").get(0).getElementsByTag("tr").get(0);
         Element tr2 = table.getElementsByTag("tbody").get(0).getElementsByTag("tr").get(1);
@@ -54,7 +61,7 @@ public class HtmlParse {
         return studentEntity;
     }
 
-    static Stack<GradeEntity> parseGrade(Element table) {
+    public static Stack<GradeEntity> parseGrade(Element table) {
         Stack<GradeEntity> gradeEntityStack = new Stack<>();
         Elements trs = table.getElementsByTag("tr");
         int trLength = table.getElementsByTag("tr").size();

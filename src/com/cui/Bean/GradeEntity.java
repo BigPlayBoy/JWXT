@@ -1,10 +1,11 @@
 package com.cui.Bean;
 
 /**
- * Created by CUI on 2016/8/17.
+ * Created by CUI on 2016/8/18.
  */
 public class GradeEntity {
     private Integer id;
+    private Integer sid;
     private String kecheng;
     private Double xuefen;
     private Double cehngji;
@@ -18,6 +19,14 @@ public class GradeEntity {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Integer getSid() {
+        return sid;
+    }
+
+    public void setSid(Integer sid) {
+        this.sid = sid;
     }
 
     public String getKecheng() {
@@ -76,6 +85,7 @@ public class GradeEntity {
         GradeEntity that = (GradeEntity) o;
 
         if (id != null ? !id.equals(that.id) : that.id != null) return false;
+        if (sid != null ? !sid.equals(that.sid) : that.sid != null) return false;
         if (kecheng != null ? !kecheng.equals(that.kecheng) : that.kecheng != null) return false;
         if (xuefen != null ? !xuefen.equals(that.xuefen) : that.xuefen != null) return false;
         if (cehngji != null ? !cehngji.equals(that.cehngji) : that.cehngji != null) return false;
@@ -89,6 +99,7 @@ public class GradeEntity {
     @Override
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (sid != null ? sid.hashCode() : 0);
         result = 31 * result + (kecheng != null ? kecheng.hashCode() : 0);
         result = 31 * result + (xuefen != null ? xuefen.hashCode() : 0);
         result = 31 * result + (cehngji != null ? cehngji.hashCode() : 0);
@@ -102,6 +113,7 @@ public class GradeEntity {
     public String toString() {
         return "GradeEntity{" +
                 "id=" + id +
+                ", sid=" + sid +
                 ", kecheng='" + kecheng + '\'' +
                 ", xuefen=" + xuefen +
                 ", cehngji=" + cehngji +

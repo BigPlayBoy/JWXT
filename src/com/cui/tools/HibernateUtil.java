@@ -51,16 +51,19 @@ public class HibernateUtil {
         System.out.println(sessionFactory);
     }
 
-    static Stack<LoginEntity> queryLogin() {
+   public static Stack<LoginEntity> queryLogin() {
         Stack<LoginEntity> loginEntities = new Stack<>();
-        String hql = "select  id,password from Login";
+        String hql = "from LoginEntity";
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
         Query query = session.createQuery(hql);
-        List<LoginEntity> loginEntityList = query.list();
-        for (LoginEntity loginEntity : loginEntityList) {
+        List<LoginEntity> loginEntityList= query.list();
+        for (LoginEntity loginEntity:loginEntityList) {
+//            System.out.println(loginEntity);
             loginEntities.push(loginEntity);
         }
+        session.getTransaction().commit();
+       HibernateUtil.closeSession(session);
         return loginEntities;
     }
 }

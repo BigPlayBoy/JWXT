@@ -1,13 +1,18 @@
 <?xml version='1.0' encoding='utf-8'?>
 <!DOCTYPE hibernate-mapping PUBLIC
-        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <!--dynamic-update 动态更新 uodate的时候不会把所有字段都更新-->
-    <class name="com.cui.Bean.GradeEntity" table="Grade" schema="" dynamic-update="true">
+
+    <class name="com.cui.Bean.GradeEntity" table="Grade" schema="">
         <id name="id">
             <column name="id" sql-type="integer(0,-1)" not-null="true"/>
+            <generator class="increment"></generator>
+
         </id>
+        <property name="sid">
+            <column name="sid" sql-type="integer(0,-1)" not-null="false"/>
+        </property>
         <property name="kecheng">
             <column name="kecheng" sql-type="text(0,-1)" not-null="false"/>
         </property>
