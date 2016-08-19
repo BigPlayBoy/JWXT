@@ -43,9 +43,9 @@ public class Grade {
 
     public static void main(String[] args) {
         GradeEntity gradeEntity = new GradeEntity();
-        gradeEntity.setId(1330090003);
+        gradeEntity.setId(3);
         gradeEntity.setKecheng("数学");
         gradeEntity.setCehngji(99.0);
-        addGrade(gradeEntity);
+        updateGrade(gradeEntity);
     }
 }

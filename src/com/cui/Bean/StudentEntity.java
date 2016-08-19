@@ -1,5 +1,7 @@
 package com.cui.Bean;
 
+import java.util.Set;
+
 /**
  * Created by CUI on 2016/8/17.
  */
@@ -13,6 +15,66 @@ public class StudentEntity {
     private String banji;
     private String ruxueriqi;
     private Integer gradeNumber;
+    private Set<GradeEntity> gradeEntitySet;
+
+    @Override
+    public String toString() {
+        return "StudentEntity{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", sex='" + sex + '\'' +
+                ", xuezhi='" + xuezhi + '\'' +
+                ", yuanxi='" + yuanxi + '\'' +
+                ", zhuanye='" + zhuanye + '\'' +
+                ", banji='" + banji + '\'' +
+                ", ruxueriqi='" + ruxueriqi + '\'' +
+                ", gradeNumber=" + gradeNumber +
+                ", gradeEntitySet=" + gradeEntitySet +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        StudentEntity that = (StudentEntity) o;
+
+        if (id != null ? !id.equals(that.id) : that.id != null) return false;
+        if (name != null ? !name.equals(that.name) : that.name != null) return false;
+        if (sex != null ? !sex.equals(that.sex) : that.sex != null) return false;
+        if (xuezhi != null ? !xuezhi.equals(that.xuezhi) : that.xuezhi != null) return false;
+        if (yuanxi != null ? !yuanxi.equals(that.yuanxi) : that.yuanxi != null) return false;
+        if (zhuanye != null ? !zhuanye.equals(that.zhuanye) : that.zhuanye != null) return false;
+        if (banji != null ? !banji.equals(that.banji) : that.banji != null) return false;
+        if (ruxueriqi != null ? !ruxueriqi.equals(that.ruxueriqi) : that.ruxueriqi != null) return false;
+        if (gradeNumber != null ? !gradeNumber.equals(that.gradeNumber) : that.gradeNumber != null) return false;
+        return gradeEntitySet != null ? gradeEntitySet.equals(that.gradeEntitySet) : that.gradeEntitySet == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (sex != null ? sex.hashCode() : 0);
+        result = 31 * result + (xuezhi != null ? xuezhi.hashCode() : 0);
+        result = 31 * result + (yuanxi != null ? yuanxi.hashCode() : 0);
+        result = 31 * result + (zhuanye != null ? zhuanye.hashCode() : 0);
+        result = 31 * result + (banji != null ? banji.hashCode() : 0);
+        result = 31 * result + (ruxueriqi != null ? ruxueriqi.hashCode() : 0);
+        result = 31 * result + (gradeNumber != null ? gradeNumber.hashCode() : 0);
+        result = 31 * result + (gradeEntitySet != null ? gradeEntitySet.hashCode() : 0);
+        return result;
+    }
+
+    public Set<GradeEntity> getGradeEntitySet() {
+        return gradeEntitySet;
+    }
+
+    public void setGradeEntitySet(Set<GradeEntity> gradeEntitySet) {
+        this.gradeEntitySet = gradeEntitySet;
+    }
 
     public Integer getId() {
         return id;
@@ -86,52 +148,4 @@ public class StudentEntity {
         this.gradeNumber = gradeNumber;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        StudentEntity that = (StudentEntity) o;
-
-        if (id != null ? !id.equals(that.id) : that.id != null) return false;
-        if (name != null ? !name.equals(that.name) : that.name != null) return false;
-        if (sex != null ? !sex.equals(that.sex) : that.sex != null) return false;
-        if (xuezhi != null ? !xuezhi.equals(that.xuezhi) : that.xuezhi != null) return false;
-        if (yuanxi != null ? !yuanxi.equals(that.yuanxi) : that.yuanxi != null) return false;
-        if (zhuanye != null ? !zhuanye.equals(that.zhuanye) : that.zhuanye != null) return false;
-        if (banji != null ? !banji.equals(that.banji) : that.banji != null) return false;
-        if (ruxueriqi != null ? !ruxueriqi.equals(that.ruxueriqi) : that.ruxueriqi != null) return false;
-        if (gradeNumber != null ? !gradeNumber.equals(that.gradeNumber) : that.gradeNumber != null) return false;
-
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (sex != null ? sex.hashCode() : 0);
-        result = 31 * result + (xuezhi != null ? xuezhi.hashCode() : 0);
-        result = 31 * result + (yuanxi != null ? yuanxi.hashCode() : 0);
-        result = 31 * result + (zhuanye != null ? zhuanye.hashCode() : 0);
-        result = 31 * result + (banji != null ? banji.hashCode() : 0);
-        result = 31 * result + (ruxueriqi != null ? ruxueriqi.hashCode() : 0);
-        result = 31 * result + (gradeNumber != null ? gradeNumber.hashCode() : 0);
-        return result;
-    }
-
-    @Override
-    public String toString() {
-        return "StudentEntity{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", sex='" + sex + '\'' +
-                ", xuezhi='" + xuezhi + '\'' +
-                ", yuanxi='" + yuanxi + '\'' +
-                ", zhuanye='" + zhuanye + '\'' +
-                ", banji='" + banji + '\'' +
-                ", ruxueriqi='" + ruxueriqi + '\'' +
-                ", gradeNumber=" + gradeNumber +
-                '}';
-    }
 }

@@ -9,7 +9,7 @@ CREATE TABLE `Grade` (
 	`time`	TEXT
 );
 CREATE TABLE `Login` (
-	`id`	INTEGER,
+	`id`	INTEGER AUTOINCREMENT,
 	`sid` INTEGER,
 	`password`	TEXT,
 	PRIMARY KEY(id)
@@ -26,5 +26,5 @@ CREATE TABLE `Student` (
 	`ruxueriqi`	TEXT DEFAULT 201309,
 	`gradeNumber`	INTEGER
 );
-ALTER TABLE Login add CONSTRAINT fk_login_sid FOREIGN KEY (sid) references Student(sid);
-ALTER TABLE Grade add CONSTRAINT fk_Grade_sid FOREIGN KEY (sid) references Student(sid);
+--ALTER TABLE Login add CONSTRAINT fk_login_sid FOREIGN KEY (sid) references Student(sid);
+--ALTER TABLE Grade add CONSTRAINT fk_Grade_sid FOREIGN KEY (sid) references Student(sid);

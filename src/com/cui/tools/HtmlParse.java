@@ -57,7 +57,7 @@ public class HtmlParse {
         studentEntity.setZhuanye(tr2.getElementsByTag("td").get(1).html().replace("&nbsp;", ""));
         studentEntity.setBanji(tr3.getElementsByTag("td").get(1).html().replace("&nbsp;", ""));
         studentEntity.setRuxueriqi(tr3.getElementsByTag("td").get(1).html().replace("&nbsp;", ""));
-        System.out.println(studentEntity);
+//        System.out.println(studentEntity);
         return studentEntity;
     }
 
@@ -76,7 +76,7 @@ public class HtmlParse {
             gradeEntity.setCehngji(parseDouble(tr.getElementsByTag("td").get(2).html().replace("&nbsp;", "")));
             gradeEntity.setShuxing(tr.getElementsByTag("td").get(3).html().replace("&nbsp;", ""));
             gradeEntity.setTime(tr.getElementsByTag("td").get(4).html().replace("&nbsp;", ""));
-            System.out.println(gradeEntity);
+//            System.out.println(gradeEntity);
             gradeEntityStack.push(gradeEntity);
         }
         return gradeEntityStack;
