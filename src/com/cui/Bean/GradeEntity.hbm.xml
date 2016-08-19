@@ -31,5 +31,6 @@
         <property name="time">
             <column name="time" sql-type="text(0,-1)" not-null="false"/>
         </property>
+        <many-to-one name="studentEntity" class="com.cui.Bean.StudentEntity" column="id" cascade="all"></many-to-one>
     </class>
 </hibernate-mapping>
