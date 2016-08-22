@@ -7,12 +7,11 @@
     <class name="com.cui.Bean.GradeEntity" table="Grade" schema="">
         <id name="id">
             <column name="id" sql-type="integer(0,-1)" not-null="true"/>
-            <generator class="increment"></generator>
-
+            <generator class="increment"/>
         </id>
-        <property name="sid">
-            <column name="sid" sql-type="integer(0,-1)" not-null="false"/>
-        </property>
+        <!--<property name="sid">-->
+            <!--<column name="sid" sql-type="integer(0,-1)" not-null="false" />-->
+        <!--</property>-->
         <property name="kecheng">
             <column name="kecheng" sql-type="text(0,-1)" not-null="false"/>
         </property>
@@ -31,6 +30,7 @@
         <property name="time">
             <column name="time" sql-type="text(0,-1)" not-null="false"/>
         </property>
-        <many-to-one name="studentEntity" class="com.cui.Bean.StudentEntity" column="id" cascade="all"></many-to-one>
+        <!-- 配置多对一关联关系 -->
+        <many-to-one name="studentEntity" class="com.cui.Bean.StudentEntity" column="sid" cascade="all"/>
     </class>
 </hibernate-mapping>
