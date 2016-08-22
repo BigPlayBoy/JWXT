@@ -26,7 +26,7 @@ public class test {
         gradeEntity1.setStudentEntity(studentEntity);
         Session session=HibernateUtil.getSession();
         session.beginTransaction();
-        session.save(studentEntity);
+//        session.save(studentEntity);
         session.save(gradeEntity);
         session.save(gradeEntity1);
         session.getTransaction().commit();

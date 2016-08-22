@@ -19,7 +19,7 @@ public class HtmlParse {
     public static void main(String[] args) {
 //        Element table = getTable(1);
 //        parseStudent(table);
-        parseGrade(getTable(2),parseStudent(getTable(1)));
+//        parseGrade(getTable(2),parseStudent(getTable(1)));
 
     }
 
@@ -71,13 +71,14 @@ public class HtmlParse {
             if (i == 1) continue;
             if (i == trLength) continue;
             GradeEntity gradeEntity = new GradeEntity();
+//            gradeEntity.setId(sid);
             gradeEntity.setKecheng(tr.getElementsByTag("td").get(0).html().replace("&nbsp;", ""));
             gradeEntity.setXuefen(parseDouble(tr.getElementsByTag("td").get(1).html().replace("&nbsp;", "")));
             gradeEntity.setCehngji(parseDouble(tr.getElementsByTag("td").get(2).html().replace("&nbsp;", "")));
             gradeEntity.setShuxing(tr.getElementsByTag("td").get(3).html().replace("&nbsp;", ""));
             gradeEntity.setTime(tr.getElementsByTag("td").get(4).html().replace("&nbsp;", ""));
             gradeEntity.setStudentEntity(studentEntity);
-//            System.out.println(gradeEntity);
+            System.out.println(gradeEntity);
             gradeEntityStack.push(gradeEntity);
         }
         return gradeEntityStack;
