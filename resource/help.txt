@@ -1,0 +1,45 @@
+1.数据库的搭建
+	1.1一共两张表Student和Grade
+	Student表
+		StuID(pk,nchar(10))	学号
+		Passwd(nchar(20))	密码
+		Name(nchar(10))		姓名
+		Sex(nchar(10))		性别		
+		Xuezhi(nchar(10))	学制
+		Yuanxi(nchar(10))	院系
+		Zhuanye(nchar(10))	专业
+		Banji(nchar(10))	班级
+		Ruxueriqi(nchar(10))入学日期
+		KechengNo(nchar(10))课程数
+		Priority(int)		优先级(暂未实现)
+		Eamil(nchar(50))	邮箱
+	Grade表
+		StuID(pk,fk,nchar(10))	学号
+		Kecheng(PK，nchar(30))	课程名
+		Xuefen(float)			学分
+		Grade(float)			成绩
+		Jidian(float)			绩点
+		Shuxing(nchar(10))		属性
+		Time(nchar(20))			考试时间
+
+
+2.时间触发器的写法(应该写到配置文件中)
+second minute hour week month year 
+
+"0 0 12 * * ?"    Fire at 12pm (noon) every day 
+"0 15 10 ? * *"    Fire at 10:15am every day 
+"0 15 10 * * ?"    Fire at 10:15am every day 
+"0 15 10 * * ? *"    Fire at 10:15am every day 
+"0 15 10 * * ? 2005"    Fire at 10:15am every day during the year 2005  
+"0 * 14 * * ?"    Fire every minute starting at 2pm and ending at 2:59pm, every day  
+"0 0/5 14 * * ?"    Fire every 5 minutes starting at 2pm and ending at 2:55pm, every day  
+"0 0/5 14,18 * * ?"    Fire every 5 minutes starting at 2pm and ending at 2:55pm, AND fire every 5 minutes starting at 6pm and ending at 6:55pm, every day  
+"0 0-5 14 * * ?"    Fire every minute starting at 2pm and ending at 2:05pm, every day  
+"0 10,44 14 ? 3 WED"    Fire at 2:10pm and at 2:44pm every Wednesday in the month of March.  
+"0 15 10 ? * MON-FRI"    Fire at 10:15am every Monday, Tuesday, Wednesday, Thursday and Friday  
+"0 15 10 15 * ?"    Fire at 10:15am on the 15th day of every month  
+"0 15 10 L * ?"    Fire at 10:15am on the last day of every month  
+"0 15 10 ? * 6L"    Fire at 10:15am on the last Friday of every month  
+"0 15 10 ? * 6L"    Fire at 10:15am on the last Friday of every month  
+"0 15 10 ? * 6L 2002-2005"    Fire at 10:15am on every last Friday of every month during the years 2002, 2003, 2004 and 2005  
+"0 15 10 ? * 6#3"    Fire at 10:15am on the third Friday of every month  
