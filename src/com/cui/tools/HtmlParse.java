@@ -19,12 +19,12 @@ public class HtmlParse {
     public static void main(String[] args) {
 //        Element table = getTable(1);
 //        parseStudent(table);
-        parseGrade(getTable(2));
+        parseGrade(getTable(2),parseStudent(getTable(1)));
 
     }
 
     public static Element getTable(int index) {
-        File input = new File(System.getProperty("user.dir") + "\\1.html");
+        File input = new File(System.getProperty("user.dir") + "\\resource\\1.html");
         Document doc;
         Element table = null;
         try {
@@ -61,7 +61,7 @@ public class HtmlParse {
         return studentEntity;
     }
 
-    public static Stack<GradeEntity> parseGrade(Element table) {
+    public static Stack<GradeEntity> parseGrade(Element table,StudentEntity studentEntity) {
         Stack<GradeEntity> gradeEntityStack = new Stack<>();
         Elements trs = table.getElementsByTag("tr");
         int trLength = table.getElementsByTag("tr").size();
@@ -76,6 +76,7 @@ public class HtmlParse {
             gradeEntity.setCehngji(parseDouble(tr.getElementsByTag("td").get(2).html().replace("&nbsp;", "")));
             gradeEntity.setShuxing(tr.getElementsByTag("td").get(3).html().replace("&nbsp;", ""));
             gradeEntity.setTime(tr.getElementsByTag("td").get(4).html().replace("&nbsp;", ""));
+            gradeEntity.setStudentEntity(studentEntity);
 //            System.out.println(gradeEntity);
             gradeEntityStack.push(gradeEntity);
         }

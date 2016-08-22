@@ -15,12 +15,12 @@ public class test {
         StudentEntity studentEntity = new StudentEntity();
         studentEntity.setName("张三");
         studentEntity.setSex("nan");
-        studentEntity.setId(1330090002);
+        studentEntity.setId(1330090004);
         GradeEntity gradeEntity=new GradeEntity();
         GradeEntity gradeEntity1=new GradeEntity();
-        gradeEntity.setId(1);
+//        gradeEntity.setId(1);
         gradeEntity.setKecheng("语文");
-        gradeEntity1.setId(2);
+//        gradeEntity1.setId(2);
         gradeEntity1.setKecheng("数学");
         gradeEntity.setStudentEntity(studentEntity);
         gradeEntity1.setStudentEntity(studentEntity);

@@ -6,6 +6,8 @@ package com.cui.Bean;
 public class GradeEntity {
     private Integer id;
     private Integer sid;
+
+
     private String kecheng;
     private Double xuefen;
     private Double cehngji;
@@ -52,6 +54,7 @@ public class GradeEntity {
     public void setSid(Integer sid) {
         this.sid = sid;
     }
+
 
     public String getKecheng() {
         return kecheng;
