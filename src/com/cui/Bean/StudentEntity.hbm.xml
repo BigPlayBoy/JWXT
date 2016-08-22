@@ -33,9 +33,6 @@
             <column name="gradeNumber" sql-type="integer(0,-1)" not-null="false"/>
         </property>
         <!-- 配置一对多关联关系 -->
-        <set name="gradeEntitySet" table="grade">
-            <key column="sid"></key>
-            <one-to-many class="com.cui.Bean.GradeEntity"/>
-        </set>
+
     </class>
 </hibernate-mapping>

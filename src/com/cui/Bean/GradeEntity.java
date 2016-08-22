@@ -12,6 +12,30 @@ public class GradeEntity {
     private Double jidian;
     private String shuxing;
     private String time;
+    private StudentEntity studentEntity;
+
+    @Override
+    public String toString() {
+        return "GradeEntity{" +
+                "id=" + id +
+                ", sid=" + sid +
+                ", kecheng='" + kecheng + '\'' +
+                ", xuefen=" + xuefen +
+                ", cehngji=" + cehngji +
+                ", jidian=" + jidian +
+                ", shuxing='" + shuxing + '\'' +
+                ", time='" + time + '\'' +
+                ", studentEntity=" + studentEntity +
+                '}';
+    }
+
+    public StudentEntity getStudentEntity() {
+        return studentEntity;
+    }
+
+    public void setStudentEntity(StudentEntity studentEntity) {
+        this.studentEntity = studentEntity;
+    }
 
     public Integer getId() {
         return id;
@@ -109,17 +133,4 @@ public class GradeEntity {
         return result;
     }
 
-    @Override
-    public String toString() {
-        return "GradeEntity{" +
-                "id=" + id +
-                ", sid=" + sid +
-                ", kecheng='" + kecheng + '\'' +
-                ", xuefen=" + xuefen +
-                ", cehngji=" + cehngji +
-                ", jidian=" + jidian +
-                ", shuxing='" + shuxing + '\'' +
-                ", time='" + time + '\'' +
-                '}';
-    }
 }

@@ -5,13 +5,14 @@ package com.cui.tools;
  */
 
 import com.cui.Bean.LoginEntity;
+import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-import org.hibernate.boot.registry.StandardServiceRegistry;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.service.ServiceRegistry;
+import org.hibernate.service.ServiceRegistryBuilder;
 
 import java.util.List;
 import java.util.Stack;
@@ -19,14 +20,25 @@ import java.util.Stack;
 public class HibernateUtil {
     private static SessionFactory sessionFactory;
     private static Session session;
+    private static Configuration configuration = null;
+    //     private static SessionFactory sessionFactory = null;
+    private static ServiceRegistry serviceRegistry = null;
 
     static {
         // 创建Configuration对象，读取hibernate.cfg.xml文件，完成初始化
-        Configuration config = new Configuration().configure();
-        StandardServiceRegistryBuilder ssrb = new StandardServiceRegistryBuilder()
-                .applySettings(config.getProperties());
-        StandardServiceRegistry ssr = ssrb.build();
-        sessionFactory = config.buildSessionFactory(ssr);
+        try {
+            configuration = new Configuration().configure();
+            serviceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties()).buildServiceRegistry();
+            sessionFactory = configuration.buildSessionFactory(serviceRegistry);
+        } catch (HibernateException e) {
+            e.printStackTrace();
+        }
+
+
+//        StandardServiceRegistryBuilder ssrb = new StandardServiceRegistryBuilder()
+//                .applySettings(config.getProperties());
+//        StandardServiceRegistry ssr = ssrb.build();
+//        sessionFactory = config.buildSessionFactory(ssr);
     }
 
     //获取SessionFactory
@@ -51,19 +63,19 @@ public class HibernateUtil {
         System.out.println(sessionFactory);
     }
 
-   public static Stack<LoginEntity> queryLogin() {
+    public static Stack<LoginEntity> queryLogin() {
         Stack<LoginEntity> loginEntities = new Stack<>();
         String hql = "from LoginEntity";
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
         Query query = session.createQuery(hql);
-        List<LoginEntity> loginEntityList= query.list();
-        for (LoginEntity loginEntity:loginEntityList) {
+        List<LoginEntity> loginEntityList = query.list();
+        for (LoginEntity loginEntity : loginEntityList) {
 //            System.out.println(loginEntity);
             loginEntities.push(loginEntity);
         }
         session.getTransaction().commit();
-       HibernateUtil.closeSession(session);
+        HibernateUtil.closeSession(session);
         return loginEntities;
     }
 }

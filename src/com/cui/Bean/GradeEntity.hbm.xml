@@ -11,7 +11,7 @@
 
         </id>
         <property name="sid">
-            <column name="sid" sql-type="integer(0,-1)" not-null="false"/>
+            <column name="sid" sql-type="integer(0,-1)" not-null="false" />
         </property>
         <property name="kecheng">
             <column name="kecheng" sql-type="text(0,-1)" not-null="false"/>
@@ -31,5 +31,7 @@
         <property name="time">
             <column name="time" sql-type="text(0,-1)" not-null="false"/>
         </property>
+        <!-- 配置多对一关联关系 -->
+        <!--<many-to-one name="studentEntity" class="com.cui.Bean.StudentEntity" column="sid" cascade="all"></many-to-one>-->
     </class>
 </hibernate-mapping>
