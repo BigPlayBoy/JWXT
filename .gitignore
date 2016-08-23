@@ -1,6 +1,5 @@
 /bin/
 /etilqs_*
 /out/
-.gitignore
 /target/
 *.log

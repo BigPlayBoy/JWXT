@@ -15,7 +15,7 @@ public class test {
         StudentEntity studentEntity = new StudentEntity();
         studentEntity.setName("张三");
         studentEntity.setSex("nan");
-        studentEntity.setId(1330090004);
+        studentEntity.setId(1330090005);
         GradeEntity gradeEntity=new GradeEntity();
         GradeEntity gradeEntity1=new GradeEntity();
 //        gradeEntity.setId(1);

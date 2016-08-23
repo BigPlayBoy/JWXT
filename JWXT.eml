@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component inheritJdk="true">
+	<exclude-output/>
+	<contentEntry url="file://$MODULE_DIR$"/>
+	<lib name="activation.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/activation.jar!/"/>
+	</lib>
+	<lib name="c3p0-0.9.5.2.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/c3p0-0.9.5.2.jar!/"/>
+	</lib>
+	<lib name="c3p0-oracle-thin-extras-0.9.5.2.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/c3p0-oracle-thin-extras-0.9.5.2.jar!/"/>
+	</lib>
+	<lib name="log4j-1.2.16.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/log4j-1.2.16.jar!/"/>
+	</lib>
+	<lib name="mail.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/mail.jar!/"/>
+	</lib>
+	<lib name="mchange-commons-java-0.2.11.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/mchange-commons-java-0.2.11.jar!/"/>
+	</lib>
+	<lib name="quartz-2.2.2.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/quartz-2.2.2.jar!/"/>
+	</lib>
+	<lib name="quartz-jobs-2.2.2.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/quartz-jobs-2.2.2.jar!/"/>
+	</lib>
+	<lib name="slf4j-api-1.7.7.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/slf4j-api-1.7.7.jar!/"/>
+	</lib>
+	<lib name="slf4j-log4j12-1.7.7.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/slf4j-log4j12-1.7.7.jar!/"/>
+	</lib>
+	<lib name="sqlitejdbc-v033-nested.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/sqlitejdbc-v033-nested.jar!/"/>
+	</lib>
+	<lib name="sqljdbc.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/sqljdbc.jar!/"/>
+	</lib>
+	<lib name="sqljdbc4.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/sqljdbc4.jar!/"/>
+	</lib>
+	<lib name="jsoup-1.8.1.jar" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/jsoup-1.8.1.jar!/"/>
+	</lib>
+	<levels>
+		<level name="Hibernate 4.2.2-4.2.2" value="project"/>
+	</levels>
+</component>
