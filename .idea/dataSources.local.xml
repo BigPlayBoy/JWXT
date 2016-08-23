@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="dataSourceStorageLocal">
-    <data-source name="Sqlite (Xerial) - TJNU.db" uuid="b4eed03d-9dd0-4495-9b36-6be94ebe3a0a">
-      <secret-storage>master_key</secret-storage>
-      <auth-required>false</auth-required>
-    </data-source>
-  </component>
-</project>
