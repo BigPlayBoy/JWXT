@@ -4,6 +4,7 @@ import java.util.Set;
 
 /**
  * Created by CUI on 2016/8/17.
+ * Student
  */
 public class StudentEntity {
     private Integer id;

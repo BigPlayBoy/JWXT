@@ -1,12 +1,12 @@
 package com.cui.tools;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
+import com.cui.Bean.Grade;
+import com.cui.Bean.IdAndPasswd;
+import com.cui.Bean.Student;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.*;
 import java.net.URL;
 import java.net.URLConnection;
 import java.sql.Connection;
@@ -18,13 +18,6 @@ import java.util.Set;
 import java.util.Stack;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import com.cui.Bean.Grade;
-import com.cui.Bean.IdAndPasswd;
-import com.cui.Bean.Student;
 
 public class Tools {
 
