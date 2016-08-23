@@ -25,7 +25,6 @@ public class NewGetGrade {
         Stack<StudentEntity> studentEntityStack = new Stack<>();//存放更新了成绩的学生
 //        while (!loginEntityStack.isEmpty()) {
         while (!loginEntityStack.isEmpty()) {
-
             LoginEntity loginEntity = loginEntityStack.pop();
 //            log.info("Success get ID:" + loginEntity.getId());
 //            String GradePage = Tools.getGradePage(loginEntity.getId().toString(), loginEntity.getPassword());
@@ -36,56 +35,33 @@ public class NewGetGrade {
 //            Element table2 = HtmlParse.getTable(GradePage, 2);//从网站获得数据
             Element table2 = HtmlParse.getTable(2);//从本地获得数据
             Stack<GradeEntity> gradeEntityStack = HtmlParse.parseGrade(table2, studentEntity);
-
-
             //获得学生信息 保存数据库
-            saveStudentStack(gradeEntityStack);
-//            Session session = HibernateUtil.getSession();
-//            try {
-//                StudentEntity studentEntity1 = (StudentEntity) session.get(StudentEntity.class, studentEntity.getId());
-//                session.beginTransaction();
-//                if (studentEntity1 == null) {
-//                    session.save(studentEntity);
-//                } else {
-//                    session.update(studentEntity);
-//                }
-//                saveStudentStack(session, gradeEntityStack);
-//                session.getTransaction().commit();
-//            } finally {
-//                HibernateUtil.closeSession(session);
-//            }
-            System.out.println("end");
+            Stack<GradeEntity> gradeEntityStack1=  saveStudentStack(gradeEntityStack);//保留的是新增的成绩队列
+
+            log.info("end");
         }
     }
 
     public static Stack<GradeEntity> saveStudentStack(Stack<GradeEntity> gradeEntityStack) {
         Session session = HibernateUtil.getSession();
         //获取数据库中是否存在这个成绩
-        System.out.println("at saveStudentStack");
         Stack<GradeEntity> gradeEntityStack1 = new Stack<>();//存放新增加的成绩
         while (!gradeEntityStack.isEmpty()) {
-            System.out.println("堆栈当前长度" + gradeEntityStack.size());
+            log.info("堆栈当前长度" + gradeEntityStack.size());
             GradeEntity gradeEntity = gradeEntityStack.pop();//从堆栈中获取成绩
-//            String hql = "from GradeEntity where studentEntity=? and kecheng='?'" ;
             String sql = "select id from Grade where sid=" + gradeEntity.getStudentEntity().getId() + " and kecheng='" + gradeEntity.getKecheng() + "'";
-//            System.out.println(hql);
-            System.out.println(sql);
-//            List<GradeEntity> o=session.createQuery(hql).setParameter(0,gradeEntity.getStudentEntity().getId()).setParameter(1,6).list();
+            log.info("生成的SQL语句："+sql);
             List<GradeEntity> o = session.createSQLQuery(sql).list();
-//            List<GradeEntity> o=query.list();
-            System.out.println("查询出来的长度" + o.size());
-//            Query query = session.createQuery(hql);//在数据库中查寻是否有该成绩
+            log.info("查询出来的长度" + o.size());
             if (o.size() == 0) {//如果查询结果为空，则说明需要添加
                 session.beginTransaction();
                 session.save(gradeEntity);//保存成绩
-                System.out.println(gradeEntity);
                 session.getTransaction().commit();
                 gradeEntityStack1.push(gradeEntity);
             }
-            System.out.println("if 之后");
         }
-//        session.getTransaction().commit();
         HibernateUtil.closeSession(session);
+       log.info("新成绩数量"+gradeEntityStack1.size());
         return gradeEntityStack1;
     }
 }
