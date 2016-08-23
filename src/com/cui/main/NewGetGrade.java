@@ -64,21 +64,18 @@ public class NewGetGrade {
         System.out.println("at saveStudentStack");
         Stack<GradeEntity> gradeEntityStack1 = new Stack<>();//存放新增加的成绩
         while (!gradeEntityStack.isEmpty()) {
-            System.out.println("堆栈当前长度"+gradeEntityStack.size());
+            System.out.println("堆栈当前长度" + gradeEntityStack.size());
             GradeEntity gradeEntity = gradeEntityStack.pop();//从堆栈中获取成绩
 //            String hql = "from GradeEntity where studentEntity=? and kecheng='?'" ;
-            String sql = "select id from Grade where sid=? and kecheng='?'" ;
-
+            String sql = "select id from Grade where sid=" + gradeEntity.getStudentEntity().getId() + " and kecheng='" + gradeEntity.getKecheng() + "'";
 //            System.out.println(hql);
             System.out.println(sql);
-
 //            List<GradeEntity> o=session.createQuery(hql).setParameter(0,gradeEntity.getStudentEntity().getId()).setParameter(1,6).list();
-            List<GradeEntity> o=session.createSQLQuery(sql).setParameter(0,gradeEntity.getStudentEntity().getId()).setParameter(1,6).list();
-
+            List<GradeEntity> o = session.createSQLQuery(sql).list();
 //            List<GradeEntity> o=query.list();
-            System.out.println("查询出来的长度"+o.size());
+            System.out.println("查询出来的长度" + o.size());
 //            Query query = session.createQuery(hql);//在数据库中查寻是否有该成绩
-            if (o.size()==0) {//如果查询结果为空，则说明需要添加
+            if (o.size() == 0) {//如果查询结果为空，则说明需要添加
                 session.beginTransaction();
                 session.save(gradeEntity);//保存成绩
                 System.out.println(gradeEntity);
