@@ -13,9 +13,8 @@ import java.util.List;
 public class QueryTest {
     public static void main(String[] args) {
         Session session = HibernateUtil.getSession();
-        String hql = "from GradeEntity where sid=? and xuefen=? ";
-        List<GradeEntity> list = new ArrayList<GradeEntity>();
-        list = session.createQuery(hql).setParameter(0,1330090010).setParameter(1,6).list();
+        String hql = "select sid,xuefen from Grade where sid=1330090010 and kecheng='编译原理' ";
+        List<GradeEntity> list  = session.createSQLQuery(hql).list();
         HibernateUtil.closeSession(session);
         System.out.println(list.size());
     }

@@ -4,6 +4,7 @@ import java.util.Set;
 
 /**
  * Created by CUI on 2016/8/17.
+ * Student
  */
 public class StudentEntity {
     private Integer id;
@@ -15,22 +16,14 @@ public class StudentEntity {
     private String banji;
     private String ruxueriqi;
     private Integer gradeNumber;
-    private Set<GradeEntity> gradeEntitySet;
+    private String eMail;
 
-    @Override
-    public String toString() {
-        return "StudentEntity{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", sex='" + sex + '\'' +
-                ", xuezhi='" + xuezhi + '\'' +
-                ", yuanxi='" + yuanxi + '\'' +
-                ", zhuanye='" + zhuanye + '\'' +
-                ", banji='" + banji + '\'' +
-                ", ruxueriqi='" + ruxueriqi + '\'' +
-                ", gradeNumber=" + gradeNumber +
-                ", gradeEntitySet=" + gradeEntitySet +
-                '}';
+    public String geteMail() {
+        return eMail;
+    }
+
+    public void seteMail(String eMail) {
+        this.eMail = eMail;
     }
 
     @Override
@@ -49,6 +42,7 @@ public class StudentEntity {
         if (banji != null ? !banji.equals(that.banji) : that.banji != null) return false;
         if (ruxueriqi != null ? !ruxueriqi.equals(that.ruxueriqi) : that.ruxueriqi != null) return false;
         if (gradeNumber != null ? !gradeNumber.equals(that.gradeNumber) : that.gradeNumber != null) return false;
+        if (eMail != null ? !eMail.equals(that.eMail) : that.eMail != null) return false;
         return gradeEntitySet != null ? gradeEntitySet.equals(that.gradeEntitySet) : that.gradeEntitySet == null;
 
     }
@@ -64,9 +58,29 @@ public class StudentEntity {
         result = 31 * result + (banji != null ? banji.hashCode() : 0);
         result = 31 * result + (ruxueriqi != null ? ruxueriqi.hashCode() : 0);
         result = 31 * result + (gradeNumber != null ? gradeNumber.hashCode() : 0);
+        result = 31 * result + (eMail != null ? eMail.hashCode() : 0);
         result = 31 * result + (gradeEntitySet != null ? gradeEntitySet.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "StudentEntity{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", sex='" + sex + '\'' +
+                ", xuezhi='" + xuezhi + '\'' +
+                ", yuanxi='" + yuanxi + '\'' +
+                ", zhuanye='" + zhuanye + '\'' +
+                ", banji='" + banji + '\'' +
+                ", ruxueriqi='" + ruxueriqi + '\'' +
+                ", gradeNumber=" + gradeNumber +
+                ", eMail='" + eMail + '\'' +
+                ", gradeEntitySet=" + gradeEntitySet +
+                '}';
+    }
+
+    private Set<GradeEntity> gradeEntitySet;
 
     public Set<GradeEntity> getGradeEntitySet() {
         return gradeEntitySet;

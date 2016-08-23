@@ -29,10 +29,11 @@
         <property name="ruxueriqi">
             <column name="ruxueriqi" sql-type="text(0,-1)" not-null="false"/>
         </property>
+        <property name="eMail">
+            <column name="email" sql-type="text(0,-1)" not-null="false"/>
+        </property>
         <property name="gradeNumber">
             <column name="gradeNumber" sql-type="integer(0,-1)" not-null="false"/>
         </property>
-        <!-- 配置一对多关联关系 -->
-
     </class>
 </hibernate-mapping>
