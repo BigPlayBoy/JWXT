@@ -9,6 +9,7 @@ import java.util.Properties;
 import java.util.Stack;
 
 
+import com.cui.Bean.GradeEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -155,5 +156,57 @@ public class EmailGrade {
 		}
 		return true;
 	}
-
+	//08 23增加
+	public static boolean sendEmailWithGrade(Stack<GradeEntity> gradeEntityStack) {
+		// 1.准备发送邮件所需要的东西
+		/**
+		 * smtp邮件服务器 , from发件人 , to收件人 , copyto抄送人（这个不需要） , subject主题 ,
+		 * content内容 , username用户名 , password密码
+		 */
+		// 获取邮箱的配置文件
+		Properties props = new Properties();// 新建一个配置对象
+		try {
+			props.load(new BufferedInputStream(new FileInputStream("src/mail.properties")));
+		} catch (FileNotFoundException e) {
+			log.error("FileNotFoundException" + e);
+		} catch (IOException e) {
+			log.error("配置文件mail.properties没有找到" + e);
+		}
+		// 配置邮箱的属性
+		String hostname = props.getProperty("mail.smtp.host");
+		String username = props.getProperty("username");
+		String password = props.getProperty("password");
+		String subject = "你有新的成绩";
+		while (!gradeEntityStack.isEmpty()) {
+			String studentcontent = "尊敬的";
+			// 当有新增的成绩时 加工该成绩
+//			Student student = newGrade.pop();
+			GradeEntity gradeEntity=gradeEntityStack.pop();
+			String name = gradeEntity.getSid().toString();
+			studentcontent = studentcontent + name + "学号:,你有新的成绩出来了！！！";
+			String gradecontent = "\n";
+				String kechengming = gradeEntity.getKecheng();
+				double chengji = gradeEntity.getCehngji();
+				double xuefen = gradeEntity.getXuefen();
+				gradecontent = gradecontent + "课程名：" + kechengming + "\n成绩:" + chengji + "\n学分:" + xuefen + "\r\n<br>";
+			// 拼接发送的文本
+			String emailContent = studentcontent + gradecontent;
+			 log.info(emailContent);
+			// 获取邮箱地址
+			String emailAddress = gradeEntity.getStudentEntity().geteMail();
+			// 发送邮件
+			// smtp, from, to, copyto, subject, content, username, password
+			Mail.send(hostname, username, emailAddress,  subject, emailContent, username, password);
+			// System.out.println("发送成功");
+			// 每发送一次 过5秒钟 再次发送
+			// wait five minutes to show jobs
+			try {
+				Thread.sleep(5L * 1000L);
+			} catch (InterruptedException e) {
+				log.error(e.toString());
+			}
+			log.info("邮件发送成功" + name);
+		}
+		return true;
+	}
 }
