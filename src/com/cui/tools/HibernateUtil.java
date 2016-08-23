@@ -2,6 +2,7 @@ package com.cui.tools;
 
 /**
  * Created by CUI on 2016/8/17.
+ *
  */
 
 import com.cui.Bean.LoginEntity;
@@ -19,7 +20,7 @@ import java.util.Stack;
 
 public class HibernateUtil {
     private static SessionFactory sessionFactory;
-    private static Session session;
+    private static Session session=null;
     private static Configuration configuration = null;
     //     private static SessionFactory sessionFactory = null;
     private static ServiceRegistry serviceRegistry = null;
@@ -33,12 +34,6 @@ public class HibernateUtil {
         } catch (HibernateException e) {
             e.printStackTrace();
         }
-
-
-//        StandardServiceRegistryBuilder ssrb = new StandardServiceRegistryBuilder()
-//                .applySettings(config.getProperties());
-//        StandardServiceRegistry ssr = ssrb.build();
-//        sessionFactory = config.buildSessionFactory(ssr);
     }
 
     //获取SessionFactory
@@ -71,7 +66,6 @@ public class HibernateUtil {
         Query query = session.createQuery(hql);
         List<LoginEntity> loginEntityList = query.list();
         for (LoginEntity loginEntity : loginEntityList) {
-//            System.out.println(loginEntity);
             loginEntities.push(loginEntity);
         }
         session.getTransaction().commit();

@@ -16,7 +16,6 @@ import org.slf4j.LoggerFactory;
 import com.cui.Bean.Grade;
 import com.cui.Bean.Student;
 import com.cui.mail.Mail;
-import com.cui.main.Getgrade;
 
 /**
  * 建立一个存放了所有更新了成绩的学生的栈 搞定 然后查询学生的邮箱，成绩格式化，发送 发送邮件 需要知道对方的邮箱 新建一个发送邮箱的对象 发送的内容格式为
@@ -24,7 +23,7 @@ import com.cui.main.Getgrade;
  * 
  **/
 public class EmailGrade {
-	private static Logger log = LoggerFactory.getLogger(Getgrade.class);
+	private static Logger log = LoggerFactory.getLogger(EmailGrade.class);
 
 	public static void main(String[] args) {
 		// 拼接发送的文本
@@ -37,7 +36,7 @@ public class EmailGrade {
 		// 获取邮箱的配置文件
 		Properties props = new Properties();// 新建一个配置对象
 		try {
-			props.load(new BufferedInputStream(new FileInputStream("src/com.cui.mail.properties")));
+			props.load(new BufferedInputStream(new FileInputStream("src/mail.properties")));
 		} catch (FileNotFoundException e) {
 			log.error("FileNotFoundException" + e);
 		} catch (IOException e) {

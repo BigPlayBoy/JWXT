@@ -32,7 +32,7 @@ public class MyQuartz {
 
 	    // jobs can be scheduled before sched.start() has been called
 
-	    JobDetail job = newJob(Getgrade.class).withIdentity("job1", "group1").build();
+	    JobDetail job = newJob(NewGetGrade.class).withIdentity("job1", "group1").build();
 	    //在这里更改运行的时间 （second minute hour day	week month year）
 	    CronTrigger trigger = newTrigger().withIdentity("trigger1", "group1").withSchedule(cronSchedule("0 0 0,4,20 * * ?"))
 	        .build();
@@ -48,14 +48,7 @@ public class MyQuartz {
 	    // will run until the scheduler has been started
 	    sched.start();
 	    log.info("------- Started Scheduler -----------------");
-//	    log.com.cui.Bean("------- Waiting five minutes... ------------");
-//	    try {
-//	      // wait five minutes to show jobs
-//	      Thread.sleep(3L * 1000L);
-//	      // executing...
-//	    } catch (Exception e) {
-//	      //
-//	    }
+
 
 	    //log.com.cui.Bean("------- Shutting Down ---------------------");
 
